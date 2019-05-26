@@ -29,7 +29,7 @@ function newConnection(socket){
     socket.on('shake', shakeMsg);
     function shakeMsg(data) {
         //socket.broadcast.emit('mouse', data);
-        console.log(socket.id +": " + timeStart.getTime());
+        console.log(socket.id +": " + Date.now());
     }
 }
 
