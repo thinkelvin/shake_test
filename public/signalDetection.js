@@ -19,8 +19,8 @@ function detectChange(data) {
   let signal = 0;
   prevMean = Mean();
   prevSD = SD();
- document.getElementById("mean").innerHTML = "Mean = " + prevMean.toString();
-  document.getElementById("sd").innerHTML = "SD = " + prevSD.toString();
+//  document.getElementById("mean").innerHTML = "Mean = " + prevMean.toString();
+//   document.getElementById("sd").innerHTML = "SD = " + prevSD.toString();
 
   if (abs(data-prevMean)>(Threshold*prevSD)) {
     if (data>prevMean)
