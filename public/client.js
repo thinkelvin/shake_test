@@ -7,7 +7,7 @@ var Status=0; // keep track of the Level change
 var song;
 var playing;
 var prevSignal;
-//var Bump;
+// var Bump;
 var NbBumps;
 var FPS = 50;
 var XSpeed = 1.2; // shifting speed of x-axis
@@ -49,7 +49,7 @@ function draw() {
     if (lvlCheckDelay ==0) {
       Level = detectChange(accX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
-      if ((Level * prevLevel)==-1) { // Level * prevLeve == -1
+      if ((Level * prevLevel)==-1) { // A transition is detected
         lvlCheckDelay=10;
         NbBumps++;
         document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
