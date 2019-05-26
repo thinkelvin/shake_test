@@ -12,6 +12,7 @@ var NbBumps;
 var FPS = 50;
 var XSpeed = 1.2; // shifting speed of x-axis
 
+
 function preload() {
   //song = loadSound('song.mp3');
 }
@@ -26,19 +27,19 @@ function setup() {
   Bump = false;
   NbBumps = 0;
   document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
-  window.addEventListener("devicemotion", accelerometerUpdate, true);
-  //song.loop();
+  window.addEventListener("devicemotion", accUpate,true);
 }
 
-function accelerometerUpdate(e){
-  var aX = event.accelerationIncludingGravity.x*1;
+function accUpate(e) {
+  accX = e.accelerationX;
 }
+
 
 function draw() {
   Threshold = document.getElementById('rangeinput').value;
   
   // keep track of max/min accX for debugging
-  accX = accelerationX;
+  //accX = accelerationX;
   //accX = aX;
   // if (accX > accXMax) accXMax = accX;
   // if (accX < accXMin) accXMin = accX;
