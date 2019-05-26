@@ -38,8 +38,8 @@ function draw() {
   Threshold = document.getElementById('rangeinput').value;
   
   // keep track of max/min accX for debugging
-  //accX = accelerationX;
-  accX = aX;
+  accX = accelerationX;
+  //accX = aX;
   // if (accX > accXMax) accXMax = accX;
   // if (accX < accXMin) accXMin = accX;
   // document.getElementById("max").innerHTML = "Max = " + accXMax.toString();
