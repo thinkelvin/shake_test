@@ -7,7 +7,7 @@ var Status=0; // keep track of the Level change
 var song;
 var playing;
 var prevSignal;
-var Bump;
+//var Bump;
 var NbBumps;
 var FPS = 50;
 var XSpeed = 1.2; // shifting speed of x-axis
@@ -25,7 +25,7 @@ function setup() {
   preSignal = 0;
   Bump = false;
   NbBumps = 0;
-  document.getElementById("bump").innerHTML = "bumps = " + NbBumps.toString();
+  document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
   //song.loop();
 }
 
@@ -52,7 +52,7 @@ function draw() {
       if ((Level * prevLevel)==-1) { // Level * prevLeve == -1
         lvlCheckDelay=10;
         NbBumps++;
-        document.getElementById("bump").innerHTML = "bumps = " + NbBumps.toString();
+        document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
       }
       prevLevel = Level;
     }
