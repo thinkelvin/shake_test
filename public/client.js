@@ -8,8 +8,8 @@ var song;
 var playing;
 var prevSignal;
 var NbBumps;
-var FPS = 50;
-var XSpeed = 1.2; // shifting speed of x-axis
+var FPS = 25;
+var XSpeed = 1; // shifting speed of x-axis
 var socket;
 
 function preload() {
