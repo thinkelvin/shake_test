@@ -25,7 +25,7 @@ function setup() {
   preSignal = 0;
   Bump = false;
   NbBumps = 0;
-  //document.getElementById("bump").innerHTML = "bumps = " + NbBumps.toString();
+  document.getElementById("bump").innerHTML = "bumps = " + NbBumps.toString();
   //song.loop();
 }
 
