@@ -26,16 +26,20 @@ function setup() {
   Bump = false;
   NbBumps = 0;
   document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
+  window.addEventListener("devicemotion", accelerometerUpdate, true);
   //song.loop();
 }
 
-
+function accelerometerUpdate(e){
+  var aX = event.accelerationIncludingGravity.x*1;
+}
 
 function draw() {
   Threshold = document.getElementById('rangeinput').value;
   
   // keep track of max/min accX for debugging
-  accX = accelerationX;
+  //accX = accelerationX;
+  accX = aX;
   // if (accX > accXMax) accXMax = accX;
   // if (accX < accXMin) accXMin = accX;
   // document.getElementById("max").innerHTML = "Max = " + accXMax.toString();
