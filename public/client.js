@@ -7,11 +7,10 @@ var Status=0; // keep track of the Level change
 var song;
 var playing;
 var prevSignal;
-// var Bump;
 var NbBumps;
 var FPS = 50;
 var XSpeed = 1.2; // shifting speed of x-axis
-
+var socket;
 
 function preload() {
   //song = loadSound('song.mp3');
@@ -28,6 +27,7 @@ function setup() {
   NbBumps = 0;
   document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
   window.addEventListener("devicemotion", accUpate,true);
+  socket = io(); // create socket connection back to hosting server
 }
 
 function accUpate(e) {
@@ -63,19 +63,8 @@ function draw() {
     }
     lvlCheckDelay--;
   }
- 
-
 }
 
-
-
-// Auxlliary functions
-// function togSong() {
-//         if (song.isPlaying()) song.pause();
-//         else
-//           song.play(); 
-  
-// }
 
 function getData() {
   return Level*30;
