@@ -36,10 +36,10 @@ function draw() {
   
   // keep track of max/min accX for debugging
   accX = accelerationX;
-  if (accX > accXMax) accXMax = accX;
-  if (accX < accXMin) accXMin = accX;
-  document.getElementById("max").innerHTML = "Max = " + accXMax.toString();
-  document.getElementById("min").innerHTML = "Min = " + accXMin.toString();  
+  // if (accX > accXMax) accXMax = accX;
+  // if (accX < accXMin) accXMin = accX;
+  // document.getElementById("max").innerHTML = "Max = " + accXMax.toString();
+  // document.getElementById("min").innerHTML = "Min = " + accXMin.toString();  
   
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(accX);
@@ -65,12 +65,12 @@ function draw() {
 
 
 // Auxlliary functions
-function togSong() {
-        if (song.isPlaying()) song.pause();
-        else
-          song.play(); 
+// function togSong() {
+//         if (song.isPlaying()) song.pause();
+//         else
+//           song.play(); 
   
-}
+// }
 
 function getData() {
   return Level*30;
