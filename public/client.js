@@ -31,7 +31,7 @@ function setup() {
 }
 
 function accUpate(e) {
-  accX = e.accelerationX;
+  accX = e.accelerationIncludingGravity.x*10;
 }
 
 
