@@ -22,10 +22,11 @@ function newConnection(socket){
     function byeConnection(socket){
         console.log('client disconnected!');
     }
-    // socket.on('mouse', mouseMsg);
-    // function mouseMsg(data) {
-    //     socket.broadcast.emit('mouse', data);
-    // }
+    socket.on('shake', shakeMsg);
+    function shakeMsg(data) {
+        //socket.broadcast.emit('mouse', data);
+        console.log(socket.id +": shake");
+    }
 }
 
 
