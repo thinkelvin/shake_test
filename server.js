@@ -20,12 +20,12 @@ function newConnection(socket){
     console.log('new connection:'+socket.id);
     socket.on('disconnect', byeConnection);
     function byeConnection(socket){
-        console.log('client disconnected:'+ socket.id);
+        console.log('client disconnected!');
     }
-    socket.on('mouse', mouseMsg);
-    function mouseMsg(data) {
-        socket.broadcast.emit('mouse', data);
-    }
+    // socket.on('mouse', mouseMsg);
+    // function mouseMsg(data) {
+    //     socket.broadcast.emit('mouse', data);
+    // }
 }
 
 
