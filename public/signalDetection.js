@@ -4,7 +4,7 @@ var bufferSize = 40;
 var prevData;
 var prevMean;
 var prevSD;
-var Influence = 0.5;
+var Influence = 0.25;
 var Threshold = 5;
 
 function fillBuffer(d) {
