@@ -55,7 +55,7 @@ function draw() {
       Level = detectChange(accX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
       if ((Level * prevLevel)==-1) { // A transition is detected
-        lvlCheckDelay=10;
+        lvlCheckDelay=20;
         NbBumps++;
         document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
         socket.emit('shake',"shake"); // tell server the client mobile shakes
