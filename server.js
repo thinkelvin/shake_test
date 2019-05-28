@@ -36,6 +36,7 @@ function newConnection(socket){
     socket.on('disconnect', byeConnection);
     function byeConnection(){
         console.log('client disconnected: '+ socket.id);
+        delete socketPair[socket.id];
     }
 }
 
