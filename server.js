@@ -11,25 +11,31 @@ app.get('/', function(req, res){
     res.render('index');
 });
 console.log("my node server is up and running at Heroku!!!");
+var socketPair = {}; // Object to store socketID: shake time
 
 // Enable Socket Communication
 var socket = require('socket.io');
 var io = socket(server);
 
-
+// waiting for new Socket connection
 io.on('connection', newConnection);
 
-// Whenever this is a new connection, do the following
+// Whenever this is a new Socket connection, do the following
 function newConnection(socket){
     console.log('new connection:'+socket.id);
+    // For every new Socket connection
+    socketPair[socket.id] = 0; // shake time set to zero at start
+
+    socket.on('shake', shakeMsg);
+    function shakeMsg(data) {
+        socketPair[socket.id] = Date.now();
+        console.log(socket.id +": " + Date.now());
+    }
+    
+    // Client disconnects
     socket.on('disconnect', byeConnection);
     function byeConnection(socket){
         console.log('client disconnected!');
-    }
-    socket.on('shake', shakeMsg);
-    function shakeMsg(data) {
-        //socket.broadcast.emit('mouse', data);
-        console.log(socket.id +": " + Date.now());
     }
 }
 
