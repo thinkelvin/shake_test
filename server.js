@@ -34,8 +34,8 @@ function newConnection(socket){
     
     // Client disconnects
     socket.on('disconnect', byeConnection);
-    function byeConnection(socket){
-        console.log('client disconnected!');
+    function byeConnection(){
+        console.log('client disconnected: '+ socket.id);
     }
 }
 
