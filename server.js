@@ -25,7 +25,7 @@ function newConnection(socket){
     console.log('new connection:'+socket.id);
     // For every new Socket connection
     socketPair[socket.id] = 0; // shake time set to zero at start
-
+    console.log(Object.keys(socketPair).length);
     socket.on('shake', shakeMsg);
     function shakeMsg(data) {
         socketPair[socket.id] = Date.now();
