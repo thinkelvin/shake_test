@@ -26,10 +26,9 @@ function newConnection(socket){
     console.log('new connection:'+socket.id);
     allClients[NbClients] = socket.id;
     NbClients++;
-    console.log(NbClients);
-    // For every new Socket connection
+        // For every new Socket connection
     socketPair[socket.id] = -1; // shake time set to -1 at start
-    console.log(Object.keys(socketPair).length);
+    //console.log(Object.keys(socketPair).length);
     socket.on('shake', shakeMsg);
     function shakeMsg(data) {
         socketPair[socket.id] = Date.now();
@@ -40,7 +39,8 @@ function newConnection(socket){
         var t2 = socketPair[allClients[1]];
         
         if (Math.abs(t1-t2)<3000) {
-            socket.broadcast.emit('syncShake','hello');
+            //socket.broadcast.emit('syncShake','hello');
+            io.emit('syncShake');
             console.log('sync shake');
         }
         
