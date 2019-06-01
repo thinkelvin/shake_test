@@ -42,7 +42,7 @@ function remoteShake(){
 }
 
 function syncShake() {
-  NbBumps_remote++;
+  NbBumps_sync++;
   document.getElementById("syncBump").innerHTML = "Sync Bumps = " + NbBumps_sync.toString();
 }
 
