@@ -30,6 +30,7 @@ function newConnection(socket){
     function shakeMsg(data) {
         socketPair[socket.id] = Date.now();
         console.log(socket.id +": " + Date.now());
+        socket.broadcast.emit('remoteShake',socket.id); // tell the other client about the shake 
     }
     
     // Client disconnects

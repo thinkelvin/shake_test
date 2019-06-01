@@ -8,6 +8,7 @@ var song;
 var playing;
 var prevSignal;
 var NbBumps;
+var NbBumps_remote;
 var FPS = 30;
 var XSpeed = 1; // shifting speed of x-axis
 var socket;
@@ -25,9 +26,16 @@ function setup() {
   preSignal = 0;
   Bump = false;
   NbBumps = 0;
+  NbBumps_remote = 0;
   document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
   window.addEventListener("devicemotion", accUpate,true);
   socket = io(); // create socket connection back to hosting server
+  socket.on('remoteShake', remoteShake); // handle the shake by another client
+}
+
+function remoteShake(){
+  NbBumps_remote++;
+  document.getElementById("remoteBump").innerHTML = "Remote Bumps = " + NbBumps_remote.toString();
 }
 
 function accUpate(e) {
