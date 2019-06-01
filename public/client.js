@@ -33,7 +33,7 @@ function setup() {
   window.addEventListener("devicemotion", accUpate,true);
   socket = io(); // create socket connection back to hosting server
   socket.on('remoteShake', remoteShake); // handle the shake by another client
-  socket.on('syncShae', syncShake);
+  socket.on('syncShake', syncShake);
 }
 
 function remoteShake(){
