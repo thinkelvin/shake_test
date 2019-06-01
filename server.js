@@ -36,6 +36,11 @@ function newConnection(socket){
         console.log(socket.id +": " + Date.now());
         socket.broadcast.emit('remoteShake',socket.id); // tell the other client about the shake 
         // check shake sync only both shake times >0
+        var t1 = socketPair[allClients[0]];
+        var t2 = socketPair[allClients[1]];
+        if (Math.abs(t1-t2)<1) {
+            socket.broadcast.emit('syncShake','hello');
+        }
         
     }
     
