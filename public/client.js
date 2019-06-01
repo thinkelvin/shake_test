@@ -58,8 +58,8 @@ function draw() {
         lvlCheckDelay=20;
         NbBumps++;
         document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
-        //socket.emit('shake',"shake"); // tell server the client mobile shakes
-        socket.broadcast.emit('shake',"shake");
+        socket.emit('shake',"shake"); // tell server the client mobile shakes
+        //socket.broadcast.emit('shake',"shake");
       }
       prevLevel = Level;
     }
