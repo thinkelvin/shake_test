@@ -90,40 +90,40 @@ function getaccX() {
   return dAccX;
 }
 
-Plotly.plot('myDiv', [
-  {
-    y: [getaccX()],
-    mode: 'lines',
-    type: 'line',
-    opacity: 0.5,
-    line: {
-      width: 2,
-      color: 'green'
-    }
-  },
-  {
-    y: [getLevel()],
-    mode: 'lines',
-    type: 'line'
-  }  
+// Plotly.plot('myDiv', [
+//   {
+//     y: [getaccX()],
+//     mode: 'lines',
+//     type: 'line',
+//     opacity: 0.5,
+//     line: {
+//       width: 2,
+//       color: 'green'
+//     }
+//   },
+//   {
+//     y: [getLevel()],
+//     mode: 'lines',
+//     type: 'line'
+//   }  
 
-]);
+// ]);
 
-var cnt = 0;
-var timePlot = 1000/FPS; // update the data at FPS
-var displayRange = 200; // x-axis time range
-setInterval(function() {
-  Plotly.extendTraces('myDiv', {
-    y: [
-      [getaccX()],[getLevel()]
-    ]
-  }, [0,1]); // normalize y datas into [0,1] range
-  cnt+=XSpeed;
-  //if (cnt > displayRange) {
-    Plotly.relayout('myDiv', {
-      xaxis: {
-        range: [cnt -displayRange , cnt+displayRange]
-      }
-    });
-  //}
-}, 1); // millisecond to update
+// var cnt = 0;
+// var timePlot = 1000/FPS; // update the data at FPS
+// var displayRange = 200; // x-axis time range
+// setInterval(function() {
+//   Plotly.extendTraces('myDiv', {
+//     y: [
+//       [getaccX()],[getLevel()]
+//     ]
+//   }, [0,1]); // normalize y datas into [0,1] range
+//   cnt+=XSpeed;
+//   //if (cnt > displayRange) {
+//     Plotly.relayout('myDiv', {
+//       xaxis: {
+//         range: [cnt -displayRange , cnt+displayRange]
+//       }
+//     });
+//   //}
+// }, 1); // millisecond to update
