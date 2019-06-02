@@ -29,19 +29,19 @@ function newConnection(socket){
         // For every new Socket connection
     socketPair[socket.id] = -1; // shake time set to -1 at start
     //console.log(Object.keys(socketPair).length);
-    socket.on('shake', shakeMsg);
+    socket.on('bump', shakeMsg);
     function shakeMsg(data) {
         socketPair[socket.id] = Date.now();
         //console.log(socket.id +": " + Date.now());
-        socket.broadcast.emit('remoteShake',socket.id); // tell the other client about the shake 
+        socket.broadcast.emit('remoteBump',socket.id); // tell the other client about the shake 
         // check shake sync only both shake times >0
         var t1 = socketPair[allClients[0]];
         var t2 = socketPair[allClients[1]];
         
         if (Math.abs(t1-t2)<3000) {
             //socket.broadcast.emit('syncShake','hello');
-            io.emit('syncShake');
-            console.log('sync shake');
+            io.emit('syncBump');
+            console.log('sync Bump');
         }
         
     }

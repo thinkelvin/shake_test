@@ -35,16 +35,16 @@ function setup() {
   document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
   window.addEventListener("devicemotion", accUpate,true);
   socket = io(); // create socket connection back to hosting server
-  socket.on('remoteShake', remoteShake); // handle the shake by another client
-  socket.on('syncShake', syncShake);
+  socket.on('remoteBump', remoteBump); // handle the shake by another client
+  socket.on('syncBump', syncBump);
 }
 
-function remoteShake(){
+function remoteBump(){
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = "Remote Bumps = " + NbBumps_remote.toString();
 }
 
-function syncShake() {
+function syncBump() {
   NbBumps_sync++;
   document.getElementById("syncBump").innerHTML = "Sync Bumps = " + NbBumps_sync.toString();
 }
@@ -71,7 +71,7 @@ function draw() {
         lvlCheckDelay=20;
         NbBumps++;
         document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
-        socket.emit('shake',"shake"); // tell server the client mobile shakes
+        socket.emit('bump',"bump"); // tell server the client mobile shakes
         //socket.broadcast.emit('shake',"shake");
       }
       prevLevel = Level;
@@ -81,49 +81,49 @@ function draw() {
 }
 
 
-// function getLevel() {
-//   return Level*30;
-// }
+function getLevel() {
+  return Level*30;
+}
 
-// function getaccX() {
-//   //return accX;
-//   return dAccX;
-// }
+function getaccX() {
+  //return accX;
+  return dAccX;
+}
 
-// Plotly.plot('myDiv', [
-//   {
-//     y: [getaccX()],
-//     mode: 'lines',
-//     type: 'line',
-//     opacity: 0.5,
-//     line: {
-//       width: 2,
-//       color: 'green'
-//     }
-//   },
-//   {
-//     y: [getLevel()],
-//     mode: 'lines',
-//     type: 'line'
-//   }  
+Plotly.plot('myDiv', [
+  {
+    y: [getaccX()],
+    mode: 'lines',
+    type: 'line',
+    opacity: 0.5,
+    line: {
+      width: 2,
+      color: 'green'
+    }
+  },
+  {
+    y: [getLevel()],
+    mode: 'lines',
+    type: 'line'
+  }  
 
-// ]);
+]);
 
-// var cnt = 0;
-// var timePlot = 1000/FPS; // update the data at FPS
-// var displayRange = 200; // x-axis time range
-// setInterval(function() {
-//   Plotly.extendTraces('myDiv', {
-//     y: [
-//       [getaccX()],[getLevel()]
-//     ]
-//   }, [0,1]); // normalize y datas into [0,1] range
-//   cnt+=XSpeed;
-//   //if (cnt > displayRange) {
-//     Plotly.relayout('myDiv', {
-//       xaxis: {
-//         range: [cnt -displayRange , cnt+displayRange]
-//       }
-//     });
-//   //}
-// }, 1); // millisecond to update
+var cnt = 0;
+var timePlot = 1000/FPS; // update the data at FPS
+var displayRange = 200; // x-axis time range
+setInterval(function() {
+  Plotly.extendTraces('myDiv', {
+    y: [
+      [getaccX()],[getLevel()]
+    ]
+  }, [0,1]); // normalize y datas into [0,1] range
+  cnt+=XSpeed;
+  //if (cnt > displayRange) {
+    Plotly.relayout('myDiv', {
+      xaxis: {
+        range: [cnt -displayRange , cnt+displayRange]
+      }
+    });
+  //}
+}, 1); // millisecond to update
