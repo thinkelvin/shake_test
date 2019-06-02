@@ -26,7 +26,7 @@
       }
       /* none: hide, block: show */
       #myDiv {
-        display: none;
+        display: block;
       }
       #track1 {
         background-color: #ee0a0a;
@@ -57,9 +57,9 @@
       <script src="levelDetection.js"></script>
       <script src="client.js"></script>
     <!-- <label for="rangeinput">Threshold</label> <input id="rangeinput" type="range" min="0" max="10" value="4" onchange="rangevalue.value=value"> <output id="rangevalue">4</output> -->
-   <div id="track1"  onclick="toggleBorder(this.id);"><span id="localBump">0</span></div>
-   <div id="track2"  onclick="toggleBorder(this.id);"><span id='remoteBump'>0</span></div>
-   <div id="track3"  onclick="toggleBorder(this.id);"><span id='syncBump'>0</span></div>
-   <div id="track4"  onclick="toggleBorder(this.id);">four</div>
+   <div id="track1"><span id="localBump">0</span></div>
+   <div id="track2"><span id='remoteBump'>0</span></div>
+   <div id="track3"><span id='syncBump'>0</span></div>
+   <div id="track4">four</div>
   </body>
   </html>
