@@ -22,13 +22,25 @@
         align-self: center;
       }
       #track1#track2#track3#track4:hover{
-        background: white;
+        background-color: white;
       }
       /* none: hide, block: show */
       #myDiv {
         display: none;
       }
-    </style>
+      #track1 {
+        background-color: #ee0a0a;
+      }
+      #track2 {
+       background-color: #25ee0a;
+      }
+      #track3 {
+        background-color: #0accee;
+      }
+      #track4 {
+        background-color: #e60aee;
+      }
+      </style>
     <script>
       function goFS() {
         if (screenfull.enabled) {
@@ -45,11 +57,11 @@
       <script src="levelDetection.js"></script>
       <script src="client.js"></script>
     <!-- <label for="rangeinput">Threshold</label> <input id="rangeinput" type="range" min="0" max="10" value="4" onchange="rangevalue.value=value"> <output id="rangevalue">4</output> -->
-   <div id="track1" style="background-color: #ee0a0a" onclick="toggleBorder(this.id);"><span id="localBump">0</span></div>
-   <div id="track2" style="background-color: green" onclick="toggleBorder(this.id);"><span id='remoteBump'>0</span>
+   <div id="track1"  onclick="toggleBorder(this.id);"><span id="localBump">0</span></div>
+   <div id="track2"  onclick="toggleBorder(this.id);"><span id='remoteBump'>0</span>
    </div>
-   <div id="track3" style="background-color: blue" onclick="toggleBorder(this.id);"><span id='syncBump'>0</span></div>
-   <div id="track4" style="background-color: yellow" onclick="toggleBorder(this.id);">four</div>
+   <div id="track3"  onclick="toggleBorder(this.id);"><span id='syncBump'>0</span></div>
+   <div id="track4"  onclick="toggleBorder(this.id);">four</div>
   
  
 
