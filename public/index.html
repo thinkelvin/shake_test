@@ -20,12 +20,13 @@
     </style>
     <script>
       function goFS() {
-        console.log('full screen');
-        screenfull.request();
+        if (screenfull.enable) 
+          screenfull.request();
+      }
       }
     </script>
   </head>
-  <body style="height: 100%; margin: 0%; padding: 0%" onclick="screenfull.request();">
+  <body style="height: 100%; margin: 0%; padding: 0%" onclick="goFS();">
     <!-- <div id="myDiv"></div>   -->
       <script src="levelDetection.js"></script>
       <script src="client.js"></script>
