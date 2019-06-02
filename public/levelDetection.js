@@ -1,6 +1,6 @@
 var bufferReady;
 var dataBuffer = [];
-var bufferSize = 40;
+var bufferSize = 20;
 var prevData;
 var prevMean;
 var prevSD;
