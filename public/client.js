@@ -60,12 +60,12 @@ function draw() {
   //Threshold = document.getElementById('rangeinput').value;
   
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
-    fillBuffer(accX);
+    fillBuffer(dAccX);
     Level=0;
     console.log('filling buffer...');
   } else {
     if (lvlCheckDelay ==0) {
-      Level = detectLevelChange(accX); // +1: moveto right, -1: moveto left, 0: no shake
+      Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
       if ((Level * prevLevel)==-1) { // A transition is detected
         lvlCheckDelay=20;
