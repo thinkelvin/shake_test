@@ -4,18 +4,34 @@
     <script src="p5.sound.min.js"></script>
     <script src="plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/4.2.0/screenfull.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
-
+    <style>
+      div {
+        width: 100%;
+        height: 25%;
+        padding: 0%;
+        margin: 0%;
+      }
+    </style>
+    <script>
+      function goFS() {
+        console.log('full screen');
+        screenfull.request();
+      }
+    </script>
   </head>
-  <body>
+  <body style="height: 100%; margin: 0%; padding: 0%" onclick="goFS()">
     <!-- <div id="myDiv"></div>   -->
       <script src="levelDetection.js"></script>
       <script src="client.js"></script>
     <!-- <label for="rangeinput">Threshold</label> <input id="rangeinput" type="range" min="0" max="10" value="4" onchange="rangevalue.value=value"> <output id="rangevalue">4</output> -->
-    <h1 id="localBump">0</h1>  
-    <h1 id="remoteBump">0</h1>
-    <h1 id="syncBump">0</h1>
+   <div style="background-color: #ee0a0a"><span id="localBump"></span></div>
+   <div style="background-color: green"><span id='remoteBump'></span></div>
+   <div style="background-color: yellow"><span id='syncBump'></span></div>
+   <div style="background-color: blue">four</div>
+  
  
 
   
