@@ -57,7 +57,7 @@ function accUpate(e) {
 
 
 function draw() {
-  Threshold = document.getElementById('rangeinput').value;
+  //Threshold = document.getElementById('rangeinput').value;
   
   // keep track of max/min accX for debugging
   //accX = accelerationX;
@@ -68,12 +68,12 @@ function draw() {
   // document.getElementById("min").innerHTML = "Min = " + accXMin.toString();  
   
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
-    fillBuffer(accX);
+    fillBuffer(dAccX);
     Level=0;
     console.log('filling buffer...');
   } else {
     if (lvlCheckDelay ==0) {
-      Level = detectLevelChange(accX); // +1: moveto right, -1: moveto left, 0: no shake
+      Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
       if ((Level * prevLevel)==-1) { // A transition is detected
         lvlCheckDelay=20;
@@ -89,49 +89,49 @@ function draw() {
 }
 
 
-// function getLevel() {
-//   return Level*30;
-// }
+function getLevel() {
+  return Level*30;
+}
 
-// function getaccX() {
-//   //return accX;
-//   return dAccX;
-// }
+function getaccX() {
+  //return accX;
+  return dAccX;
+}
 
-// Plotly.plot('myDiv', [
-//   {
-//     y: [getaccX()],
-//     mode: 'lines',
-//     type: 'line',
-//     opacity: 0.5,
-//     line: {
-//       width: 2,
-//       color: 'green'
-//     }
-//   },
-//   {
-//     y: [getLevel()],
-//     mode: 'lines',
-//     type: 'line'
-//   }  
+Plotly.plot('myDiv', [
+  {
+    y: [getaccX()],
+    mode: 'lines',
+    type: 'line',
+    opacity: 0.5,
+    line: {
+      width: 2,
+      color: 'green'
+    }
+  },
+  {
+    y: [getLevel()],
+    mode: 'lines',
+    type: 'line'
+  }  
 
-// ]);
+]);
 
-// var cnt = 0;
-// var timePlot = 1000/FPS; // update the data at FPS
-// var displayRange = 200; // x-axis time range
-// setInterval(function() {
-//   Plotly.extendTraces('myDiv', {
-//     y: [
-//       [getaccX()],[getLevel()]
-//     ]
-//   }, [0,1]); // normalize y datas into [0,1] range
-//   cnt+=XSpeed;
-//   //if (cnt > displayRange) {
-//     Plotly.relayout('myDiv', {
-//       xaxis: {
-//         range: [cnt -displayRange , cnt+displayRange]
-//       }
-//     });
-//   //}
-// }, 1); // millisecond to update
+var cnt = 0;
+var timePlot = 1000/FPS; // update the data at FPS
+var displayRange = 200; // x-axis time range
+setInterval(function() {
+  Plotly.extendTraces('myDiv', {
+    y: [
+      [getaccX()],[getLevel()]
+    ]
+  }, [0,1]); // normalize y datas into [0,1] range
+  cnt+=XSpeed;
+  //if (cnt > displayRange) {
+    Plotly.relayout('myDiv', {
+      xaxis: {
+        range: [cnt -displayRange , cnt+displayRange]
+      }
+    });
+  //}
+}, 1); // millisecond to update
