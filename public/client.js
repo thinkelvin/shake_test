@@ -1,4 +1,6 @@
 var accX;
+var pAccX; // last accX reading
+var dAccX; 
 var accXMax, accXMin;
 var Level; // outliner detection
 var prevLevel=0; // previous Level change
@@ -22,6 +24,7 @@ function setup() {
   frameRate(FPS);
   accXMax = -10000;
   accXMin = 10000;
+  pAccX = 0;
   bufferReady = false;
   playing = false;
   preSignal = 0;
@@ -47,7 +50,9 @@ function syncShake() {
 }
 
 function accUpate(e) {
+  pAccX = accX;
   accX = e.acceleration.x;
+  dAccX = accX - pAccX;
 }
 
 
@@ -84,12 +89,13 @@ function draw() {
 }
 
 
-function getData() {
+function getLevel() {
   return Level*30;
 }
 
 function getaccX() {
-  return accX;
+  //return accX;
+  return dAccX;
 }
 
 Plotly.plot('myDiv', [
@@ -104,7 +110,7 @@ Plotly.plot('myDiv', [
     }
   },
   {
-    y: [getData()],
+    y: [getLevel()],
     mode: 'lines',
     type: 'line'
   }  
@@ -117,7 +123,7 @@ var displayRange = 200; // x-axis time range
 setInterval(function() {
   Plotly.extendTraces('myDiv', {
     y: [
-      [getaccX()],[getData()]
+      [getaccX()],[getLevel()]
     ]
   }, [0,1]); // normalize y datas into [0,1] range
   cnt+=XSpeed;
