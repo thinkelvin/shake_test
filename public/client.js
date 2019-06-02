@@ -57,7 +57,7 @@ function accUpate(e) {
 
 
 function draw() {
-  Threshold = document.getElementById('rangeinput').value;
+  //Threshold = document.getElementById('rangeinput').value;
   
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(accX);
