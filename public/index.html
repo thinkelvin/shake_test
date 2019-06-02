@@ -12,6 +12,7 @@
     <meta charset="utf-8">
     <style>
       div {
+        cursor: pointer;
         width: 100%;
         height: 25%;
         padding: 0%;
@@ -27,6 +28,9 @@
           screenfull.request();
       }
       }
+      function toggleBorder() {
+        console.log('border');
+      }
     </script>
   </head>
   <body style="height: 100%; margin: 0%; padding: 0%">
@@ -34,10 +38,10 @@
       <script src="levelDetection.js"></script>
       <script src="client.js"></script>
     <!-- <label for="rangeinput">Threshold</label> <input id="rangeinput" type="range" min="0" max="10" value="4" onchange="rangevalue.value=value"> <output id="rangevalue">4</output> -->
-   <div style="background-color: #ee0a0a"><span id="localBump">0</span></div>
-   <div style="background-color: green"><span id='remoteBump'>0</span></div>
-   <div style="background-color: blue"><span id='syncBump'>0</span></div>
-   <div style="background-color: yellow">four</div>
+   <div id="track1" style="background-color: #ee0a0a" onclick="toggleBorder();"><span id="localBump">0</span></div>
+   <div id="track2" style="background-color: green"><span id='remoteBump'>0</span></div>
+   <div id="track3" style="background-color: blue"><span id='syncBump'>0</span></div>
+   <div id="track4" style="background-color: yellow">four</div>
   
  
 
