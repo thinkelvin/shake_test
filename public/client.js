@@ -127,4 +127,4 @@ setInterval(function() {
       }
     });
   //}
-}, 1); // millisecond to update
+}, 50); // millisecond to update
