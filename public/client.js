@@ -59,14 +59,6 @@ function accUpate(e) {
 function draw() {
   Threshold = document.getElementById('rangeinput').value;
   
-  // keep track of max/min accX for debugging
-  //accX = accelerationX;
-  //accX = aX;
-  // if (accX > accXMax) accXMax = accX;
-  // if (accX < accXMin) accXMin = accX;
-  // document.getElementById("max").innerHTML = "Max = " + accXMax.toString();
-  // document.getElementById("min").innerHTML = "Min = " + accXMin.toString();  
-  
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(accX);
     Level=0;
