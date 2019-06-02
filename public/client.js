@@ -73,7 +73,7 @@ function draw() {
     console.log('filling buffer...');
   } else {
     if (lvlCheckDelay ==0) {
-      Level = detectChange(accX); // +1: moveto right, -1: moveto left, 0: no shake
+      Level = detectLevelChange(accX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
       if ((Level * prevLevel)==-1) { // A transition is detected
         lvlCheckDelay=20;

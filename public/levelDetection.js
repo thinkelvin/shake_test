@@ -1,11 +1,11 @@
 var bufferReady;
 var dataBuffer = [];
-var bufferSize = 30;
+var bufferSize = 40;
 var prevData;
 var prevMean;
 var prevSD;
 var Influence = 0;
-var Threshold = 5;
+var Threshold = 4;
 
 function fillBuffer(d) {
   dataBuffer.push(d);
@@ -15,7 +15,7 @@ function fillBuffer(d) {
   } 
 }
 
-function detectChange(data) {
+function detectLevelChange(data) {
   let signal = 0;
   prevMean = Mean();
   prevSD = SD();
