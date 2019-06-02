@@ -33,7 +33,7 @@ function setup() {
   NbBumps_remote = 0;
   NbBumps_sync = 0;
   document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
-  window.addEventListener("devicemotion", accUpate,true);
+  window.addEventListener("devicemotion", accUpdate,true);
   socket = io(); // create socket connection back to hosting server
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
@@ -49,7 +49,8 @@ function syncBump() {
   document.getElementById("syncBump").innerHTML = "Sync Bumps = " + NbBumps_sync.toString();
 }
 
-function accUpate(e) {
+
+function accUpdate(e) {
   pAccX = accX;
   accX = e.acceleration.x;
   dAccX = accX - pAccX;
