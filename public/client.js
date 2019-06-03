@@ -56,7 +56,7 @@ function setup() {
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
   trackSetup();
-
+  track1Sound.play();
 }
 
 function trackSetup() {
@@ -109,15 +109,15 @@ function trackSetup() {
 }
 
 function draw() {
-  if (!trackStarted) {
-    if (track1Sound.state() == 'loaded' && track2Sound.state() == 'loaded' && track3Sound.state() == 'loaded' && track4Sound.state() == 'loaded'){
-      track1Sound.play();
-      // track2Sound.play();
-      // track3Sound.play();
-      // track4Sound.play();  
-      trackStarted = true;
-  }
-  }
+  // if (!trackStarted) {
+  //   if (track1Sound.state() == 'loaded' && track2Sound.state() == 'loaded' && track3Sound.state() == 'loaded' && track4Sound.state() == 'loaded'){
+  //     track1Sound.play();
+  //     // track2Sound.play();
+  //     // track3Sound.play();
+  //     // track4Sound.play();  
+  //     trackStarted = true;
+  // }
+  // }
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
