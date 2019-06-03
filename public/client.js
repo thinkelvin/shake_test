@@ -15,6 +15,8 @@ var NbBumps_sync;
 var FPS = 30;
 var XSpeed = 1; // shifting speed of x-axis
 var socket;
+// variables for track
+var track1Tap = false;
 
 function preload() {
   //song = loadSound('song.mp3');
@@ -41,7 +43,15 @@ function setup() {
   var track1Element = document.getElementById('track1');
   var mc = new Hammer(track1Element);
   mc.on("tap", function(ev) {
-    track1Element.style.backgroundColor = "yellow";
+    track1Tap = !track1Tap;
+    if (track1Tap) {
+      track1Element.style.backgroundColor = "black";
+    }
+    else {
+      track1Element.style.backgroundColor =  "#ee0a0a";
+    }
+
+    
   });
 }
 
