@@ -62,9 +62,11 @@ function trackSetup() {
     track1Tap = !track1Tap;
     if (track1Tap) {
       track1Element.style.backgroundColor = "black";
+      track1Sound.play();
     }
     else {
       track1Element.style.backgroundColor = "#ee0a0a";
+      track1Sound.pause();
     }
   });
   mc2.on("tap", function (ev) {
