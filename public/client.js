@@ -38,7 +38,7 @@ function setup() {
   NbBumps_remote = 0;
   NbBumps_sync = 0;
   document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
-  window.addEventListener("devicemotion", accUpdate,true);
+  window.addEventListener("deviceorientation", accUpdate,true);
   window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
   socket.on('remoteBump', remoteBump); // handle the shake by another client
