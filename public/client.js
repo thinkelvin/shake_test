@@ -31,10 +31,10 @@ var track4Ready = false;
 var trackStarted = false;
 
 function preload() {
-  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: false, onload: function(){track1Ready=true;} });
-  track2Sound = new Howl({ src: ['./media/track2.mp3'], autoplay: false, onload: function () { track2Ready = true; }  });
-  track3Sound = new Howl({ src: ['./media/track3.mp3'], autoplay: false, onload: function () { track3Ready = true; }  });
-  track4Sound = new Howl({ src: ['./media/track4.mp3'], autoplay: false, onload: function () { track4Ready = true; }  });      
+  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: false });
+  track2Sound = new Howl({ src: ['./media/track2.mp3'], autoplay: false });
+  track3Sound = new Howl({ src: ['./media/track3.mp3'], autoplay: false });
+  track4Sound = new Howl({ src: ['./media/track4.mp3'], autoplay: false });      
 }
 
 function setup() {
@@ -71,13 +71,12 @@ function trackSetup() {
   var mc4 = new Hammer(track4Element);
   mc1.on("tap", function (ev) {
     track1Tap = !track1Tap;
+    track1Sound.mute(track1Tap);
     if (track1Tap) {
       track1Element.style.backgroundColor = "black";
-      track1Sound.mute();
     }
     else {
       track1Element.style.backgroundColor = "#ee0a0a";
-      track1Sound.unmute();
     }
   });
   mc2.on("tap", function (ev) {
@@ -110,12 +109,14 @@ function trackSetup() {
 }
 
 function draw() {
-  if (track1Ready && track2Ready && track3Ready && track4Ready && !trackStarted) {
+  if (!trackStarted) {
+    if (track1Sound.state() == 'loaded' && track2Sound.state() == 'loaded' && track3Sound.state() == 'loaded' && track4Sound.state() == 'loaded'){
       track1Sound.play();
       track2Sound.play();
       track3Sound.play();
       track4Sound.play();  
       trackStarted = true;
+  }
   }
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
