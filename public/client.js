@@ -84,6 +84,7 @@ function trackSetup() {
   });
   mc2.on("tap", function (ev) {
     track2Tap = !track2Tap;
+    track2Sound.mute(track2Tap);
     if (track2Tap) {
       track2Element.style.backgroundColor = "black";
     }
@@ -93,6 +94,7 @@ function trackSetup() {
   });
   mc3.on("tap", function (ev) {
     track3Tap = !track3Tap;
+    track3Sound.mute(track3Tap);
     if (track3Tap) {
       track3Element.style.backgroundColor = "black";
     }
@@ -102,6 +104,7 @@ function trackSetup() {
   });
   mc4.on("tap", function (ev) {
     track4Tap = !track4Tap;
+    track4Sound.mute(track4Tap);
     if (track4Tap) {
       track4Element.style.backgroundColor = "black";
     }
