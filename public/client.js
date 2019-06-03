@@ -57,6 +57,9 @@ function setup() {
   socket.on('syncBump', syncBump);
   trackSetup();
   track1Sound.play();
+  track2Sound.play();
+  track3Sound.play();
+  track4Sound.play();
 }
 
 function trackSetup() {
