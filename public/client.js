@@ -31,7 +31,7 @@ var track4Ready = false;
 var trackStarted = false;
 
 function preload() {
-  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: false });
+  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: true });
   track2Sound = new Howl({ src: ['./media/track2.mp3'], autoplay: false });
   track3Sound = new Howl({ src: ['./media/track3.mp3'], autoplay: false });
   track4Sound = new Howl({ src: ['./media/track4.mp3'], autoplay: false });      
