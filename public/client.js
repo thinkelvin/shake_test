@@ -40,8 +40,8 @@ function setup() {
   // set up touch responses
   var track1Element = document.getElementById('track1');
   var mc = new Hammer(track1Element);
-  mc.on("tap", fucntion(ev) {
-    track1Element.style.background-color = "yellow";
+  mc.on("tap", function(ev) {
+    track1Element.style.backgroundColor = "yellow";
   });
 }
 
