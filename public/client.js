@@ -37,6 +37,12 @@ function setup() {
   socket = io(); // create socket connection back to hosting server
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
+  // set up touch responses
+  var track1Element = document.getElementById('track1');
+  var mc = new Hammer(track1Element);
+  mc.on("tap", fucntion(ev) {
+    track1Element.style.background-color = "yellow";
+  });
 }
 
 function remoteBump(){
