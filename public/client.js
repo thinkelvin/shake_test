@@ -21,9 +21,20 @@ var track2Tap = false;
 var track3Tap = false;
 var track4Tap = false;
 var track1Sound;
+var track2Sound;
+var track3Sound;
+var track4Sound;
+var track1Ready = false;
+var track2Ready = false;
+var track3Ready = false;
+var track4Ready = false;
+var trackStarted = false;
 
 function preload() {
-  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: false });
+  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: false, onload: function(){track1Ready=true;} });
+  track2Sound = new Howl({ src: ['./media/track2.mp3'], autoplay: false, onload: function () { track2Ready = true; }  });
+  track3Sound = new Howl({ src: ['./media/track3.mp3'], autoplay: false, onload: function () { track3Ready = true; }  });
+  track4Sound = new Howl({ src: ['./media/track4.mp3'], autoplay: false, onload: function () { track4Ready = true; }  });      
 }
 
 function setup() {
@@ -62,11 +73,11 @@ function trackSetup() {
     track1Tap = !track1Tap;
     if (track1Tap) {
       track1Element.style.backgroundColor = "black";
-      track1Sound.play();
+      track1Sound.mute();
     }
     else {
       track1Element.style.backgroundColor = "#ee0a0a";
-      track1Sound.pause();
+      track1Sound.unmute();
     }
   });
   mc2.on("tap", function (ev) {
@@ -98,6 +109,36 @@ function trackSetup() {
   });
 }
 
+function draw() {
+  if (track1Ready && track2Ready && track3Ready && track4Ready && !trackStarted) {
+      track1Sound.play();
+      track2Sound.play();
+      track3Sound.play();
+      track4Sound.play();  
+      trackStarted = true;
+  }
+
+  if (!bufferReady) { // need to fill up the buffer before computing mean and sd
+    fillBuffer(dAccX);
+    Level = 0;
+    console.log('filling buffer...');
+  } else {
+    if (lvlCheckDelay == 0) {
+      Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
+      lvlCheckDelay++;
+      if ((Level * prevLevel) == -1) { // A transition is detected
+        lvlCheckDelay = 20;
+        NbBumps++;
+        document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
+        socket.emit('bump', "bump"); // tell server the client mobile shakes
+        //socket.broadcast.emit('shake',"shake");
+      }
+      prevLevel = Level;
+    }
+    lvlCheckDelay--;
+  }
+}
+
 function remoteBump(){
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = "Remote Bumps = " + NbBumps_remote.toString();
@@ -116,29 +157,7 @@ function accUpdate(e) {
 }
 
 
-function draw() {
-  //Threshold = document.getElementById('rangeinput').value;
-  
-  if (!bufferReady) { // need to fill up the buffer before computing mean and sd
-    fillBuffer(dAccX);
-    Level=0;
-    console.log('filling buffer...');
-  } else {
-    if (lvlCheckDelay ==0) {
-      Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
-      lvlCheckDelay++;
-      if ((Level * prevLevel)==-1) { // A transition is detected
-        lvlCheckDelay=20;
-        NbBumps++;
-        document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
-        socket.emit('bump',"bump"); // tell server the client mobile shakes
-        //socket.broadcast.emit('shake',"shake");
-      }
-      prevLevel = Level;
-    }
-    lvlCheckDelay--;
-  }
-}
+
 
 
 function getLevel() {
