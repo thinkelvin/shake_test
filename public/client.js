@@ -112,9 +112,9 @@ function draw() {
   if (!trackStarted) {
     if (track1Sound.state() == 'loaded' && track2Sound.state() == 'loaded' && track3Sound.state() == 'loaded' && track4Sound.state() == 'loaded'){
       track1Sound.play();
-      track2Sound.play();
-      track3Sound.play();
-      track4Sound.play();  
+      // track2Sound.play();
+      // track3Sound.play();
+      // track4Sound.play();  
       trackStarted = true;
   }
   }
