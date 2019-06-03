@@ -20,9 +20,10 @@ var track1Tap = false;
 var track2Tap = false;
 var track3Tap = false;
 var track4Tap = false;
+var track1Sound;
 
 function preload() {
-  //song = loadSound('song.mp3');
+  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: false });
 }
 
 function setup() {
@@ -43,6 +44,11 @@ function setup() {
   socket = io(); // create socket connection back to hosting server
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
+  trackSetup();
+
+}
+
+function trackSetup() {
   // set up touch responses
   var track1Element = document.getElementById('track1');
   var track2Element = document.getElementById('track2');
@@ -52,40 +58,40 @@ function setup() {
   var mc2 = new Hammer(track2Element);
   var mc3 = new Hammer(track3Element);
   var mc4 = new Hammer(track4Element);
-  mc1.on("tap", function(ev) {
+  mc1.on("tap", function (ev) {
     track1Tap = !track1Tap;
     if (track1Tap) {
       track1Element.style.backgroundColor = "black";
     }
     else {
-      track1Element.style.backgroundColor =  "#ee0a0a";
+      track1Element.style.backgroundColor = "#ee0a0a";
     }
   });
-  mc2.on("tap", function(ev) {
+  mc2.on("tap", function (ev) {
     track2Tap = !track2Tap;
     if (track2Tap) {
       track2Element.style.backgroundColor = "black";
     }
     else {
-      track2Element.style.backgroundColor =  "#25ee0a";
+      track2Element.style.backgroundColor = "#25ee0a";
     }
   });
-  mc3.on("tap", function(ev) {
+  mc3.on("tap", function (ev) {
     track3Tap = !track3Tap;
     if (track3Tap) {
       track3Element.style.backgroundColor = "black";
     }
     else {
-      track3Element.style.backgroundColor =  "#0accee";
+      track3Element.style.backgroundColor = "#0accee";
     }
   });
-  mc4.on("tap", function(ev) {
+  mc4.on("tap", function (ev) {
     track4Tap = !track4Tap;
     if (track4Tap) {
       track4Element.style.backgroundColor = "black";
     }
     else {
-      track4Element.style.backgroundColor =  "#e60aee";
+      track4Element.style.backgroundColor = "#e60aee";
     }
   });
 }
