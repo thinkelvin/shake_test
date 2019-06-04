@@ -38,16 +38,17 @@
       #track4 {
         background-color: #e60aee;
       } 
-      #myDiv {
-        display: block;
+      #accGraph {
+        display: none;
       }
       </style>
 
   </head>
   <body style="height: 100%; margin: 0%; padding: 0%">
-    <div id="myDiv"></div>  
-      <script src="levelDetection.js"></script>
-      <script src="client.js"></script>
+    <div id="accGraph"></div>  
+    <script src="accGraph.js"></script>
+    <script src="levelDetection.js"></script>
+    <script src="client.js"></script>
     <!-- <label for="rangeinput">Threshold</label> <input id="rangeinput" type="range" min="0" max="10" value="4" onchange="rangevalue.value=value"> <output id="rangevalue">4</output> -->
    <div class="trackBar" id="track1"><span id="localBump">0</span></div>
    <div class="trackBar" id="track2"><span id='remoteBump'>0</span></div>
