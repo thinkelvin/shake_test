@@ -35,7 +35,7 @@ function getLevel() {
   ]);
   
   var cnt = 0;
-  var timePlot = 1000/FPS; // update the data at FPS
+  
   var displayRange = 200; // x-axis time range
   setInterval(function() {
     Plotly.extendTraces('accGraph', {

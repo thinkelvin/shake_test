@@ -6,7 +6,7 @@ var prevSignal;
 var NbBumps;
 var NbBumps_remote;
 var NbBumps_sync;
-var FPS = 30;
+
 var XSpeed = 1; // shifting speed of x-axis
 var socket;
 
@@ -19,7 +19,7 @@ function preload() {
 }
 
 function setup() {
-  frameRate(FPS);
+
   accXMax = -10000;
   accXMin = 10000;
   pAccX = 0;
