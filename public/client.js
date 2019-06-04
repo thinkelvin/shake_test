@@ -40,8 +40,10 @@ function setup() {
   var logoPage = document.getElementById('logo');
   var logoPageTap = new Hammer(logoPage);
   logoPageTap.on("tap", function (ev) {
+    if (trackLoaded == 4) {
       logoPage.style.display = "none";
       trackStarted = false;
+    }
   });
 }
 
