@@ -12,10 +12,10 @@ var socket;
 
 
 function preload() {
-  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: true, onload: function(){track1Ready=true;} });
-  track2Sound = new Howl({ src: ['./media/track2.mp3'], autoplay: true, onload: function(){track2Ready=true;} });
-  track3Sound = new Howl({ src: ['./media/track3.mp3'], autoplay: true, onload: function(){track3Ready=true;}  });
-  track4Sound = new Howl({ src: ['./media/track4.mp3'], autoplay: true, onload: function(){track4Ready=true;}  });      
+  track1Sound = new Howl({ src: ['./media/track1.mp3'],  onload: function(){trackLoaded++;}   });
+  track2Sound = new Howl({ src: ['./media/track2.mp3'],  onload: function(){trackLoaded++;}   });
+  track3Sound = new Howl({ src: ['./media/track3.mp3'],  onload: function(){trackLoaded++;}  });
+  track4Sound = new Howl({ src: ['./media/track4.mp3'],  onload: function(){trackLoaded++;}  });      
 }
 
 function setup() {
@@ -41,7 +41,7 @@ function setup() {
   var logoPageTap = new Hammer(logoPage);
   logoPageTap.on("tap", function (ev) {
       logoPage.style.display = "none";
-
+      trackStarted = true;
   });
 }
 

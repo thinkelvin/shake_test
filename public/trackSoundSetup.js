@@ -13,32 +13,37 @@ var track2End = false;
 var track3End = false;
 var track4End = false;
 var trackStarted = false;
+var trackLoaded = 0;
+var trackEnded = 0;
 
 function trackSoundSetup() {
-    if (!trackStarted) {
-        if (track1Ready && track2Ready && track3Ready && track4Ready ){
+    if (!trackStarted && trackLoaded==4) {
+        
+      //if (track1Ready && track2Ready && track3Ready && track4Ready ){
           track1Sound.volume(0.5);track2Sound.volume(0.5);track3Sound.volume(0.5); track4Sound.volume(0.5);
           track1Sound.play(); track2Sound.play(); track3Sound.play();track4Sound.play();  
         //   track1Ready = false; track2Ready = false; track3Ready = false; track4Ready = false;
           trackStarted = true;
           track1Sound.on('end', function () {
-            track1End = true;
+            trackEnded++;
           });
           track2Sound.on('end', function () {
-            track2End = true;
+            trackEnded++;
           });
           track3Sound.on('end', function () {
-            track3End = true;
+            trackEnded++;
           });
           track4Sound.on('end', function () {
-            track4End = true;
+            trackEnded++;
           });
-      }
-    } else {
-        if (track1End && track2End && track3End && track4End) {
+      //}
+    } else if (trackEnded == 4) {
+              //if (track1End && track2End && track3End && track4End) {
+            trackEnded = 0;
+            trackLoaded = 4;
             trackStarted = false;
-            track1End = false;track2End = false;track3End = false;track4End = false;
-            console.log('finised all tracks');
+            //track1End = false;track2End = false;track3End = false;track4End = false;
+            //console.log('finised all tracks');
         }
     }
      
