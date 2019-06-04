@@ -43,7 +43,7 @@ function trackSoundSetup() {
             trackLoaded = 4;
             trackStarted = false;
             //track1End = false;track2End = false;track3End = false;track4End = false;
-            //console.log('finised all tracks');
+            console.log('finised all tracks');
         
     }
      
