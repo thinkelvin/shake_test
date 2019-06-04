@@ -1,6 +1,4 @@
-var accX;
-var pAccX; // last accX reading
-var dAccX; 
+
 var accXMax, accXMin;
 var Level; // outliner detection
 var prevLevel=0; // previous Level change

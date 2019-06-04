@@ -1,4 +1,6 @@
-
+var accX;
+var pAccX; // last accX reading
+var dAccX; 
 
 function getLevel() {
     return Level*30;
