@@ -81,10 +81,10 @@ function syncBump() {
 
 
 function accUpdate(e) {
-  //pAccX = accX;
+  pAccX = accX;
   accX = e.acceleration.x;
-  dAccX = accX;
-  //dAccX = accX - pAccX;
+  
+  dAccX = accX - pAccX;
 }
 
 
