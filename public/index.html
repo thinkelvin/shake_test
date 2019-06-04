@@ -49,12 +49,27 @@
         text-align: center;
         padding-top: 45%;
       }
-    
+      #myProgress {
+        width: 100%;
+        background-color: grey;
+      }
+      #myBar {
+        width: 1%;
+        height: 30px;
+        background-color: green;
+      }
       </style>
 
   </head>
   <body style="height: 100%; margin: 0%; padding: 0%">
-    <div id="logo"><h1 style="font-size: 250%">Mu*Shake</h1></div>
+    <div id="logo">
+      <h1 style="font-size: 250%">Mu*Shake</h1>
+      <div style="padding-top:20%;padding-bottom: 20%;"></div>
+      <div id="myProgress">
+        <div id="myBar">
+        </div>
+      </div>
+    </div>
     <div id="accGraph"></div>  
     <script src="accGraph.js"></script>
     <script src="trackTouchSetup.js"></script>
