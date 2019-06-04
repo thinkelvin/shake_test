@@ -37,6 +37,12 @@ function setup() {
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
   trackTouchSetup();
+  var logoPage = document.getElementById('logo');
+  var logoPageTap = new Hammer(logoPage);
+  logoPageTap.on("tap", function (ev) {
+      logoPage.style.display = "none";
+
+  });
 }
 
 function draw() {
