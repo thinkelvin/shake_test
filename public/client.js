@@ -31,10 +31,10 @@ var track4Ready = false;
 var trackStarted = false;
 
 function preload() {
-  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: true });
-  track2Sound = new Howl({ src: ['./media/track2.mp3'], autoplay: true });
-  track3Sound = new Howl({ src: ['./media/track3.mp3'], autoplay: true });
-  track4Sound = new Howl({ src: ['./media/track4.mp3'], autoplay: true });      
+  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: true, loop: true });
+  track2Sound = new Howl({ src: ['./media/track2.mp3'], autoplay: true, loop: true });
+  track3Sound = new Howl({ src: ['./media/track3.mp3'], autoplay: true, loop: true });
+  track4Sound = new Howl({ src: ['./media/track4.mp3'], autoplay: true, loop: true });      
 }
 
 function setup() {
@@ -61,10 +61,8 @@ function setup() {
 function draw() {
   if (!trackStarted) {
     if (track1Sound.state() == 'loaded' && track2Sound.state() == 'loaded' && track3Sound.state() == 'loaded' && track4Sound.state() == 'loaded'){
-      track1Sound.volume(0.5);track1Sound.play();
-      track2Sound.volume(0.5);track2Sound.play();
-      track3Sound.volume(0.5);track3Sound.play();
-      track4Sound.volume(0.5);track4Sound.play();    
+      track1Sound.volume(0.5);track2Sound.volume(0.5);track3Sound.volume(0.5); track4Sound.volume(0.5);
+      track1Sound.play(); track2Sound.play(); track3Sound.play();track4Sound.play();  
       trackStarted = true;
   }
   }
