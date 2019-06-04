@@ -37,6 +37,7 @@ function trackSoundSetup() {
     } else {
         if (track1End && track2End && tack3End && track4End) {
             trackStarted = false;
+            console.log('finised all tracks');
         }
     }
      
