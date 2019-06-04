@@ -7,7 +7,7 @@ var NbBumps;
 var NbBumps_remote;
 var NbBumps_sync;
 
-var XSpeed = 1; // shifting speed of x-axis
+
 var socket;
 
 
