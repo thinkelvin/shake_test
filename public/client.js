@@ -50,9 +50,9 @@ function setup() {
 
 
 function draw() {
-  if (width<100) {
+  if (progressBarWidth<100) {
     progressBarWidth++;
-    progressElement.st.width = progressBarWidth + '%';
+    progressElement.style.width = progressBarWidth + '%';
   }
   trackSoundSetup();
 
