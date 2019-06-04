@@ -9,7 +9,8 @@ var NbBumps_sync;
 
 
 var socket;
-
+var progressBarWidth = 1;
+var progressElement;
 
 function preload() {
   track1Sound = new Howl({ src: ['./media/track1.mp3'],  onload: function(){trackLoaded++;}   });
@@ -19,7 +20,7 @@ function preload() {
 }
 
 function setup() {
-
+  progressElement = document.getElementById("myBar");
   accXMax = -10000;
   accXMin = 10000;
   pAccX = 0;
@@ -47,7 +48,12 @@ function setup() {
   });
 }
 
+
 function draw() {
+  if (width<100) {
+    progressBarWidth++;
+    progressElement.st.width = progressBarWidth + '%';
+  }
   trackSoundSetup();
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
