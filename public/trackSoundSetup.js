@@ -12,7 +12,7 @@ var track1End = false;
 var track2End = false;
 var track3End = false;
 var track4End = false;
-var trackStarted = false;
+var trackStarted = true;
 var trackLoaded = 0;
 var trackEnded = 0;
 

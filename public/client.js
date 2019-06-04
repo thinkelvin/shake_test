@@ -41,7 +41,7 @@ function setup() {
   var logoPageTap = new Hammer(logoPage);
   logoPageTap.on("tap", function (ev) {
       logoPage.style.display = "none";
-      trackStarted = true;
+      trackStarted = false;
   });
 }
 
