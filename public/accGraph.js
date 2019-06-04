@@ -1,7 +1,11 @@
 var accX;
 var pAccX; // last accX reading
 var dAccX; 
-
+var accXMax, accXMin;
+var Level; // outliner detection
+var prevLevel=0; // previous Level change
+var lvlCheckDelay=0; // control if level check or not
+var Status=0; // keep track of the Level change
 function getLevel() {
     return Level*30;
   }
