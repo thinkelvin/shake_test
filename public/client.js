@@ -15,26 +15,13 @@ var NbBumps_sync;
 var FPS = 30;
 var XSpeed = 1; // shifting speed of x-axis
 var socket;
-// variables for track
-var track1Tap = false;
-var track2Tap = false;
-var track3Tap = false;
-var track4Tap = false;
-var track1Sound;
-var track2Sound;
-var track3Sound;
-var track4Sound;
-var track1Ready = false;
-var track2Ready = false;
-var track3Ready = false;
-var track4Ready = false;
-var trackStarted = false;
+
 
 function preload() {
-  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: true, loop: true });
-  track2Sound = new Howl({ src: ['./media/track2.mp3'], autoplay: true, loop: true });
-  track3Sound = new Howl({ src: ['./media/track3.mp3'], autoplay: true, loop: true });
-  track4Sound = new Howl({ src: ['./media/track4.mp3'], autoplay: true, loop: true });      
+  track1Sound = new Howl({ src: ['./media/track1.mp3'], autoplay: true, onload: function(){track1Ready=true;} });
+  track2Sound = new Howl({ src: ['./media/track2.mp3'], autoplay: true, onload: function(){track2Ready=true;} });
+  track3Sound = new Howl({ src: ['./media/track3.mp3'], autoplay: true, onload: function(){track3Ready=true;}  });
+  track4Sound = new Howl({ src: ['./media/track4.mp3'], autoplay: true, onload: function(){track4Ready=true;}  });      
 }
 
 function setup() {
@@ -59,13 +46,7 @@ function setup() {
 }
 
 function draw() {
-  if (!trackStarted) {
-    if (track1Sound.state() == 'loaded' && track2Sound.state() == 'loaded' && track3Sound.state() == 'loaded' && track4Sound.state() == 'loaded'){
-      track1Sound.volume(0.5);track2Sound.volume(0.5);track3Sound.volume(0.5); track4Sound.volume(0.5);
-      track1Sound.play(); track2Sound.play(); track3Sound.play();track4Sound.play();  
-      trackStarted = true;
-  }
-  }
+  trackSoundSetup();
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
@@ -100,9 +81,10 @@ function syncBump() {
 
 
 function accUpdate(e) {
-  pAccX = accX;
+  //pAccX = accX;
   accX = e.acceleration.x;
-  dAccX = accX - pAccX;
+  aAccX = accX;
+  //dAccX = accX - pAccX;
 }
 
 
