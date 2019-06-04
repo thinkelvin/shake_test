@@ -35,8 +35,8 @@ function trackSoundSetup() {
           });
       }
     } else {
-        if (track1End && track2End && tack3End && track4End) {
-            trackStarted = false;
+        if (track1End && track2End && track3End && track4End) {
+            //trackStarted = false;
             console.log('finised all tracks');
         }
     }
