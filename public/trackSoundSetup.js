@@ -24,16 +24,16 @@ function trackSoundSetup() {
           track1Sound.play(); track2Sound.play(); track3Sound.play();track4Sound.play();  
         //   track1Ready = false; track2Ready = false; track3Ready = false; track4Ready = false;
           trackStarted = true;
-          track1Sound.on('end', function () {
+          track1Sound.once('end', function () {
             trackEnded++;
           });
-          track2Sound.on('end', function () {
+          track2Sound.once('end', function () {
             trackEnded++;
           });
-          track3Sound.on('end', function () {
+          track3Sound.once('end', function () {
             trackEnded++;
           });
-          track4Sound.on('end', function () {
+          track4Sound.once('end', function () {
             trackEnded++;
           });
       //}
