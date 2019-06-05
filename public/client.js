@@ -10,8 +10,8 @@ var NbBumps_sync;
 
 var socket;
 var progressBarWidth = 1;
+var loadingProgress;
 var logoPage;
-var screenBk;
 
 function preload() {
   track1Sound = new Howl({ src: ['./media/track1.mp3'],  onload: function(){trackLoaded++;}   });
@@ -21,8 +21,8 @@ function preload() {
 }
 
 function setup() {
+  loadingProgress = document.getElementById("loading");
   logoPage = document.getElementById("logo");
-  screenBk = document.getElementById("screenBack");
   accXMax = -10000;
   accXMin = 10000;
   pAccX = 0;
@@ -45,7 +45,6 @@ function setup() {
   logoPageTap.on("tap", function (ev) {
     if (trackLoaded == 4) {
       logoPage.style.display = "none";
-      screenBk.style.display = "none";
       trackStarted = false;
     }
   });
@@ -57,7 +56,7 @@ function draw() {
     let curLimit = 25*trackLoaded;
     if (progressBarWidth<curLimit)
       progressBarWidth+=5;
-    logoPage.style.width = progressBarWidth + '%';
+    loadingProgress.style.width = progressBarWidth + '%';
   }
   trackSoundSetup();
 

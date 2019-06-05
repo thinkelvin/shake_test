@@ -41,25 +41,18 @@
       #accGraph {
         display: none;
       }
-      #screenBack {
-        display: block;
-        height: 100vh;
-        width: 100%;
-        background-color: black;
-      }     
+  
        #logo {
         display: block;
         height: 100vh;
-        width: 1%;
+        width: 100%;
         background-color: yellow;
         text-align: center;
         padding-top: 45%;
       }
-      #myProgress {
-        width: 100%;
-        background-color: grey;
-      }
-      #myBar {
+
+      #loading {
+        padding: 0%;
         width: 1%;
         height: 10px;
         background-color: yellow;
@@ -72,15 +65,15 @@
 
   </head>
   <body style="height: 100%; margin: 0%; padding: 0%">
-    <div id="screenBack">
+    
       <div id="logo">
         <h1 id="myName">Mu*Shake</h1>
-        <!-- <div style="padding-top:20%;padding-bottom: 20%;"></div> -->
-        <!-- <div id="myProgress">
-        <div id="myBar"></div>
-        </div>-->
+        <div style="padding-top:20%;padding-bottom: 20%;"></div> 
+
+        <div id="loading"></div>
+  
       </div>
-    </div>
+    
    
     <div id="accGraph"></div>  
     <script src="accGraph.js"></script>
