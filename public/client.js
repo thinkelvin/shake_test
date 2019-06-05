@@ -52,7 +52,7 @@ function setup() {
 function draw() {
   if (progressBarWidth<100) {
     let curLimit = 25*trackLoaded;
-    if (progressBarWidth<=curLimit)
+    if (progressBarWidth<curLimit)
       progressBarWidth+=5;
     progressElement.style.width = progressBarWidth + '%';
   }
