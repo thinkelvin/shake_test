@@ -10,7 +10,7 @@ var NbBumps_sync;
 
 var socket;
 var progressBarWidth = 1;
-var progressElement;
+
 
 function preload() {
   track1Sound = new Howl({ src: ['./media/track1.mp3'],  onload: function(){trackLoaded++;}   });
@@ -20,7 +20,8 @@ function preload() {
 }
 
 function setup() {
-  progressElement = document.getElementById("myBar");
+  var logoPage = document.getElementById("logo");
+  var screenBk = document.getElementById("screenBack");
   accXMax = -10000;
   accXMin = 10000;
   pAccX = 0;
@@ -38,11 +39,12 @@ function setup() {
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
   touchUISetup();
-  var logoPage = document.getElementById('logo');
+ 
   var logoPageTap = new Hammer(logoPage);
-  logoPageTap.on("tap press", function (ev) {
+  logoPageTap.on("tap", function (ev) {
     if (trackLoaded == 4) {
       logoPage.style.display = "none";
+      screenBk.style.display = "none";
       trackStarted = false;
     }
   });
@@ -54,7 +56,7 @@ function draw() {
     let curLimit = 25*trackLoaded;
     if (progressBarWidth<curLimit)
       progressBarWidth+=5;
-    progressElement.style.width = progressBarWidth + '%';
+    logoPage.style.width = progressBarWidth + '%';
   }
   trackSoundSetup();
 
