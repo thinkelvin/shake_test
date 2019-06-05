@@ -1,5 +1,5 @@
 
-function trackTouchSetup() {
+function touchUISetup() {
   // set up touch responses
   var track1Tap = false;
   var track2Tap = false;
@@ -13,7 +13,7 @@ function trackTouchSetup() {
   var mc2 = new Hammer(track2Element);
   var mc3 = new Hammer(track3Element);
   var mc4 = new Hammer(track4Element);
-  mc1.on("tap", function (ev) {
+  mc1.on("tap press", function (ev) {
     track1Tap = !track1Tap;
     track1Sound.mute(track1Tap);
     if (track1Tap) {
@@ -23,7 +23,7 @@ function trackTouchSetup() {
       track1Element.style.backgroundColor = "#ee0a0a";
     }
   });
-  mc2.on("tap", function (ev) {
+  mc2.on("tap press", function (ev) {
     track2Tap = !track2Tap;
     track2Sound.mute(track2Tap);
     if (track2Tap) {
@@ -33,7 +33,7 @@ function trackTouchSetup() {
       track2Element.style.backgroundColor = "#25ee0a";
     }
   });
-  mc3.on("tap", function (ev) {
+  mc3.on("tap press", function (ev) {
     track3Tap = !track3Tap;
     track3Sound.mute(track3Tap);
     if (track3Tap) {
@@ -43,7 +43,7 @@ function trackTouchSetup() {
       track3Element.style.backgroundColor = "#0accee";
     }
   });
-  mc4.on("tap", function (ev) {
+  mc4.on("tap press", function (ev) {
     track4Tap = !track4Tap;
     track4Sound.mute(track4Tap);
     if (track4Tap) {

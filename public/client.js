@@ -37,10 +37,10 @@ function setup() {
   socket = io(); // create socket connection back to hosting server
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
-  trackTouchSetup();
+  touchUISetup();
   var logoPage = document.getElementById('logo');
   var logoPageTap = new Hammer(logoPage);
-  logoPageTap.on("tap", function (ev) {
+  logoPageTap.on("tap press", function (ev) {
     if (trackLoaded == 4) {
       logoPage.style.display = "none";
       trackStarted = false;
