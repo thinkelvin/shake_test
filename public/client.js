@@ -9,7 +9,7 @@ var NbBumps_sync;
 
 
 var socket;
-var progressBarWidth = 1;
+var progressBarWidth = 0;
 var loadingProgress;
 var logoPage;
 
