@@ -46,6 +46,7 @@ function setup() {
     if (trackLoaded == 4) {
       logoPage.style.display = "none";
       trackStarted = false;
+      screenfull.request();
     }
   });
 }
