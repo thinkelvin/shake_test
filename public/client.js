@@ -10,7 +10,8 @@ var NbBumps_sync;
 
 var socket;
 var progressBarWidth = 1;
-
+var logoPage;
+var screenBk;
 
 function preload() {
   track1Sound = new Howl({ src: ['./media/track1.mp3'],  onload: function(){trackLoaded++;}   });
@@ -20,8 +21,8 @@ function preload() {
 }
 
 function setup() {
-  var logoPage = document.getElementById("logo");
-  var screenBk = document.getElementById("screenBack");
+  logoPage = document.getElementById("logo");
+  screenBk = document.getElementById("screenBack");
   accXMax = -10000;
   accXMin = 10000;
   pAccX = 0;
