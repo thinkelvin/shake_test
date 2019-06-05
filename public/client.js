@@ -54,7 +54,7 @@ function setup() {
 
 function draw() {
   var curLimit = 25 * trackLoaded;
-  if (progressBarWidth<=curlimit) {
+  if (progressBarWidth<=curLimit) {
     progressBarWidth += 5; 
     loadingProgress.style.width = progressBarWidth + '%';
   }
