@@ -37,7 +37,7 @@ function newConnection(socket){
         // check shake sync only both shake times >0
         var t1 = socketPair[allClients[0]];
         var t2 = socketPair[allClients[1]];
-        console.log(t1);
+        console.log(t1+','+t2);
         if (Math.abs(t1-t2)<3000) {
             //socket.broadcast.emit('syncShake','hello');
             io.emit('syncBump');
