@@ -2,7 +2,7 @@
 var accX;
 var pAccX; // last accX reading
 var dAccX;
-var accXMax, accXMin;
+//var accXMax, accXMin;
 var Level; // outliner detection
 var prevLevel = 0; // previous Level change
 var lvlCheckDelay = 0; // control if level check or not
@@ -76,7 +76,7 @@ function draw() {
       Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
       if ((Level * prevLevel) == -1) { // A transition is detected
-        lvlCheckDelay = 20;
+        lvlCheckDelay = 40;
         NbBumps++;
         document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
         socket.emit('bump', "bump"); // tell server the client mobile shakes
