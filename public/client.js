@@ -101,9 +101,9 @@ function setup() {
 
 function draw() {
   trackSoundSetup();
-  if (trackLoaded==4) {
-    soundViz();
-}
+//   if (trackLoaded==4) {
+//     soundViz();
+// }
   var curLimit = 25 * trackLoaded;
   if (progressBarWidth <= curLimit) {
     loadingProgress.style.width = progressBarWidth + '%';
