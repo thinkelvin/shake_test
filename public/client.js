@@ -20,6 +20,7 @@ var progressBarWidth = 0;
 var loadingProgress;
 var logoPage;
 
+
 function preload() {
   track1Sound = new Howl({ src: ['./media/track1.mp3'],  onload: function(){trackLoaded++;}   });
   track2Sound = new Howl({ src: ['./media/track2.mp3'],  onload: function(){trackLoaded++;}   });
@@ -28,6 +29,13 @@ function preload() {
 }
 
 function setup() {
+  var _debug = false;
+  if (_debug) {
+    document.getElementById('accGraph').style.display = "block";
+  } else {
+    document.getElementById('accGraph').style.display = "none";
+  }
+
   loadingProgress = document.getElementById("loading");
   logoPage = document.getElementById("logo");
   accXMax = -10000;
