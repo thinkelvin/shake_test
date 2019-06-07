@@ -20,7 +20,7 @@ var progressBarWidth = 0;
 var loadingProgress;
 var logoPage;
 
-var _debug = false;
+var _debug = true;
 
 function preload() {
   track1Sound = new Howl({ src: ['./media/track1.mp3'],  onload: function(){trackLoaded++;}   });
