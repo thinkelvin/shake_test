@@ -27,7 +27,7 @@ var analyser1;
 var bufferLength1;
   var dataArray1;
 
-var _debug = false; // turn on/off accelerationX plot for debug
+var _debug = true; // turn on/off accelerationX plot for debug
 
 function preload() {
   track1Sound = new Howl({
