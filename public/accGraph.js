@@ -31,18 +31,21 @@ function getLevel() {
   var cnt = 0;
   
   var displayRange = 200; // x-axis time range
-  setInterval(function() {
-    Plotly.extendTraces('accGraph', {
-      y: [
-        [getaccX()],[getLevel()]
-      ]
-    }, [0,1]); // normalize y datas into [0,1] range
-    cnt+=XSpeed;
-    //if (cnt > displayRange) {
+  if (_debug) {
+    setInterval(function () {
+      Plotly.extendTraces('accGraph', {
+        y: [
+          [getaccX()],
+          [getLevel()]
+        ]
+      }, [0, 1]); // normalize y datas into [0,1] range
+      cnt += XSpeed;
+      //if (cnt > displayRange) {
       Plotly.relayout('accGraph', {
         xaxis: {
-          range: [cnt -displayRange , cnt+displayRange]
+          range: [cnt - displayRange, cnt + displayRange]
         }
       });
-    //}
-  }, 50); // millisecond to update
+      //}
+    }, 50); // millisecond to update
+  }

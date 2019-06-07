@@ -20,6 +20,7 @@ var progressBarWidth = 0;
 var loadingProgress;
 var logoPage;
 
+var _debug = false;
 
 function preload() {
   track1Sound = new Howl({ src: ['./media/track1.mp3'],  onload: function(){trackLoaded++;}   });
@@ -29,7 +30,7 @@ function preload() {
 }
 
 function setup() {
-  var _debug = false;
+  
   if (_debug) {
     document.getElementById('accGraph').style.display = "block";
   } else {
