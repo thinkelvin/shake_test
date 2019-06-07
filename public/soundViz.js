@@ -19,10 +19,10 @@ function soundViz() {
     if (p3 < pMin) p3 = pMin;
     if (p4 < pMin) p4 = pMin;
 
-    var colorHSL1 = 'hsl(' + 100 + ',' + 100 + '%,' + p1 + '%)';
-    var colorHSL2 = 'hsl(' + 100 + ',' + 100 + '%,' + p2 + '%)';
-    var colorHSL3 = 'hsl(' + 100 + ',' + 100 + '%,' + p3 + '%)';
-    var colorHSL4 = 'hsl(' + 100 + ',' + 100 + '%,' + p4 + '%)';
+    var colorHSL1 = 'hsl(' + 0 + ',' + 100 + '%,' + p1 + '%)';
+    var colorHSL2 = 'hsl(' + 113 + ',' + 100 + '%,' + p2 + '%)';
+    var colorHSL3 = 'hsl(' + 189 + ',' + 100 + '%,' + p3 + '%)';
+    var colorHSL4 = 'hsl(' + 298 + ',' + 100 + '%,' + p4 + '%)';
     //var p = Math.max(...dataArray1) % 100;
     //var colorHSL1 = 'hsl(' + 100 + ',' + 100 + '%,' + p + '%)';
     bkColor1.style.setProperty('background-color', colorHSL1);
