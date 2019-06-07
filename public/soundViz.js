@@ -25,9 +25,9 @@ function soundViz() {
     var colorHSL4 = 'hsl(' + 298 + ',' + 100 + '%,' + p4 + '%)';
     //var p = Math.max(...dataArray1) % 100;
     //var colorHSL1 = 'hsl(' + 100 + ',' + 100 + '%,' + p + '%)';
-    bkColor1.style.setProperty('background-color', colorHSL1);
-    bkColor2.style.setProperty('background-color', colorHSL2);
-    bkColor3.style.setProperty('background-color', colorHSL3);
-    bkColor4.style.setProperty('background-color', colorHSL4);
+    if (!track1Tap) bkColor1.style.setProperty('background-color', colorHSL1);
+    if (!track2Tap) bkColor2.style.setProperty('background-color', colorHSL2);
+    if (!track3Tap) bkColor3.style.setProperty('background-color', colorHSL3);
+    if (!track4Tap) bkColor4.style.setProperty('background-color', colorHSL4);
 
 }
