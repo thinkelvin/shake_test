@@ -1,11 +1,11 @@
 var bufferReady;
 var dataBuffer = [];
-var bufferSize = 30;
+var bufferSize = 20;
 var prevData;
 var prevMean;
 var prevSD;
 var Influence = 0;
-var Threshold = 8;
+var Threshold = 6;
 
 function fillBuffer(d) {
   dataBuffer.push(d);
