@@ -5,7 +5,7 @@ var prevData;
 var prevMean;
 var prevSD;
 var Influence = 0;
-var Threshold = 6;
+var Threshold = 9;
 
 function fillBuffer(d) {
   dataBuffer.push(d);
