@@ -24,10 +24,10 @@ var bkColor2 = document.getElementById("track2");
 var bkColor3 = document.getElementById("track3");
 var bkColor4 = document.getElementById("track4");
 var analyser1;
+var bufferLength1;
+  var dataArray1;
 
-
-
-var _debug = true; // turn on/off accelerationX plot for debug
+var _debug = false; // turn on/off accelerationX plot for debug
 
 function preload() {
   track1Sound = new Howl({
@@ -63,6 +63,12 @@ function preload() {
 
 function setup() {
   analyser1 = Howler.ctx.createAnalyser();
+  Howler.masterGain.connect(analyser1);
+  analyser1.connect(Howler.ctx.destination);
+  analyser1.fftSzie = 2048;
+  bufferLength1 = analyser1.frequencyBinCount;
+  dataArray1 = new Uint8Array(bufferLength1);
+
   if (_debug) {
     document.getElementById('accGraph').style.display = "block";
   } else {
