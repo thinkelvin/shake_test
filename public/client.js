@@ -1,4 +1,3 @@
-
 var accX;
 var pAccX; // last accX reading
 var dAccX;
@@ -20,17 +19,37 @@ var progressBarWidth = 0;
 var loadingProgress;
 var logoPage;
 
-var _debug = true;
+var _debug = true; // turn on/off accelerationX plot for debug
 
 function preload() {
-  track1Sound = new Howl({ src: ['./media/track1.mp3'],  onload: function(){trackLoaded++;}   });
-  track2Sound = new Howl({ src: ['./media/track2.mp3'],  onload: function(){trackLoaded++;}   });
-  track3Sound = new Howl({ src: ['./media/track3.mp3'],  onload: function(){trackLoaded++;}  });
-  track4Sound = new Howl({ src: ['./media/track4.mp3'],  onload: function(){trackLoaded++;}  });      
+  track1Sound = new Howl({
+    src: ['./media/track1.mp3'],
+    onload: function () {
+      trackLoaded++;
+    }
+  });
+  track2Sound = new Howl({
+    src: ['./media/track2.mp3'],
+    onload: function () {
+      trackLoaded++;
+    }
+  });
+  track3Sound = new Howl({
+    src: ['./media/track3.mp3'],
+    onload: function () {
+      trackLoaded++;
+    }
+  });
+  track4Sound = new Howl({
+    src: ['./media/track4.mp3'],
+    onload: function () {
+      trackLoaded++;
+    }
+  });
 }
 
 function setup() {
-  
+
   if (_debug) {
     document.getElementById('accGraph').style.display = "block";
   } else {
@@ -39,8 +58,7 @@ function setup() {
 
   loadingProgress = document.getElementById("loading");
   logoPage = document.getElementById("logo");
-  accXMax = -10000;
-  accXMin = 10000;
+
   pAccX = 0;
   bufferReady = false;
   playing = false;
@@ -50,13 +68,13 @@ function setup() {
   NbBumps_remote = 0;
   NbBumps_sync = 0;
   document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
-  window.addEventListener("devicemotion", accUpdate,true);
+  window.addEventListener("devicemotion", accUpdate, true);
   // window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
   touchUISetup();
- 
+
   var logoPageTap = new Hammer(logoPage);
   logoPageTap.on("tap", function (ev) {
     if (trackLoaded == 4) {
@@ -69,12 +87,14 @@ function setup() {
 
 
 function draw() {
+  trackSoundSetup();
+
   var curLimit = 25 * trackLoaded;
-  if (progressBarWidth<=curLimit) {  
+  if (progressBarWidth <= curLimit) {
     loadingProgress.style.width = progressBarWidth + '%';
     progressBarWidth += 5;
   }
-  trackSoundSetup();
+
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
@@ -84,20 +104,27 @@ function draw() {
     if (lvlCheckDelay == 0) {
       Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
+      if (Level>0) { // shake is detected
+        lvlCheckDelay = 40;
+        NbBumps++;
+        document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
+        socket.emit('bump', "bump"); // tell server the client mobile shakes
+      }
+      /*
       if ((Level * prevLevel) == -1) { // A transition is detected
         lvlCheckDelay = 40;
         NbBumps++;
         document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
         socket.emit('bump', "bump"); // tell server the client mobile shakes
-        //socket.broadcast.emit('shake',"shake");
       }
       prevLevel = Level;
+      */
     }
     lvlCheckDelay--;
   }
 }
 
-function remoteBump(){
+function remoteBump() {
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = "Remote Bumps = " + NbBumps_remote.toString();
 }
@@ -111,9 +138,6 @@ function syncBump() {
 function accUpdate(e) {
   pAccX = accX;
   accX = e.acceleration.x;
-  
-  dAccX = accX - pAccX;
+  //dAccX = accX - pAccX;
+  dAccX = Math.abs(accX-pAccX);
 }
-
-
-
