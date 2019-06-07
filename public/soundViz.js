@@ -1,13 +1,5 @@
 
 
-
-//sound1.connect(analyser1);
-Howler.masterGain.connect(analyser1);
-analyser1.connect(Howler.ctx.destination);
-analyser1.fftSzie = 2048;
-var bufferLength1 = analyser1.frequencyBinCount;
-var dataArray1 = new Uint8Array(bufferLength1);
-
 function soundViz() {
     analyser1.getByteFrequencyData(dataArray1);
     let segWidth = bufferLength1 * 0.25;
