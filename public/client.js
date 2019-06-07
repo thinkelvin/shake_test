@@ -19,10 +19,10 @@ var progressBarWidth = 0;
 var loadingProgress;
 var logoPage;
 
-var bkColor1 = document.getElementById("track1");
-var bkColor2 = document.getElementById("track2");
-var bkColor3 = document.getElementById("track3");
-var bkColor4 = document.getElementById("track4");
+var bkColor1;
+var bkColor2;
+var bkColor3;
+var bkColor4;
 var analyser1;
 var bufferLength1;
   var dataArray1;
@@ -62,6 +62,10 @@ function preload() {
 }
 
 function setup() {
+  bkColor1 = document.getElementById("track1");
+  bkColor2 = document.getElementById("track2");
+  bkColor3 = document.getElementById("track3");
+  bkColor4 = document.getElementById("track4");
   analyser1 = Howler.ctx.createAnalyser();
   Howler.masterGain.connect(analyser1);
   analyser1.connect(Howler.ctx.destination);
