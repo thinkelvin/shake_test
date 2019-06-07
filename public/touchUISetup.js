@@ -1,10 +1,11 @@
-
-function touchUISetup() {
-  // set up touch responses
   var track1Tap = false;
   var track2Tap = false;
   var track3Tap = false;
   var track4Tap = false;
+  
+function touchUISetup() {
+  // set up touch responses
+
   var track1Element = document.getElementById('track1');
   var track2Element = document.getElementById('track2');
   var track3Element = document.getElementById('track3');
