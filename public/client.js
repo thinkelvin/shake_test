@@ -92,7 +92,7 @@ function setup() {
 
 function draw() {
   trackSoundSetup();
-  if (trackLoaded==4) {}
+  if (trackLoaded==4) {
     soundViz();
 }
   var curLimit = 25 * trackLoaded;
