@@ -23,9 +23,9 @@ var bkColor1 = document.getElementById("track1");
 var bkColor2 = document.getElementById("track2");
 var bkColor3 = document.getElementById("track3");
 var bkColor4 = document.getElementById("track4");
+var analyser1;
 
 
-var analyser1 = Howler.ctx.createAnalyser();
 
 var _debug = true; // turn on/off accelerationX plot for debug
 
@@ -58,10 +58,11 @@ function preload() {
       trackLoaded++;
     }
   });
+
 }
 
 function setup() {
-
+  analyser1 = Howler.ctx.createAnalyser();
   if (_debug) {
     document.getElementById('accGraph').style.display = "block";
   } else {
