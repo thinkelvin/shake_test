@@ -1,10 +1,4 @@
-var bkColor1 = document.getElementById("track1");
-var bkColor2 = document.getElementById("track2");
-var bkColor3 = document.getElementById("track3");
-var bkColor4 = document.getElementById("track4");
 
-
-var analyser1 = Howler.ctx.createAnalyser();
 
 
 //sound1.connect(analyser1);
