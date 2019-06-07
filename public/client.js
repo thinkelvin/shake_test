@@ -24,24 +24,28 @@ var _debug = true; // turn on/off accelerationX plot for debug
 function preload() {
   track1Sound = new Howl({
     src: ['./media/track1.mp3'],
+    preload: true,
     onload: function () {
       trackLoaded++;
     }
   });
   track2Sound = new Howl({
     src: ['./media/track2.mp3'],
+    preload: true,
     onload: function () {
       trackLoaded++;
     }
   });
   track3Sound = new Howl({
     src: ['./media/track3.mp3'],
+    preload: true,
     onload: function () {
       trackLoaded++;
     }
   });
   track4Sound = new Howl({
     src: ['./media/track4.mp3'],
+    preload: true,
     onload: function () {
       trackLoaded++;
     }
@@ -88,7 +92,7 @@ function setup() {
 
 function draw() {
   trackSoundSetup();
-
+  soundViz();
   var curLimit = 25 * trackLoaded;
   if (progressBarWidth <= curLimit) {
     loadingProgress.style.width = progressBarWidth + '%';
