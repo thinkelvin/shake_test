@@ -20,8 +20,8 @@
            p4 = p4 * 100 * 1.3 / 256;
 
            bar1.style.width = p1 + '%';
-           // bar2.style.width = p2 + '%';
-           // bar3.style.width = p3 + '%';
+           bar2.style.width = p2 + '%';
+           bar3.style.width = p3 + '%';
            // bar4.style.width = p4 + '%';
 
            //var p = Math.max(...dataArray1) % 100;

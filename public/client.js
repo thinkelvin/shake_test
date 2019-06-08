@@ -90,7 +90,7 @@ function setup() {
   NbBumps = 0;
   NbBumps_remote = 0;
   NbBumps_sync = 0;
-  document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
+  //document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
   window.addEventListener("devicemotion", accUpdate, true);
   // window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
