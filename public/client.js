@@ -15,7 +15,11 @@ var NbBumps_sync;
 
 
 var socket;
-var progressBarWidth = 0;
+var progressBarWidth1 = 0;
+var progressBarWidth2 = 0;
+var progressBarWidth3 = 0;
+var progressBarWidth4 = 0;
+var progressOffset = 50;
 var loadingProgress1;
 var loadingProgress2;
 var loadingProgress3;
@@ -120,13 +124,22 @@ function draw() {
 
   soundViz();
   var curLimit = 25 * trackLoaded;
-  if (progressBarWidth <= curLimit) {
-    loadingProgress1.style.width = progressBarWidth + '%';
-    loadingProgress2.style.width = progressBarWidth + '%';
-    loadingProgress3.style.width = progressBarWidth + '%';
-    loadingProgress4.style.width = progressBarWidth + '%';
-    progressBarWidth += 5;
+  if (progressBarWidth1 <= curLimit) {
+    loadingProgress1.style.width = progressBarWidth1 + '%';
+    progressBarWidth1 += 5;
   }
+  if (progressBarWidth1 > progressOffset && progressBarWidth2 <= curLimit) {
+      loadingProgress2.style.width = progressBarWidth2 + '%';
+      progressBarWidth2 += 5;
+  }
+  if (progressBarWidth2 > progressOffset && progressBarWidth3 <= curLimit) {
+    loadingProgress3.style.width = progressBarWidth3 + '%';
+    progressBarWidth3 += 5;
+  }
+    if (progressBarWidth3 > progressOffset && progressBarWidth4 <= curLimit) {
+      loadingProgress4.style.width = progressBarWidth4 + '%';
+      progressBarWidth4 += 5;
+    }
 
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
