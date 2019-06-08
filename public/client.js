@@ -19,7 +19,7 @@ var progressBarWidth1 = 0;
 var progressBarWidth2 = 0;
 var progressBarWidth3 = 0;
 var progressBarWidth4 = 0;
-var progressOffset = 50;
+var progressOffset = 100;
 var loadingProgress1;
 var loadingProgress2;
 var loadingProgress3;
