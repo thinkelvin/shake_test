@@ -21,7 +21,7 @@ function touchUISetup() {
       track1Element.style.backgroundColor = "black";
     }
     else {
-      track1Element.style.backgroundColor = "#ee0a0a";
+      track1Element.style.backgroundColor = "hsl(0, 100%, 33%)";
     }
   });
   mc2.on("tap", function (ev) {
@@ -31,7 +31,7 @@ function touchUISetup() {
       track2Element.style.backgroundColor = "black";
     }
     else {
-      track2Element.style.backgroundColor = "#25ee0a";
+      track2Element.style.backgroundColor = "hsl(113, 100%, 33%)";
     }
   });
   mc3.on("tap", function (ev) {
@@ -41,7 +41,7 @@ function touchUISetup() {
       track3Element.style.backgroundColor = "black";
     }
     else {
-      track3Element.style.backgroundColor = "#0accee";
+      track3Element.style.backgroundColor = "hsl(189, 100%, 33%)";
     }
   });
   mc4.on("tap", function (ev) {
@@ -51,7 +51,7 @@ function touchUISetup() {
       track4Element.style.backgroundColor = "black";
     }
     else {
-      track4Element.style.backgroundColor = "#e60aee";
+      track4Element.style.backgroundColor = "hsl(298, 100%, 33%)";
     }
   });
 }
