@@ -24,7 +24,7 @@ var loadingProgress1;
 var loadingProgress2;
 var loadingProgress3;
 var loadingProgress4;
-var logoPage;
+var landingPage;
 
 var bar1;
 var bkColor2;
@@ -90,7 +90,7 @@ function setup() {
   loadingProgress2 = document.getElementById("loading2");
   loadingProgress3 = document.getElementById("loading3");
   loadingProgress4 = document.getElementById("loading4");
-  logoPage = document.getElementById("logo");
+  landingPage = document.getElementById("landingPage");
 
   pAccX = 0;
   bufferReady = false;
@@ -108,10 +108,10 @@ function setup() {
   socket.on('syncBump', syncBump);
   touchUISetup();
 
-  var logoPageTap = new Hammer(logoPage);
-  logoPageTap.on("tap", function (ev) {
+  var landingPageTap = new Hammer(landingPage);
+  landingPageTap.on("tap", function (ev) {
     if (trackLoaded == 4) {
-      logoPage.style.display = "none";
+      landingPage.style.display = "none";
       trackStarted = false;
       screenfull.request();
     }
