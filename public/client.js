@@ -98,7 +98,7 @@ function setup() {
   socket.on('syncBump', syncBump);
   touchUISetup();
 
-  var logoPageTap = new Hammer(logoPage);
+  var logoPageTap = new Hammer(loadingProgress);
   logoPageTap.on("tap", function (ev) {
     if (trackLoaded == 4) {
       logoPage.style.display = "none";
