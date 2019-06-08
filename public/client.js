@@ -19,7 +19,7 @@ var progressBarWidth1 = 0;
 var progressBarWidth2 = 0;
 var progressBarWidth3 = 0;
 var progressBarWidth4 = 0;
-var progressOffset = 100;
+var progressOffset = 50;
 var loadingProgress1;
 var loadingProgress2;
 var loadingProgress3;
@@ -145,7 +145,7 @@ function draw() {
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
     Level = 0;
-    console.log('filling buffer...');
+    //console.log('filling buffer...');
   } else {
     if (lvlCheckDelay == 0) {
       Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
