@@ -19,16 +19,14 @@
            p3 = p3 * 100 * 1.2 / 256;
            p4 = p4 * 100 * 1.3 / 256;
 
-           bar1.style.width = p1 + '%';
-           bar2.style.width = p2 + '%';
-           bar3.style.width = p3 + '%';
-           // bar4.style.width = p4 + '%';
+          
+          
+           
+           
 
-           //var p = Math.max(...dataArray1) % 100;
-           //var colorHSL1 = 'hsl(' + 100 + ',' + 100 + '%,' + p + '%)';
-           // if (!track1Tap) bkColor1.style.setProperty('background-color', colorHSL1);
-           // if (!track2Tap) bkColor2.style.setProperty('background-color', colorHSL2);
-           // if (!track3Tap) bkColor3.style.setProperty('background-color', colorHSL3);
-           // if (!track4Tap) bkColor4.style.setProperty('background-color', colorHSL4);
+           if (!track1Tap) bar1.style.width = p1 + '%';
+           if (!track2Tap) bar2.style.width = p2 + '%';
+           if (!track3Tap) bar3.style.width = p3 + '%';
+           if (!track4Tap) bar4.style.width = p4 + '%';
 
        }
