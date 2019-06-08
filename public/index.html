@@ -120,7 +120,7 @@
       top: 33%;
       left: 50%;
       animation: 1s shake infinite alternate;
-      transform: translateX(-50%) translateY(-50%);
+      /* transform: translateX(-50%) translateY(-50%); */
       font-size: 5em;
       font-family: 'Gochi Hand', cursive;
       color: black;
@@ -131,14 +131,17 @@
 
     @keyframes shake {
       0% {
+        translateX(-50%) translateY(-50%);
         transform: skewX(-15deg);
       }
 
       5% {
+        translateX(-50%) translateY(-50%);
         transform: skewX(15deg);
       }
 
       10% {
+        translateX(-50%) translateY(-50%);
         transform: skewX(-15deg);
       }
 
@@ -147,10 +150,12 @@
       }
 
       20% {
+        translateX(-50%) translateY(-50%);
         transform: skewX(0deg);
       }
 
       100% {
+        translateX(-50%) translateY(-50%);
         transform: skewX(0deg);
       }
     }
