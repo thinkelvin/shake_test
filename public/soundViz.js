@@ -1,6 +1,8 @@
        var p1, p2, p3, p4;
 
-
+        function getSum(total, num) {
+            return total + num;
+        }
        function soundViz() {
            analyser1.getByteFrequencyData(dataArray1);
            let segWidth = bufferLength1 * 0.25;
