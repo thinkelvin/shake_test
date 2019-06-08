@@ -2,93 +2,131 @@
 <html style="height: 100%">
 
 <head>
-    <script src="./libs/p5.min.js"></script>
-    <!-- <script src="./libs/p5.dom.min.js"></script> -->
-    <!-- <script src="./libs/p5.sound.min.js"></script> -->
-    <script src="./libs/plotly-latest.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
-    <script src="./libs/howler/howler.core.js"></script>
-    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
-    <script src="./libs/screenfull.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
-    <style>
-      .trackBar {
-        cursor: pointer;
-        width: 100%;
-        height: 25%;
-        padding: 0%;
-        margin: 0%;
-        font-size: 2.0em;
-        color: white;
-      }
-      /* #track1:active{
-        box-shadow: 0px 0px 0px 10px black inset; 
-       } 
-     */
-    
-      #track1 {
-        background-color: hsl(0, 92%, 49%);
-      }
-      #track2 {
-       background-color: hsl(113, 92%, 49%);
-      }
-      #track3 {
-        background-color: hsl(189, 92%, 49%);
-      }
-      #track4 {
-        background-color: hsl(298, 92%, 49%);
-      } 
-      #accGraph {
-        display: block;
-      }
-  
-       #logo {
-        display: block;
-        height: 100vh;
-        width: 100%;
-        background-color: yellow;
-        text-align: center;
-        padding-top: 45%;
-      }
+  <script src="./libs/p5.min.js"></script>
+  <!-- <script src="./libs/p5.dom.min.js"></script> -->
+  <!-- <script src="./libs/p5.sound.min.js"></script> -->
+  <script src="./libs/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="./libs/howler/howler.core.js"></script>
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+  <script src="./libs/screenfull.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <style>
+    .trackBar {
+      cursor: pointer;
+      width: 100%;
+      height: 25%;
+      padding: 0%;
+      margin: 0%;
+      font-size: 2.0em;
+      text-align: center;
+      color: black;
+    }
 
-      #loading {
-        padding: 0%;
-        width: 0%;
-        height: 10px;
-        background-color: black;
-      }
-      #myName {
-        font-size: 3em;
-        color: black;
-      }
-      </style>
+    #track1 {
+      background-color: hsl(0, 100%, 33%);
+    }
 
-  </head>
-  <body style="height: 100%; margin: 0%; padding: 0%">
-    
-      <div id="logo">
-        <h1 id="myName">Mu*Shake</h1>
-        <div style="padding-top:20%;padding-bottom: 20%;"></div> 
+    #bar1 {
+      width: 50%;
+      height: 100%;
+      display: inline-block;
+      background-color: hsl(0, 100%, 50%);
+    }
 
-        <div id="loading"></div>
-  
-      </div>
-    
-   
-    <div id="accGraph"></div>  
-    <script src="client.js"></script>
-    
-    <script src="accGraph.js"></script>
-    <script src="touchUISetup.js"></script>
-    <script src="trackSoundSetup.js"></script>
-    <script src="soundViz.js"></script>
-    <script src="levelDetection.js"></script>
-   
-    <!-- <label for="rangeinput">Threshold</label> <input id="rangeinput" type="range" min="0" max="10" value="4" onchange="rangevalue.value=value"> <output id="rangevalue">4</output> -->
-   <div class="trackBar" id="track1"><span id="localBump">0</span></div>
-   <div class="trackBar" id="track2"><span id='remoteBump'>0</span></div>
-   <div class="trackBar" id="track3"><span id='syncBump'>0</span></div>
-   <div class="trackBar" id="track4">four</div>
-  </body>
-  </html>
+    #track2 {
+      background-color: hsl(113, 100%, 33%);
+    }
+
+    #bar2 {
+      width: 50%;
+      height: 100%;
+      display: inline-block;
+      background-color: hsl(113, 100%, 50%);
+    }
+
+    #track3 {
+      background-color: hsl(189, 100%, 33%);
+    }
+
+    #bar3 {
+      width: 50%;
+      height: 100%;
+      display: inline-block;
+      background-color: hsl(189, 100%, 50%);
+    }
+
+    #track4 {
+      background-color: hsl(298, 100%, 33%);
+    }
+
+    #bar4 {
+      width: 50%;
+      height: 100%;
+      display: inline-block;
+      background-color: hsl(298, 100%, 50%);
+    }
+
+    #accGraph {
+      display: block;
+    }
+
+    #logo {
+      display: block;
+      height: 100vh;
+      width: 100%;
+      background-color: yellow;
+      text-align: center;
+      padding-top: 45%;
+    }
+
+    #loading {
+      padding: 0%;
+      width: 0%;
+      height: 10px;
+      background-color: black;
+    }
+
+    #myName {
+      font-size: 3em;
+      color: black;
+    }
+  </style>
+
+</head>
+
+<body style="height: 100%; margin: 0%; padding: 0%">
+
+  <div id="logo">
+    <h1 id="myName">Mu*Shake</h1>
+    <div style="padding-top:20%;padding-bottom: 20%;"></div>
+
+    <div id="loading"></div>
+
+  </div>
+
+
+  <div id="accGraph"></div>
+  <script src="client.js"></script>
+
+  <script src="accGraph.js"></script>
+  <script src="touchUISetup.js"></script>
+  <script src="trackSoundSetup.js"></script>
+  <script src="soundViz.js"></script>
+  <script src="levelDetection.js"></script>
+
+  <!-- <label for="rangeinput">Threshold</label> <input id="rangeinput" type="range" min="0" max="10" value="4" onchange="rangevalue.value=value"> <output id="rangevalue">4</output> -->
+  <div class="trackBar" id="track1">
+    <div id="bar1"></div>
+  </div>
+  <div class="trackBar" id="track2"></div>
+  <div class="trackBar" id="track3"></div>
+  <div class="trackBar" id="track4">
+    <h1 id="localBump">0</h1>
+    <h1 id='remoteBump'>0</h1>
+    <h1 id='syncBump'>0</h1>
+  </div>
+</body>
+
+</html>

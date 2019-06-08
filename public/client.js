@@ -19,13 +19,13 @@ var progressBarWidth = 0;
 var loadingProgress;
 var logoPage;
 
-var bkColor1;
+var bar1;
 var bkColor2;
 var bkColor3;
 var bkColor4;
 var analyser1;
 var bufferLength1;
-  var dataArray1;
+var dataArray1;
 
 var _debug = false; // turn on/off accelerationX plot for debug
 
@@ -62,14 +62,14 @@ function preload() {
 }
 
 function setup() {
-  bkColor1 = document.getElementById("track1");
+  bar1 = document.getElementById("bar1");
   bkColor2 = document.getElementById("track2");
   bkColor3 = document.getElementById("track3");
   bkColor4 = document.getElementById("track4");
   analyser1 = Howler.ctx.createAnalyser();
   Howler.masterGain.connect(analyser1);
   analyser1.connect(Howler.ctx.destination);
-  analyser1.fftSzie = 2048;
+  analyser1.fftSzie = 256;
   bufferLength1 = analyser1.frequencyBinCount;
   dataArray1 = new Uint8Array(bufferLength1);
 
@@ -112,7 +112,7 @@ function setup() {
 function draw() {
   trackSoundSetup();
 
-     soundViz();
+  soundViz();
   var curLimit = 25 * trackLoaded;
   if (progressBarWidth <= curLimit) {
     loadingProgress.style.width = progressBarWidth + '%';
@@ -128,10 +128,10 @@ function draw() {
     if (lvlCheckDelay == 0) {
       Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
-      if (Level>0) { // shake is detected
+      if (Level > 0) { // shake is detected
         lvlCheckDelay = 20;
         NbBumps++;
-        document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
+        document.getElementById("localBump").innerHTML = NbBumps.toString();
         socket.emit('bump', "bump"); // tell server the client mobile shakes
       }
       /*
@@ -150,12 +150,12 @@ function draw() {
 
 function remoteBump() {
   NbBumps_remote++;
-  document.getElementById("remoteBump").innerHTML = "Remote Bumps = " + NbBumps_remote.toString();
+  document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
 }
 
 function syncBump() {
   NbBumps_sync++;
-  document.getElementById("syncBump").innerHTML = "Sync Bumps = " + NbBumps_sync.toString();
+  document.getElementById("syncBump").innerHTML = NbBumps_sync.toString();
 }
 
 
@@ -163,5 +163,5 @@ function accUpdate(e) {
   pAccX = accX;
   accX = e.acceleration.x;
   //dAccX = accX - pAccX;
-  dAccX = Math.abs(accX-pAccX);
+  dAccX = Math.abs(accX - pAccX);
 }
