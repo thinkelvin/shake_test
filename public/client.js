@@ -123,20 +123,20 @@ function draw() {
   trackSoundSetup();
 
   soundViz();
-  var curLimit = 25 * trackLoaded;
-  if (progressBarWidth1 <= curLimit) {
+  //var curLimit = 25 * trackLoaded;
+  if (trackLoaded >0 && progressBarWidth1 <= 100) {
     loadingProgress1.style.width = progressBarWidth1 + '%';
     progressBarWidth1 += 5;
   }
-  if (progressBarWidth1 > progressOffset && progressBarWidth2 <= curLimit) {
+  if (trackLoaded >1 && progressBarWidth2 <= 100) {
       loadingProgress2.style.width = progressBarWidth2 + '%';
       progressBarWidth2 += 5;
   }
-  if (progressBarWidth2 > progressOffset && progressBarWidth3 <= curLimit) {
+  if (trackLoaded >2 && progressBarWidth3 <= 100) {
     loadingProgress3.style.width = progressBarWidth3 + '%';
     progressBarWidth3 += 5;
   }
-    if (progressBarWidth3 > progressOffset && progressBarWidth4 <= curLimit) {
+    if (trackLoaded >3 && progressBarWidth4 <= 100) {
       loadingProgress4.style.width = progressBarWidth4 + '%';
       progressBarWidth4 += 5;
     }
