@@ -25,6 +25,7 @@
            
 
            if (!track1Tap) bar1.style.width = p1 + '%';
+           else bar1.style.width = '0%';
            if (!track2Tap) bar2.style.width = p2 + '%';
            if (!track3Tap) bar3.style.width = p3 + '%';
            if (!track4Tap) bar4.style.width = p4 + '%';
