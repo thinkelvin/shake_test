@@ -16,7 +16,10 @@ var NbBumps_sync;
 
 var socket;
 var progressBarWidth = 0;
-var loadingProgress;
+var loadingProgress1;
+var loadingProgress2;
+var loadingProgress3;
+var loadingProgress4;
 var logoPage;
 
 var bar1;
@@ -79,7 +82,10 @@ function setup() {
     document.getElementById('accGraph').style.display = "none";
   }
 
-  loadingProgress = document.getElementById("loading");
+  loadingProgress1 = document.getElementById("loading1");
+  loadingProgress2 = document.getElementById("loading2");
+  loadingProgress3 = document.getElementById("loading3");
+  loadingProgress4 = document.getElementById("loading4");
   logoPage = document.getElementById("logo");
 
   pAccX = 0;
@@ -98,7 +104,7 @@ function setup() {
   socket.on('syncBump', syncBump);
   touchUISetup();
 
-  var logoPageTap = new Hammer(loadingProgress);
+  var logoPageTap = new Hammer(logoPage);
   logoPageTap.on("tap", function (ev) {
     if (trackLoaded == 4) {
       logoPage.style.display = "none";
@@ -115,7 +121,10 @@ function draw() {
   soundViz();
   var curLimit = 25 * trackLoaded;
   if (progressBarWidth <= curLimit) {
-    loadingProgress.style.width = progressBarWidth + '%';
+    loadingProgress1.style.width = progressBarWidth + '%';
+    loadingProgress2.style.width = progressBarWidth + '%';
+    loadingProgress3.style.width = progressBarWidth + '%';
+    loadingProgress4.style.width = progressBarWidth + '%';
     progressBarWidth += 5;
   }
 

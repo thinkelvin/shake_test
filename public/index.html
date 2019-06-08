@@ -11,7 +11,7 @@
   <script src="https://hammerjs.github.io/dist/hammer.js"></script>
   <script src="./libs/screenfull.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
-  
+
   <meta charset="utf-8">
   <style>
     .trackBar {
@@ -82,11 +82,36 @@
       z-index: -2;
     }
 
-    #loading {
+    #loading1 {
       padding: 0%;
       width: 0%;
       height: 25%;
-      background-color: yellow;
+      background-color: hsl(0, 100%, 50%);
+      z-index: -1;
+    }
+
+    #loading2 {
+      padding: 0%;
+      width: 0%;
+      height: 25%;
+      background-color: hsl(113, 100%, 50%);
+      z-index: -1;
+    }
+
+    #loading3 {
+      padding: 0%;
+      width: 0%;
+      height: 25%;
+      background-color: hsl(189, 100%, 50%);
+      }
+      z-index: -1;
+    }
+
+    #loading4 {
+      padding: 0%;
+      width: 0%;
+      height: 25%;
+      background-color: hsl(298, 100%, 50%);
       z-index: -1;
     }
 
@@ -98,20 +123,20 @@
       font-family: 'Patrick Hand', cursive;
       color: black;
       z-index: 1;
-      
+
     }
   </style>
-<link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 
 <body style="height: 100%; margin: 0%; padding: 0%">
 
   <div id="logo">
     <h1 id="myName">Mu*Shake</h1>
-    <div id="loading">
-</div>
-    
-
+    <div id="loading1"></div>
+<div id="loading2"></div>
+<div id="loading3"></div>
+<div id="loading4"></div>
   </div>
 
 
@@ -136,9 +161,9 @@
   </div>
   <div class="trackBar" id="track4">
     <div id="bar4">
-    <span id="localBump">0</span>
-    <span id='remoteBump' style="color:white;">0</span>
-    <span id='syncBump'>0</span>
+      <span id="localBump">0</span>
+      <span id='remoteBump' style="color:white;">0</span>
+      <span id='syncBump'>0</span>
     </div>
   </div>
 </body>
