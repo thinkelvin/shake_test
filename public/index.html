@@ -79,7 +79,7 @@
       width: 100%;
       background-color: black;
       text-align: center;
-      z-index: -2;
+      z-index: -3;
     }
 
     #loading1 {
@@ -89,7 +89,13 @@
       background-color: hsl(0, 100%, 50%);
       z-index: -1;
     }
-
+   #loading1bk {
+   padding: 0%;
+   width: 0%;
+   height: 25%;
+   background-color: hsl(0, 100%, 30%);
+   z-index: -2;
+   }
     #loading2 {
       padding: 0%;
       width: 0%;
@@ -97,7 +103,13 @@
       background-color: hsl(113, 100%, 50%);
       z-index: -1;
     }
-
+    #loading2bk {
+    padding: 0%;
+    width: 0%;
+    height: 25%;
+    background-color: hsl(113, 100%, 30%);
+    z-index: -2;
+    }
     #loading3 {
       padding: 0%;
       width: 0%;
@@ -106,7 +118,14 @@
 
       z-index: -1;
     }
+    #loading3bk {
+    padding: 0%;
+    width: 0%;
+    height: 25%;
+    background-color: hsl(189, 100%, 30%);
 
+    z-index: -2;
+    }
     #loading4 {
       padding: 0%;
       width: 0%;
@@ -114,7 +133,13 @@
       background-color: hsl(298, 100%, 50%);
       z-index: -1;
     }
-
+    #loading4bk {
+    padding: 0%;
+    width: 0%;
+    height: 25%;
+    background-color: hsl(298, 100%, 30%);
+    z-index: -2;
+    }
     #myName {
       position: absolute;
       top: 33%;
@@ -168,10 +193,10 @@
 
   <div id="logo">
     <h1 id="myName">Mu*Shake</h1>
-    <div id="loading1"></div>
-    <div id="loading2"></div>
-    <div id="loading3"></div>
-    <div id="loading4"></div>
+    <div id="loading1bk"><div id="loading1"></div></div>
+    <div id="loading2bk"><div id="loading2"></div></div>
+    <div id="loading3bk"><div id="loading3"></div></div>
+    <div id="loading4bk"><div id="loading4"></div></div>
   </div>
 
 
