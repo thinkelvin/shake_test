@@ -126,36 +126,12 @@ function setup() {
   });
 }
 
-var prog1Loop=0;
+
 
 function draw() {
-  trackSoundSetup();
-
+  //trackSoundSetup();
+  openingAnimation();
   soundViz();
-  //var curLimit = 25 * trackLoaded;
-  if (trackLoaded >0 && progressBarWidth1 <= 100 && prog1Loop<2) {
-    loadingProgress1.style.width = progressBarWidth1 + '%';    
-    progressBarWidth1 += 5;
-  }
-  if (progressBarWidth1>100) {
-    prog1Loop++;
-    progressBarWidth1=0;
-    loadingProgress1.style.width = '0%';
-    loadingProgress1.style.backgroundColor = "black";
-  }
-
-  if (trackLoaded >1 && progressBarWidth2 <= 100) {
-      loadingProgress2.style.width = progressBarWidth2 + '%';
-      progressBarWidth2 += 5;
-  }
-  if (trackLoaded >2 && progressBarWidth3 <= 100) {
-    loadingProgress3.style.width = progressBarWidth3 + '%';
-    progressBarWidth3 += 5;
-  }
-    if (trackLoaded >3 && progressBarWidth4 <= 100) {
-      loadingProgress4.style.width = progressBarWidth4 + '%';
-      progressBarWidth4 += 5;
-    }
 
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
@@ -184,6 +160,29 @@ function draw() {
     }
     lvlCheckDelay--;
   }
+}
+
+function openingAnimation() {
+  if (trackLoaded > 0 && progressBarWidth1 <= 100) {
+    loadingProgress1.style.width = progressBarWidth1 + '%';
+    progressBarWidth1 += 5;
+  }
+
+
+  if (trackLoaded > 1 && progressBarWidth2 <= 100) {
+    loadingProgress2.style.width = progressBarWidth2 + '%';
+    progressBarWidth2 += 5;
+  }
+  if (trackLoaded > 2 && progressBarWidth3 <= 100) {
+    loadingProgress3.style.width = progressBarWidth3 + '%';
+    progressBarWidth3 += 5;
+  }
+  if (trackLoaded > 3 && progressBarWidth4 <= 100) {
+    loadingProgress4.style.width = progressBarWidth4 + '%';
+    progressBarWidth4 += 5;
+  }
+
+
 }
 
 function remoteBump() {
