@@ -215,7 +215,8 @@ function openingAnimation() {
   if (progressBarWidth1 > 200 && progressBarWidth2 > 200 && progressBarWidth3 > 200 && progressBarWidth4 > 200) {
     allPlayed = true;
     projectName.style.opacity = 0;
-    projectName.style.classList.add('fadeIn');
+    projectName.classList.add('fadeIn');
+
   }
 
 }
