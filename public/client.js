@@ -25,7 +25,7 @@ var loadingProgress2;
 var loadingProgress3;
 var loadingProgress4;
 var landingPage;
-var loadingProgress1BK;
+var allPlayed = 0;
 
 var track1Viz;
 var track2Viz;
@@ -132,7 +132,9 @@ function setup() {
 
 function draw() {
   trackSoundSetup();
-  openingAnimation();
+  if (!allPlayed) {
+    openingAnimation();
+  }
   soundViz();
 
 
@@ -165,12 +167,10 @@ function draw() {
 }
 
 function openingAnimation() {
-  if (trackLoaded > 0 && progressBarWidth1 <= 100 ) {
+  if (trackLoaded > 0 && progressBarWidth1 <= 100) {
     loadingProgress1.style.width = progressBarWidth1 + '%';
     progressBarWidth1 += 5;
   }
-
-
   if (trackLoaded > 1 && progressBarWidth2 <= 100) {
     loadingProgress2.style.width = progressBarWidth2 + '%';
     progressBarWidth2 += 5;
@@ -183,7 +183,9 @@ function openingAnimation() {
     loadingProgress4.style.width = progressBarWidth4 + '%';
     progressBarWidth4 += 5;
   }
-
+  if (progressBarWidth1 > 100 && progressBarWidth2 > 100 && progressBarWidth3 > 100 && progressBarWidth4 > 100) {
+    allPlayed = true;
+  }
 
 }
 
@@ -203,5 +205,5 @@ function accUpdate(e) {
   accX = e.acceleration.x;
   //dAccX = accX - pAccX;
   dAccX = Math.abs(accX - pAccX);
-  if (dAccX < 3) dAccX=0;
+  if (dAccX < 3) dAccX = 0;
 }
