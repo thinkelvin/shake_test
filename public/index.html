@@ -15,7 +15,13 @@
   <link href="https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap" rel="stylesheet">
 
   <!-- <style></style> -->
+    <script src="client.js"></script>
 
+    <script src="accGraph.js"></script>
+    <script src="touchUISetup.js"></script>
+    <script src="trackSoundSetup.js"></script>
+    <script src="soundViz.js"></script>
+    <script src="levelDetection.js"></script>
 </head>
 
 <body>
@@ -38,15 +44,10 @@
 
 
   <div id="accGraph"></div>
-  <script src="client.js"></script>
 
-  <script src="accGraph.js"></script>
-  <script src="touchUISetup.js"></script>
-  <script src="trackSoundSetup.js"></script>
-  <script src="soundViz.js"></script>
-  <script src="levelDetection.js"></script>
 
   <!-- <label for="rangeinput">Threshold</label> <input id="rangeinput" type="range" min="0" max="10" value="4" onchange="rangevalue.value=value"> <output id="rangevalue">4</output> -->
+  <div id="main">
   <div class="trackBar" id="track1">
     <div id="bar1"></div>
   </div>
@@ -62,6 +63,7 @@
       <span id='remoteBump' style="color:white;">0</span>
       <span id='syncBump'>0</span>
     </div>
+  </div>
   </div>
 </body>
 

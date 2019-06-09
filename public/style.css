@@ -125,6 +125,10 @@
 
  }
 
+ #main {
+   display: block;
+ }
+
 
  @keyframes shake {
    0% {
