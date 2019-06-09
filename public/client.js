@@ -33,6 +33,7 @@ var track4Viz;
 var analyser1;
 var bufferLength1;
 var dataArray1;
+var mainPage;
 
 var _debug = false; // turn on/off accelerationX plot for debug
 
@@ -69,6 +70,7 @@ function preload() {
 }
 
 function setup() {
+  mainPage = document.getElementById("main");
   track1Viz = document.getElementById("track1Viz");
   track2Viz = document.getElementById("track2Viz");
   track3Viz = document.getElementById("track3Viz");
@@ -117,6 +119,7 @@ function setup() {
       landingPage.style.display = "none";
       trackStarted = false;
       screenfull.request();
+      mainPage.style.display = "block";
     }
   });
 }
