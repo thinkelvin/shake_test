@@ -127,13 +127,14 @@
    width: 0%;
    height: 25%;
    background-color: hsl(113, 100%, var(--track-bright));
-   /* z-index: -1; */
  }
 
  #loading2bk {
-   background-color: hsl(113, 100%, var(--loading-dim));
-   /* z-index: -2; */
- }
+   background-color: black;
+   padding: 0%;
+   width: 0%;
+   height: 100%;
+   }
 
  #loading3 {
    padding: 0%;
@@ -141,12 +142,13 @@
    height: 25%;
    background-color: hsl(189, 100%, var(--track-bright));
 
-   /* z-index: -1; */
  }
 
  #loading3bk {
-   background-color: hsl(189, 100%, var(--loading-dim));
-   /* z-index: -2; */
+    background-color: black;
+    padding: 0%;
+    width: 0%;
+    height: 100%;
  }
 
  #loading4 {
@@ -154,12 +156,14 @@
    width: 0%;
    height: 25%;
    background-color: hsl(298, 100%, var(--track-bright));
-   /* z-index: -1; */
+
  }
 
  #loading4bk {
-   background-color: hsl(298, 100%, var(--loading-dim));
-   /* z-index: -2; */
+      background-color: black;
+      padding: 0%;
+      width: 0%;
+      height: 100%;
  }
 
 
