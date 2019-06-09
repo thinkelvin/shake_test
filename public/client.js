@@ -79,9 +79,7 @@ function setup() {
   track2Viz = document.getElementById("track2Viz");
   track3Viz = document.getElementById("track3Viz");
   track4Viz = document.getElementById("track4Viz");
-  // bkColor2 = document.getElementById("track2");
-  // bkColor3 = document.getElementById("track3");
-  // bkColor4 = document.getElementById("track4");
+
   analyser1 = Howler.ctx.createAnalyser();
   Howler.masterGain.connect(analyser1);
   analyser1.connect(Howler.ctx.destination);
@@ -128,16 +126,23 @@ function setup() {
   });
 }
 
+var prog1Loop=0;
 
 function draw() {
   trackSoundSetup();
 
   soundViz();
   //var curLimit = 25 * trackLoaded;
-  if (trackLoaded >0 && progressBarWidth1 <= 100) {
-    loadingProgress1.style.width = progressBarWidth1 + '%';
+  if (trackLoaded >0 && progressBarWidth1 <= 100 && prog1Loop<2) {
+    loadingProgress1.style.width = progressBarWidth1 + '%';    
     progressBarWidth1 += 5;
   }
+  if (progressBarWidth1>100) {
+    prog1Loop++;
+    progressBarWidth1=0;
+    loadingProgress1.style.backgroundColor = "black";
+  }
+
   if (trackLoaded >1 && progressBarWidth2 <= 100) {
       loadingProgress2.style.width = progressBarWidth2 + '%';
       progressBarWidth2 += 5;
