@@ -24,6 +24,7 @@ var loadingProgress1;
 var loadingProgress2;
 var loadingProgress3;
 var loadingProgress4;
+var loadingProgress1BK;
 var landingPage;
 var allPlayed = 0;
 
@@ -169,6 +170,10 @@ function draw() {
 function openingAnimation() {
   if (trackLoaded > 0 && progressBarWidth1 <= 100) {
     loadingProgress1.style.width = progressBarWidth1 + '%';
+    progressBarWidth1 += 5;
+  }
+  if (trackLoaded > 0 && progressBarWidth1 <=200) {
+    loadingProgress1BK.style.width = (progressBarWidth1-100) + '%';
     progressBarWidth1 += 5;
   }
   if (trackLoaded > 1 && progressBarWidth2 <= 100) {
