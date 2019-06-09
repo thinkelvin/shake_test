@@ -83,6 +83,7 @@
    text-align: center;
    /* z-index: -3; */
  }
+
  #projectName {
    position: fixed;
    top: 30%;
@@ -96,25 +97,30 @@
    color: hsl(0, 0%, 0%);
    z-index: 1;
  }
+
  .loadingBar {
-     /* cursor: pointer; */
-     width: 100%;
-     height: 25%;
-     padding: 0%;
-     margin: 0%;
-     background-color: black;
+   /* cursor: pointer; */
+   width: 100%;
+   height: 25%;
+   padding: 0%;
+   margin: 0%;
+   background-color: black;
  }
+
  #loading1 {
    padding: 0%;
    width: 0%;
    height: 25%;
    background-color: hsl(0, 100%, var(--track-bright));
-   /* z-index: -1; */
  }
-  #loading1bk {
-    background-color: black;
-    /* z-index: -2; */
-  }
+
+ #loading1bk {
+   background-color: black;
+   padding: 0%;
+   width: 0%;
+   height: 25%;
+ }
+
  #loading2 {
    padding: 0%;
    width: 0%;
@@ -122,10 +128,12 @@
    background-color: hsl(113, 100%, var(--track-bright));
    /* z-index: -1; */
  }
+
  #loading2bk {
    background-color: hsl(113, 100%, var(--loading-dim));
    /* z-index: -2; */
  }
+
  #loading3 {
    padding: 0%;
    width: 0%;
@@ -134,10 +142,12 @@
 
    /* z-index: -1; */
  }
+
  #loading3bk {
    background-color: hsl(189, 100%, var(--loading-dim));
    /* z-index: -2; */
  }
+
  #loading4 {
    padding: 0%;
    width: 0%;
@@ -146,10 +156,10 @@
    /* z-index: -1; */
  }
 
-  #loading4bk {
-    background-color: hsl(298, 100%, var(--loading-dim));
-    /* z-index: -2; */
-  }
+ #loading4bk {
+   background-color: hsl(298, 100%, var(--loading-dim));
+   /* z-index: -2; */
+ }
 
 
  #main {
@@ -191,11 +201,13 @@
    }
  }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-/* canvas {
+ html,
+ body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+ }
+
+ /* canvas {
   display: block;
 } */
