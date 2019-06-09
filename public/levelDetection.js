@@ -18,7 +18,7 @@ function fillBuffer(d) {
 function detectLevelChange(data) {
   let signal = 0;
   prevMean = Mean();
-  prevSD = SD();
+  // prevSD = SD();
 //  document.getElementById("mean").innerHTML = "Mean = " + prevMean.toString();
 //   document.getElementById("sd").innerHTML = "SD = " + prevSD.toString();
 
