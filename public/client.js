@@ -169,7 +169,7 @@ function openingAnimation() {
     loadingProgress1.style.width = progressBarWidth1 + '%';
     progressBarWidth1 += 5;
   }
-  if (progressBarWidth1>100) { 
+  if (progressBarWidth1>100 && !loadbar1BK) { 
     loadbar1BK=true;
     progressBarWidth1=0;
   }
