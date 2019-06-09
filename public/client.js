@@ -27,9 +27,9 @@ var loadingProgress4;
 var landingPage;
 
 var bar1;
-var bkColor2;
-var bkColor3;
-var bkColor4;
+var bar2;
+var bar3;
+var bar4;
 var analyser1;
 var bufferLength1;
 var dataArray1;
@@ -70,6 +70,9 @@ function preload() {
 
 function setup() {
   bar1 = document.getElementById("bar1");
+  bar2 = document.getElementById("bar2");
+  bar3 = document.getElementById("bar3");
+  bar4 = document.getElementById("bar4");
   // bkColor2 = document.getElementById("track2");
   // bkColor3 = document.getElementById("track3");
   // bkColor4 = document.getElementById("track4");
