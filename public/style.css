@@ -114,13 +114,13 @@
 
  #projectName {
    position: relative;
-   top: 33%;
+   top: 50%;
    /* left: 33%; */
    animation: 1s shake infinite alternate;
    /* transform: translateX(-50%) translateY(-50%); */
    font-size: 5em;
    font-family: 'Gochi Hand', cursive;
-   color: hsl(113, 100%, var(--track-dim));
+   color: hsl(0, 0%, 0%);
    z-index: 1;
 
  }
@@ -128,32 +128,32 @@
 
  @keyframes shake {
    0% {
-     transform: translateX(-50%) translateY(-50%);
+     /* transform: translateX(-50%) translateY(-50%); */
      transform: skewX(-15deg);
    }
 
    5% {
-     transform: translateX(-50%) translateY(-50%);
+     /* transform: translateX(-50%) translateY(-50%); */
      transform: skewX(15deg);
    }
 
    10% {
-     transform: translateX(-50%) translateY(-50%);
+     /* transform: translateX(-50%) translateY(-50%); */
      transform: skewX(-15deg);
    }
 
    15% {
-     transform: translateX(-50%) translateY(-50%);
+     /* transform: translateX(-50%) translateY(-50%); */
      transform: skewX(15deg);
    }
 
    20% {
-     transform: translateX(-50%) translateY(-50%);
+     /* transform: translateX(-50%) translateY(-50%); */
      transform: skewX(0deg);
    }
 
    100% {
-     transform: translateX(-50%) translateY(-50%);
+     /* transform: translateX(-50%) translateY(-50%); */
      transform: skewX(0deg);
    }
  }
