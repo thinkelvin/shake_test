@@ -30,6 +30,7 @@ var loadingProgress3BK;
 var loadingProgress4BK;
 var landingPage;
 var barStep = 2;
+var barProgressOffset = 25;
 var allPlayed = 0;
 
 var track1Viz;
@@ -183,7 +184,7 @@ function openingAnimation() {
     loadingProgress1BK.style.width = (progressBarWidth1-100) + '%';
     progressBarWidth1 += barStep;
   }
-  if (trackLoaded > 1 && progressBarWidth2 <= 100 && progressBarWidth1>100) {
+  if (trackLoaded > 1 && progressBarWidth2 <= 100 && progressBarWidth1 > barProgressOffset) {
     loadingProgress2.style.width = progressBarWidth2 + '%';
     progressBarWidth2 += barStep;
   }
@@ -192,7 +193,7 @@ function openingAnimation() {
       progressBarWidth2 += barStep;
     }
 
-  if (trackLoaded > 2 && progressBarWidth3 <= 100 && progressBarWidth2 >100) {
+  if (trackLoaded > 2 && progressBarWidth3 <= 100 && progressBarWidth2 > barProgressOffset) {
     loadingProgress3.style.width = progressBarWidth3 + '%';
     progressBarWidth3 += barStep;
   }
@@ -200,7 +201,7 @@ function openingAnimation() {
         loadingProgress3BK.style.width = (progressBarWidth3 - 100) + '%';
         progressBarWidth3 += barStep;
       }
-  if (trackLoaded > 3 && progressBarWidth4 <= 100 && progressBarWidth3 >100) {
+  if (trackLoaded > 3 && progressBarWidth4 <= 100 && progressBarWidth3 > barProgressOffset) {
     loadingProgress4.style.width = progressBarWidth4 + '%';
     progressBarWidth4 += barStep;
   }
