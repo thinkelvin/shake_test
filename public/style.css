@@ -21,7 +21,7 @@
  }
 
 
- #bar1 {
+ #track1Viz {
    width: 0%;
    height: 100%;
    display: inline-block;
@@ -34,7 +34,7 @@
    z-index: -2;
  }
 
- #bar2 {
+ #track2Viz {
    width: 0%;
    height: 100%;
    display: inline-block;
@@ -47,7 +47,7 @@
    z-index: -2;
  }
 
- #bar3 {
+ #track3Viz {
    width: 0%;
    height: 100%;
    display: inline-block;
@@ -61,7 +61,7 @@
  }
 
 
- #bar4 {
+ #track4Viz {
    width: 0%;
    height: 100%;
    display: inline-block;

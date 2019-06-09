@@ -26,10 +26,10 @@ var loadingProgress3;
 var loadingProgress4;
 var landingPage;
 
-var bar1;
-var bar2;
-var bar3;
-var bar4;
+var track1Viz;
+var track2Viz;
+var track3Viz;
+var track4Viz;
 var analyser1;
 var bufferLength1;
 var dataArray1;
@@ -69,10 +69,10 @@ function preload() {
 }
 
 function setup() {
-  bar1 = document.getElementById("bar1");
-  bar2 = document.getElementById("bar2");
-  bar3 = document.getElementById("bar3");
-  bar4 = document.getElementById("bar4");
+  track1Viz = document.getElementById("track1Viz");
+  track2Viz = document.getElementById("track2Viz");
+  track3Viz = document.getElementById("track3Viz");
+  track4Viz = document.getElementById("track4Viz");
   // bkColor2 = document.getElementById("track2");
   // bkColor3 = document.getElementById("track3");
   // bkColor4 = document.getElementById("track4");
