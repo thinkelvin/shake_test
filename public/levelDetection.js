@@ -22,7 +22,8 @@ function detectLevelChange(data) {
 //  document.getElementById("mean").innerHTML = "Mean = " + prevMean.toString();
 //   document.getElementById("sd").innerHTML = "SD = " + prevSD.toString();
 
-  if (abs(data-prevMean)>(Threshold*prevSD)) {
+  //if (abs(data-prevMean)>(Threshold*prevSD)) {
+  if (abs(data - prevMean) > (Threshold)) {
     if (data>prevMean)
       signal = 1;
     else
