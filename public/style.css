@@ -113,11 +113,11 @@
  }
 
  #projectName {
-   position: absolute;
+   position: relative;
    top: 33%;
-   left: 33%;
+   /* left: 33%; */
    animation: 1s shake infinite alternate;
-   transform: translateX(-50%) translateY(-50%);
+   /* transform: translateX(-50%) translateY(-50%); */
    font-size: 5em;
    font-family: 'Gochi Hand', cursive;
    color: hsl(113, 100%, var(--track-dim));
@@ -161,6 +161,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 /* canvas {
   display: block;
