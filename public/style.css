@@ -84,7 +84,7 @@
    /* z-index: -3; */
  }
 
- #projectName {
+ .projectName {
    position: fixed;
    top: 30%;
    left: 50%;
@@ -96,7 +96,7 @@
   opacity: 1;
  }
 
- .fadeIn {
+ .projectName.fadeIn {
   animation: fadingIn 1s ease-in;
  }
 @keyframes fadingIn {

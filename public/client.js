@@ -102,7 +102,7 @@ function setup() {
   }
 
     landingPage = document.getElementById("landingPage");
-      projectName = document.getElementById("projectName");
+      projectName = document.getElementsByClassName("projectName");
   loadingProgress1 = document.getElementById("loading1");
   loadingProgress2 = document.getElementById("loading2");
   loadingProgress3 = document.getElementById("loading3");
