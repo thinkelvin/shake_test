@@ -113,6 +113,7 @@
  }
 
  #projectName {
+   float: left;
    position: relative;
    top: 50%;
    /* left: 33%; */
