@@ -88,12 +88,8 @@
    position: fixed;
    top: 30%;
    left: 50%;
-   /* transform: translateX(-50%); */
-   /* left: 33%; */
    animation: 1s shake infinite alternate;
-   /* transform: translateX(-50%) translateY(-50%); */
-   font-size: 8em;
-
+   font-size: 8vw;
    font-family: 'Gochi Hand', cursive;
    color: hsl(0, 0%, 0%);
    z-index: 1;
