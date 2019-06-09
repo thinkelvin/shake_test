@@ -110,6 +110,9 @@
    /* z-index: -1; */
  }
   #loading1bk {
+       padding: 0%;
+       width: 0%;
+       height: 100%;
     background-color: hsl(0, 100%, var(--loading-dim));
     /* z-index: -2; */
   }

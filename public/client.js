@@ -25,6 +25,7 @@ var loadingProgress2;
 var loadingProgress3;
 var loadingProgress4;
 var landingPage;
+var loadingProgress1BK;
 
 var track1Viz;
 var track2Viz;
@@ -98,6 +99,7 @@ function setup() {
   loadingProgress3 = document.getElementById("loading3");
   loadingProgress4 = document.getElementById("loading4");
   landingPage = document.getElementById("landingPage");
+  loadingProgress1BK = document.getElementById("loading1bk");
 
   pAccX = 0;
   bufferReady = false;
@@ -161,13 +163,24 @@ function draw() {
     lvlCheckDelay--;
   }
 }
-
+var loadbar1BK = false;
 function openingAnimation() {
-  if (trackLoaded > 0 && progressBarWidth1 <= 100) {
+  if (trackLoaded > 0 && progressBarWidth1 <= 100 && !loadbar1BK) {
     loadingProgress1.style.width = progressBarWidth1 + '%';
     progressBarWidth1 += 5;
   }
+  if (progressBarWidth1>100) { 
+    loadbar1BK=true;
+    progressBarWidth1=0;
+  }
 
+  if (loadbar1BK) {
+    if (trackLoaded > 0 && progressBarWidth1 <= 100) {
+      loadingProgress1BK.style.width = progressBarWidth1 + '%';
+     progressBarWidth1 += 5;
+  }
+
+  }
 
   if (trackLoaded > 1 && progressBarWidth2 <= 100) {
     loadingProgress2.style.width = progressBarWidth2 + '%';
