@@ -140,6 +140,7 @@ function draw() {
   if (progressBarWidth1>100) {
     prog1Loop++;
     progressBarWidth1=0;
+    loadingProgress1.style.width = '0%';
     loadingProgress1.style.backgroundColor = "black";
   }
 
