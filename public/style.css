@@ -97,7 +97,7 @@
  }
 
  .fadeIn {
-  animation: fadingIn;
+  animation: fadingIn 1s ease-in;
  }
 @keyframes fadingIn {
   from {
