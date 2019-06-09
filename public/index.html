@@ -2,6 +2,7 @@
 <html style="height: 100%">
 
 <head>
+    <meta charset="utf-8">
   <script src="./libs/p5.min.js"></script>
   <!-- <script src="./libs/p5.dom.min.js"></script> -->
   <!-- <script src="./libs/p5.sound.min.js"></script> -->
@@ -11,169 +12,10 @@
   <script src="https://hammerjs.github.io/dist/hammer.js"></script>
   <script src="./libs/screenfull.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap" rel="stylesheet">
 
-  <meta charset="utf-8">
-  <style>
-    :root {
-      --track-dim: 30%;
-      --track-bright: 50%;
-    }
-    .trackBar {
-      cursor: pointer;
-      width: 100%;
-      height: 25%;
-      padding: 0%;
-      margin: 0%;
-      font-size: 2.0em;
-      /* text-align: center; */
-      /* color: black; */
-    }
-
-    #track1 {
-      background-color: hsl(0, 100%, var(--track-dim));
-      z-index: -2;
-    }
-
-    #bar1 {
-      width: 0%;
-      height: 100%;
-      display: inline-block;
-      background-color: hsl(0, 100%, var(--track-bright));
-      z-index: -1;
-    }
-
-    #track2 {
-      background-color: hsl(113, 100%, var(--track-dim));
-      z-index: -2;
-    }
-
-    #bar2 {
-      width: 0%;
-      height: 100%;
-      display: inline-block;
-      background-color: hsl(113, 100%, var(--track-bright));
-      z-index: -1;
-    }
-
-    #track3 {
-      background-color: hsl(189, 100%, var(--track-dim));
-      z-index: -2;
-    }
-
-    #bar3 {
-      width: 0%;
-      height: 100%;
-      display: inline-block;
-      background-color: hsl(189, 100%,var(--track-bright));
-      z-index: -1;
-    }
-
-    #track4 {
-      background-color: hsl(298, 100%, var(--track-dim));
-      z-index: -2;
-    }
-
-    #bar4 {
-      width: 0%;
-      height: 100%;
-      display: inline-block;
-      background-color: hsl(298, 100%, var(--track-bright));
-      z-index: -1;
-    }
-
-    #accGraph {
-      display: block;
-    }
-
-    #landingPage {
-      display: block;
-      height: 100vh;
-      width: 100%;
-      /* background-color: black; */
-      text-align: center;
-      /* z-index: -3; */
-    }
-
-    #loading1 {
-      padding: 0%;
-      width: 0%;
-      height: 100%;
-      background-color: hsl(0, 100%, var(--track-bright));
-      z-index: -1;
-    }
-
-    #loading2 {
-      padding: 0%;
-      width: 0%;
-      height: 100%;
-      background-color: hsl(113, 100%, var(--track-bright));
-      z-index: -1;
-    }
-
-    #loading3 {
-      padding: 0%;
-      width: 0%;
-      height: 100%;
-      background-color: hsl(189, 100%, var(--track-bright));
-
-      z-index: -1;
-    }
-
-    #loading4 {
-      padding: 0%;
-      width: 0%;
-      height: 100%;
-      background-color: hsl(298, 100%, var(--track-bright));
-      z-index: -1;
-    }
-
-    #projectName {
-      position: absolute;
-      top: 33%;
-      left: 33%;
-      animation: 1s shake infinite alternate;
-      transform: translateX(-50%) translateY(-50%);
-      font-size: 5em;
-      font-family: 'Gochi Hand', cursive;
-      color: hsl(113, 100%, var(--track-dim));
-      z-index: 1;
-
-    }
-    
-
-    @keyframes shake {
-      0% {
-        transform: translateX(-50%) translateY(-50%);
-        transform: skewX(-15deg);
-      }
-
-      5% {
-        transform: translateX(-50%) translateY(-50%);
-        transform: skewX(15deg);
-      }
-
-      10% {
-        transform: translateX(-50%) translateY(-50%);
-        transform: skewX(-15deg);
-      }
-
-      15% {
-        transform: translateX(-50%) translateY(-50%);
-        transform: skewX(15deg);
-      }
-
-      20% {
-        transform: translateX(-50%) translateY(-50%);
-        transform: skewX(0deg);
-      }
-
-      100% {
-        transform: translateX(-50%) translateY(-50%);
-        transform: skewX(0deg);
-      }
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap" rel="stylesheet">
+  <!-- <style></style> -->
+  
 </head>
 
 <body style="height: 100%; margin: 0%; padding: 0%">
