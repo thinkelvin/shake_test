@@ -189,4 +189,5 @@ function accUpdate(e) {
   accX = e.acceleration.x;
   //dAccX = accX - pAccX;
   dAccX = Math.abs(accX - pAccX);
+  if (dAccX < 3) dAccX=0;
 }
