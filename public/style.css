@@ -89,7 +89,7 @@
    /* left: 33%; */
    animation: 1s shake infinite alternate;
    /* transform: translateX(-50%) translateY(-50%); */
-   font-size: 5em;
+   font-size: 15em;
    font-family: 'Gochi Hand', cursive;
    color: hsl(0, 0%, 0%);
    z-index: 1;

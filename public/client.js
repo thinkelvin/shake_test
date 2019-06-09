@@ -129,7 +129,7 @@ function setup() {
 
 
 function draw() {
-  //trackSoundSetup();
+  trackSoundSetup();
   openingAnimation();
   soundViz();
 
