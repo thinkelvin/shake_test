@@ -29,6 +29,7 @@ var loadingProgress2BK;
 var loadingProgress3BK;
 var loadingProgress4BK;
 var landingPage;
+var barStep = 2;
 var allPlayed = 0;
 
 var track1Viz;
@@ -176,36 +177,36 @@ function draw() {
 function openingAnimation() {
   if (trackLoaded > 0 && progressBarWidth1 <= 100) {
     loadingProgress1.style.width = progressBarWidth1 + '%';
-    progressBarWidth1 += 5;
+    progressBarWidth1 += barStep;
   }
   if (trackLoaded > 0 && progressBarWidth1 <=200 && progressBarWidth1 >100) {
     loadingProgress1BK.style.width = (progressBarWidth1-100) + '%';
-    progressBarWidth1 += 5;
+    progressBarWidth1 += barStep;
   }
   if (trackLoaded > 1 && progressBarWidth2 <= 100) {
     loadingProgress2.style.width = progressBarWidth2 + '%';
-    progressBarWidth2 += 5;
+    progressBarWidth2 += barStep;
   }
     if (trackLoaded > 1 && progressBarWidth2 <= 200 && progressBarWidth2 > 100) {
       loadingProgress2BK.style.width = (progressBarWidth2 - 100) + '%';
-      progressBarWidth2 += 5;
+      progressBarWidth2 += barStep;
     }
 
   if (trackLoaded > 2 && progressBarWidth3 <= 100) {
     loadingProgress3.style.width = progressBarWidth3 + '%';
-    progressBarWidth3 += 5;
+    progressBarWidth3 += barStep;
   }
       if (trackLoaded > 2 && progressBarWidth3 <= 200 && progressBarWidth3 > 100) {
         loadingProgress3BK.style.width = (progressBarWidth3 - 100) + '%';
-        progressBarWidth3 += 5;
+        progressBarWidth3 += barStep;
       }
   if (trackLoaded > 3 && progressBarWidth4 <= 100) {
     loadingProgress4.style.width = progressBarWidth4 + '%';
-    progressBarWidth4 += 5;
+    progressBarWidth4 += barStep;
   }
       if (trackLoaded > 3 && progressBarWidth4 <= 200 && progressBarWidth4 > 100) {
         loadingProgress4BK.style.width = (progressBarWidth4 - 100) + '%';
-        progressBarWidth4 += 5;
+        progressBarWidth4 += barStep;
       }
   if (progressBarWidth1 > 200 && progressBarWidth2 > 200 && progressBarWidth3 > 200 && progressBarWidth4 > 200) {
     allPlayed = true;
