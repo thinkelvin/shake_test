@@ -29,9 +29,10 @@ var loadingProgress2BK;
 var loadingProgress3BK;
 var loadingProgress4BK;
 var landingPage;
-var barStep = 2;
+var barStep = 4;
 var barProgressOffset = 25;
 var allPlayed = 0;
+var projectName;
 
 var track1Viz;
 var track2Viz;
@@ -100,11 +101,13 @@ function setup() {
     document.getElementById('accGraph').style.display = "none";
   }
 
+    landingPage = document.getElementById("landingPage");
+      projectName = document.getElementById("projectName");
   loadingProgress1 = document.getElementById("loading1");
   loadingProgress2 = document.getElementById("loading2");
   loadingProgress3 = document.getElementById("loading3");
   loadingProgress4 = document.getElementById("loading4");
-  landingPage = document.getElementById("landingPage");
+
   loadingProgress1BK = document.getElementById("loading1bk");
   loadingProgress2BK = document.getElementById("loading2bk");
   loadingProgress3BK = document.getElementById("loading3bk");
@@ -211,6 +214,7 @@ function openingAnimation() {
       }
   if (progressBarWidth1 > 200 && progressBarWidth2 > 200 && progressBarWidth3 > 200 && progressBarWidth4 > 200) {
     allPlayed = true;
+    projectName.style.backgroundColor = "white";
   }
 
 }
