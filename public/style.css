@@ -87,7 +87,7 @@
    position: fixed;
    top: 30%;
    left: 50%;
-   transform: translateX(-50%);
+   /* transform: translateX(-50%); */
    /* left: 33%; */
    /* animation: 1s shake infinite alternate; */
    /* transform: translateX(-50%) translateY(-50%); */
@@ -162,32 +162,32 @@
  @keyframes shake {
    0% {
      /* transform: translateX(-50%) translateY(-50%); */
-     transform: skewX(-15deg);
+     transform: skewX(-15deg) translateX(-50%);
    }
 
    5% {
      /* transform: translateX(-50%) translateY(-50%); */
-     transform: skewX(15deg);
+     transform: skewX(15deg) translateX(-50%);
    }
 
    10% {
      /* transform: translateX(-50%) translateY(-50%); */
-     transform: skewX(-15deg);
+     transform: skewX(-15deg) translateX(-50%);
    }
 
    15% {
      /* transform: translateX(-50%) translateY(-50%); */
-     transform: skewX(15deg);
+     transform: skewX(15deg) translateX(-50%);
    }
 
    20% {
      /* transform: translateX(-50%) translateY(-50%); */
-     transform: skewX(0deg);
+     transform: skewX(0deg) translateX(-50%);
    }
 
    100% {
      /* transform: translateX(-50%) translateY(-50%); */
-     transform: skewX(0deg);
+     transform: skewX(0deg) translateX(-50%);
    }
  }
 
