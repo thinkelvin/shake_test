@@ -172,7 +172,7 @@ function openingAnimation() {
     loadingProgress1.style.width = progressBarWidth1 + '%';
     progressBarWidth1 += 5;
   }
-  if (trackLoaded > 0 && progressBarWidth1 <=200) {
+  if (trackLoaded > 0 && progressBarWidth1 <=200 && progressBarWidth1 >100) {
     loadingProgress1BK.style.width = (progressBarWidth1-100) + '%';
     progressBarWidth1 += 5;
   }
@@ -188,7 +188,7 @@ function openingAnimation() {
     loadingProgress4.style.width = progressBarWidth4 + '%';
     progressBarWidth4 += 5;
   }
-  if (progressBarWidth1 > 100 && progressBarWidth2 > 100 && progressBarWidth3 > 100 && progressBarWidth4 > 100) {
+  if (progressBarWidth1 > 200 && progressBarWidth2 > 200 && progressBarWidth3 > 200 && progressBarWidth4 > 200) {
     allPlayed = true;
   }
 
