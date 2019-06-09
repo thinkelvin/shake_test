@@ -97,17 +97,6 @@
     transition: none;
  }
 
- .fadeIn {
-  animation: fadingIn 1s ease-in;
- }
-@keyframes fadingIn {
-  from {
-    opacity: 0;
-  } to {
-    opacity: 1;
-  }
-
-}
  .loadingBar {
    /* cursor: pointer; */
    width: 100%;
