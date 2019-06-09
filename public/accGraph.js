@@ -1,4 +1,6 @@
+  var cnt = 0;
 
+  var displayRange = 200; // x-axis time range
 var XSpeed = 1; // shifting speed of x-axis
 function getLevel() {
     return Level*30;
@@ -9,6 +11,7 @@ function getLevel() {
     return dAccX;
   }
   
+    if (_debug) {
   Plotly.plot('accGraph', [
     {
       y: [getaccX()],
@@ -28,10 +31,8 @@ function getLevel() {
   
   ]);
   
-  var cnt = 0;
-  
-  var displayRange = 200; // x-axis time range
-  if (_debug) {
+
+
     setInterval(function () {
       Plotly.extendTraces('accGraph', {
         y: [
