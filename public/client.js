@@ -69,10 +69,10 @@ function preload() {
 }
 
 function setup() {
-  bar1 = document.getElementById("bar1");
-  bkColor2 = document.getElementById("track2");
-  bkColor3 = document.getElementById("track3");
-  bkColor4 = document.getElementById("track4");
+  // bar1 = document.getElementById("bar1");
+  // bkColor2 = document.getElementById("track2");
+  // bkColor3 = document.getElementById("track3");
+  // bkColor4 = document.getElementById("track4");
   analyser1 = Howler.ctx.createAnalyser();
   Howler.masterGain.connect(analyser1);
   analyser1.connect(Howler.ctx.destination);
