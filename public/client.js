@@ -119,7 +119,7 @@ function setup() {
 
   var landingPageTap = new Hammer(landingPage);
   landingPageTap.on("tap", function (ev) {
-    if (trackLoaded == 4) {
+    if (trackLoaded == 4 && allPlayed) {
       landingPage.style.display = "none";
       trackStarted = false;
       screenfull.request();
