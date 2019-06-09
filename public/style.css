@@ -19,6 +19,7 @@
    z-index: -2;
  }
 
+
  #bar1 {
    width: 0%;
    height: 100%;
@@ -58,6 +59,7 @@
    z-index: -2;
  }
 
+
  #bar4 {
    width: 0%;
    height: 100%;
@@ -78,40 +80,6 @@
    text-align: center;
    /* z-index: -3; */
  }
-
- #loading1 {
-   padding: 0%;
-   width: 0%;
-   height: 100%;
-   background-color: hsl(0, 100%, var(--track-bright));
-   z-index: -1;
- }
-
- #loading2 {
-   padding: 0%;
-   width: 0%;
-   height: 100%;
-   background-color: hsl(113, 100%, var(--track-bright));
-   z-index: -1;
- }
-
- #loading3 {
-   padding: 0%;
-   width: 0%;
-   height: 100%;
-   background-color: hsl(189, 100%, var(--track-bright));
-
-   z-index: -1;
- }
-
- #loading4 {
-   padding: 0%;
-   width: 0%;
-   height: 100%;
-   background-color: hsl(298, 100%, var(--track-bright));
-   z-index: -1;
- }
-
  #projectName {
    position: fixed;
    top: 50%;
@@ -122,8 +90,61 @@
    font-family: 'Gochi Hand', cursive;
    color: hsl(0, 0%, 0%);
    z-index: 1;
-
  }
+ .loadingBar {
+     cursor: pointer;
+     width: 100%;
+     height: 25%;
+     padding: 0%;
+     margin: 0%;
+ }
+ #loading1 {
+   padding: 0%;
+   width: 0%;
+   height: 100%;
+   background-color: hsl(0, 100%, var(--track-bright));
+   /* z-index: -1; */
+ }
+  #loading1bk {
+    background-color: hsl(0, 100%, var(--track-dim));
+    /* z-index: -2; */
+  }
+ #loading2 {
+   padding: 0%;
+   width: 0%;
+   height: 100%;
+   background-color: hsl(113, 100%, var(--track-bright));
+   /* z-index: -1; */
+ }
+ #loading2bk {
+   background-color: hsl(113, 100%, var(--track-dim));
+   /* z-index: -2; */
+ }
+ #loading3 {
+   padding: 0%;
+   width: 0%;
+   height: 100%;
+   background-color: hsl(189, 100%, var(--track-bright));
+
+   /* z-index: -1; */
+ }
+ #loading3bk {
+   background-color: hsl(189, 100%, var(--track-dim));
+   /* z-index: -2; */
+ }
+ #loading4 {
+   padding: 0%;
+   width: 0%;
+   height: 100%;
+   background-color: hsl(298, 100%, var(--track-bright));
+   /* z-index: -1; */
+ }
+
+  #loading4bk {
+    background-color: hsl(298, 100%, var(--track-dim));
+    /* z-index: -2; */
+  }
+
 
  #main {
    display: block;
