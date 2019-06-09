@@ -102,7 +102,7 @@ function setup() {
   }
 
     landingPage = document.getElementById("landingPage");
-      projectName = document.getElementsByClassName("projectName");
+      projectName = document.getElementsById("projectName");
   loadingProgress1 = document.getElementById("loading1");
   loadingProgress2 = document.getElementById("loading2");
   loadingProgress3 = document.getElementById("loading3");
@@ -214,7 +214,7 @@ function openingAnimation() {
       }
   if (progressBarWidth1 > 200 && progressBarWidth2 > 200 && progressBarWidth3 > 200 && progressBarWidth4 > 200) {
     allPlayed = true;
-    //projectName.style.opacity = 0;
+    projectName.style.opacity = 0;
     
 
   }
