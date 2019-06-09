@@ -113,8 +113,7 @@
  }
 
  #projectName {
-   float: left;
-   position: relative;
+   position: fixed;
    top: 50%;
    /* left: 33%; */
    animation: 1s shake infinite alternate;
