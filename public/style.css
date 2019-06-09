@@ -92,8 +92,19 @@
    font-size: 15vw;
    font-family: 'Gochi Hand', cursive;
    color: hsl(0, 0%, 0%);
-   opacity: 1;
    z-index: 1;
+        opacity: 1;
+ }
+
+ .fadeIn {
+   opacity: 0;
+       -webkit-transition:opacity 0.5s linear;
+       -moz-transition:opacity 0.5s linear;
+       -o-transition:opacity 0.5s linear;
+       -ms-transition:opacity 0.5s linear;
+       transition:opacity 0.5s linear;
+ 
+
  }
 
  .loadingBar {
