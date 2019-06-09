@@ -163,24 +163,13 @@ function draw() {
     lvlCheckDelay--;
   }
 }
-var loadbar1BK = false;
+
 function openingAnimation() {
-  if (trackLoaded > 0 && progressBarWidth1 <= 100 && !loadbar1BK) {
+  if (trackLoaded > 0 && progressBarWidth1 <= 100 ) {
     loadingProgress1.style.width = progressBarWidth1 + '%';
     progressBarWidth1 += 5;
   }
-  if (progressBarWidth1>100 && !loadbar1BK) { 
-    loadbar1BK=true;
-    progressBarWidth1=0;
-  }
 
-  if (loadbar1BK) {
-    if (trackLoaded > 0 && progressBarWidth1 <= 100) {
-      loadingProgress1BK.style.width = progressBarWidth1 + '%';
-     progressBarWidth1 += 5;
-  }
-
-  }
 
   if (trackLoaded > 1 && progressBarWidth2 <= 100) {
     loadingProgress2.style.width = progressBarWidth2 + '%';
