@@ -81,7 +81,7 @@
    padding: 0%;
    background-color: black;
    text-align: center;
-   border-style: solid; 
+  float: left;
    
    /* z-index: -3; */
  }
