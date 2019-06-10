@@ -81,6 +81,7 @@
    padding: 0%;
    background-color: black;
    text-align: center;
+   border-style: solid; 
    /* z-index: -3; */
  }
 
@@ -167,7 +168,7 @@
 
  #main {
    display: none;
-   height: 0vh;
+   height: 100vh;
    width: 100%;
  }
 
