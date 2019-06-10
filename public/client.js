@@ -222,7 +222,7 @@ function openingAnimation() {
 
      //document.getElementById('projectName').style.color = "white";
     document.getElementById('projectName').style.opacity = 0;
-    document.getElementById('projectName').style.transition = "all 3s ease-in";
+    document.getElementById('projectName').style.transition = "all 1s ease-in";
 
 
   }
