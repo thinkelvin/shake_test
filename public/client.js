@@ -218,12 +218,11 @@ function openingAnimation() {
     document.getElementById('projectName').style.setProperty("background", "-webkit-linear-gradient(left, red, green, blue, purple)");
     document.getElementById('projectName').style.setProperty("-webkit-background-clip","text");
     document.getElementById('projectName').style.setProperty("background-clip","text");
-
     document.getElementById('projectName').style.setProperty("-webkit-text-fill-color", 'transparent');
+
      //document.getElementById('projectName').style.color = "white";
     document.getElementById('projectName').style.opacity = 1;
-
-    document.getElementById('projectName').style.transition = "all 3s ease-in";
+    document.getElementById('projectName').style.transition = "background 3s ease-in, opacity 3s ease-in";
 
 
   }
