@@ -91,15 +91,25 @@
    font-size: 15vw;
    font-family: 'Gochi Hand', cursive;
    color: rgb(0, 0, 0);
-   /* background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; */
-   z-index: 1;
+   z-index: 2;
     opacity: 1;
     transition: none;
  }
-
+ #projectNameColor {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  animation: 1s shake infinite alternate;
+  font-size: 15vw;
+  font-family: 'Gochi Hand', cursive;
+  background: -webkit-linear-gradient(left, red, green, blue);
+ -webkit-background-clip: text;
+ background-clip: text;
+ -webkit-text-fill-color: transparent; 
+  z-index: 1;
+   opacity: 1;
+   transition: none;
+}
  .loadingBar {
    /* cursor: pointer; */
    width: 100%;
