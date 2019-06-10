@@ -74,7 +74,7 @@
  }
 
  #landingPage {
-   display: inline;
+   display: block;
    height: 100vh;
    width: 100%;
    margin: 0%;
