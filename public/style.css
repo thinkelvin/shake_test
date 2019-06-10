@@ -82,6 +82,7 @@
    background-color: black;
    text-align: center;
    border-style: solid; 
+   border-color: chartreuse;
    /* z-index: -3; */
  }
 
