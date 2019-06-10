@@ -219,7 +219,7 @@ function openingAnimation() {
     //projectName.style.transition = 'opacity 1s ease-in';
 
     document.getElementById('projectName').style.transition = "opacity 10s ease-in";
-    document.getElementById('projectName').style.opacity = 1;
+    //document.getElementById('projectName').style.opacity = 1;
 
   }
 
