@@ -102,7 +102,7 @@
   animation: 1s shake infinite alternate;
   font-size: 15vw;
   font-family: 'Gochi Hand', cursive;
-  background: -webkit-linear-gradient(left, red, green, blue);
+  background: -webkit-linear-gradient(left, hsl(0,100%,50%), hsl(113,100%,50%),hsl(189,100%,50%));
  -webkit-background-clip: text;
  background-clip: text;
  -webkit-text-fill-color: transparent; 
