@@ -167,7 +167,7 @@
 
  #main {
    display: none;
-   height: 100vh;
+   height: 0vh;
    width: 100%;
  }
 
