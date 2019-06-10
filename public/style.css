@@ -90,9 +90,13 @@
    animation: 1s shake infinite alternate;
    font-size: 15vw;
    font-family: 'Gochi Hand', cursive;
-   color: rgb(0, 0, 0);
+   /* color: rgb(0, 0, 0); */
+   background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
    z-index: 1;
-  opacity: 1;
+    opacity: 1;
     transition: none;
  }
 
