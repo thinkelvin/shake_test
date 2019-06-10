@@ -215,7 +215,7 @@ function openingAnimation() {
   if (progressBarWidth1 > 200 && progressBarWidth2 > 200 && progressBarWidth3 > 200 && progressBarWidth4 > 200) {
     allPlayed = true;
     document.getElementById('projectName').style.opacity = 0;
-    document.getElementById('projectName').style.setProperty("background", "-webkit-linear-gradient(red, green, blue, purple)");
+    document.getElementById('projectName').style.setProperty("background", "-webkit-linear-gradient(left, red, green, blue, purple)");
     document.getElementById('projectName').style.setProperty("-webkit-background-clip","text");
     document.getElementById('projectName').style.setProperty("background-clip","text");
 
