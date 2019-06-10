@@ -218,7 +218,7 @@ function openingAnimation() {
      document.getElementById('projectName').style.color = "black";
     //projectName.style.transition = 'opacity 1s ease-in';
 
-    document.getElementById('projectName').style.transition = "opacity 10s ease-in";
+    document.getElementById('projectName').style.transition = "opacity 2s ease-in";
     //document.getElementById('projectName').style.opacity = 1;
 
   }
