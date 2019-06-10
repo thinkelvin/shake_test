@@ -220,8 +220,8 @@ function openingAnimation() {
     // document.getElementById('projectName').style.setProperty("background-clip","text");
     // document.getElementById('projectName').style.setProperty("-webkit-text-fill-color", 'transparent');
 
-     document.getElementById('projectName').style.color = "white";
-    document.getElementById('projectName').style.opacity = 1;
+     //document.getElementById('projectName').style.color = "white";
+    document.getElementById('projectName').style.opacity = 0;
     document.getElementById('projectName').style.transition = "all 3s ease-in";
 
 
