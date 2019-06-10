@@ -215,13 +215,14 @@ function openingAnimation() {
   if (progressBarWidth1 > 200 && progressBarWidth2 > 200 && progressBarWidth3 > 200 && progressBarWidth4 > 200) {
     allPlayed = true;
     document.getElementById('projectName').style.opacity = 0;
-    //document.getElementById('projectName').style.transition = "none";
-
-     document.getElementById('projectName').style.color = "white";
+    document.getElementById('projectName').style.backgroundColor = "-webkit-linear-gradient(#eee, #333)";
+    document.getElementById('projectName').style.setProperty('-webkit-background-color',"text");
+    document.getElementById('projectName').style.setProperty('-webkit-text-fill-color', 'transparent');
+     //document.getElementById('projectName').style.color = "white";
     document.getElementById('projectName').style.opacity = 1;
 
     document.getElementById('projectName').style.transition = "all 1s ease-in";
-    //document.getElementById('projectName').style.opacity = 1;
+
 
   }
 
