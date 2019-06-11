@@ -32,7 +32,7 @@ function newConnection(socket){
     socket.emit('initClient', clientData);
     allClients[NbClients] = socket.id;
     NbClients++;
-    trackNum = (trackNum++) % 4;
+    trackNum = (trackNum+1)%4;
         // For every new Socket connection
     socketPair[socket.id] = -1; // shake time set to -1 at start
     //console.log(Object.keys(socketPair).length);
