@@ -21,20 +21,20 @@ var trackID = [];
 function trackSoundSetup() {
     if (!trackStarted && trackLoaded==4) {
           trackID[0] = trackSounds[0].play();
-          trackID[1] = track2Sound.play();
-          trackID[2] = track3Sound.play();
-          trackID[3] = track4Sound.play();
+          trackID[1] = trackSounds[1].play();
+          trackID[2] = trackSounds[2].play();
+          trackID[3] = trackSounds[3].play();
           trackStarted = true;
           trackSounds[0].once('end', function () {
             trackEnded++;
           });
-          track2Sound.once('end', function () {
+          trackSounds[1].once('end', function () {
             trackEnded++;
           });
-          track3Sound.once('end', function () {
+          trackSounds[2].once('end', function () {
             trackEnded++;
           });
-          track4Sound.once('end', function () {
+          trackSounds[3].once('end', function () {
             trackEnded++;
           });
       //}

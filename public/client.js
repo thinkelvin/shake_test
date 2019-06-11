@@ -54,7 +54,7 @@ function preload() {
       trackLoaded++;
     }
   });
-  track2Sound = new Howl({
+  trackSounds[1] = new Howl({
     src: ['./media/track2.mp3'],
     volume: 0.5,
     preload: true,
@@ -62,7 +62,7 @@ function preload() {
       trackLoaded++;
     }
   });
-  track3Sound = new Howl({
+  trackSounds[2] = new Howl({
     src: ['./media/track3.mp3'],
     volume: 0.5,
     preload: true,
@@ -70,7 +70,7 @@ function preload() {
       trackLoaded++;
     }
   });
-  track4Sound = new Howl({
+  trackSounds[3] = new Howl({
     src: ['./media/track4.mp3'],
     volume: 0.5,
     preload: true,
