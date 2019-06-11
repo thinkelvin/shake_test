@@ -6,38 +6,44 @@ var trackLoaded = 0;
 var trackEnded = 0;
 var trackIDs = [];
 var firstTimeSetup = true;
+var track1Sound, track2Sound, track3Sound, track4Sound;
 
 function trackSoundSetup() {
-  for (var i=0; i<4 ;i++){
-      trackSounds[i].mute(trackMuted[i]);
-  }
+  // for (var i=0; i<4 ;i++){
+  //     trackSounds[i].mute(trackMuted[i]);
+  // }
+  track1Sound.mute(trackMuted[0]);
+  track2Sound.mute(trackMuted[1]);
+  track3Sound.mute(trackMuted[2]);
+  track4Sound.mute(trackMuted[3]);
+
   if (firstTimeSetup && !trackStarted && trackLoaded==4) {
-        trackIDs[0] = trackSounds[0].play();
-        trackIDs[1] = trackSounds[1].play();
-        trackIDs[2] = trackSounds[2].play();
-        trackIDs[3] = trackSounds[3].play();
+        trackIDs[0] = track1Sound.play();
+        trackIDs[1] = track2Sound.play();
+        trackIDs[2] = track3Sound.play();
+        trackIDs[3] = track4Sound.play();
         firstTimeSetup = false;
   }
   
   if (!firstTimeSetup && !trackStarted && trackLoaded == 4) {
-    trackSounds[0].play(trackIDs[0]);
-    trackSounds[1].play(trackIDs[1]);
-    trackSounds[2].play(trackIDs[2]);
-    trackSounds[3].play(trackIDs[3]);
+    track1Sound.play();
+    track2Sound.play();
+    track3Sound.play();
+    track4Sound.play();
     trackStarted = true;
-    trackSounds[0].once('end', function () {
+    track1Sound.once('end', function () {
       
       trackEnded++;
     });
-    trackSounds[1].once('end', function () {
+    track2Sound.once('end', function () {
       
       trackEnded++;
     });
-    trackSounds[2].once('end', function () {
+    track3Sound.once('end', function () {
      
       trackEnded++;
     });
-    trackSounds[3].once('end', function () {
+    track4Sound.once('end', function () {
     
       trackEnded++;
     });
