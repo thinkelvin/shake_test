@@ -58,6 +58,7 @@ function newConnection(socket){
     function byeConnection(){
         console.log('client disconnected: '+ socket.id);
         delete socketPair[socket.id];
+        NbClients--;
     }
 }
 

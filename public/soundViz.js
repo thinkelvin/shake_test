@@ -20,19 +20,19 @@
            p3 = p3 * 100 * 1.2 / 256;
            p4 = p4 * 100 * 1.3 / 256;
 
-           track1Viz.style.width = p1 + '%';
-           track2Viz.style.width = p2 + '%';
-           track3Viz.style.width = p3 + '%';
-           track4Viz.style.width = p4 + '%';
+        //    track1Viz.style.width = p1 + '%';
+        //    track2Viz.style.width = p2 + '%';
+        //    track3Viz.style.width = p3 + '%';
+        //    track4Viz.style.width = p4 + '%';
 
         //    Disable the viz if tap
-        //    if (!track1Tap) track1Viz.style.width = p1 + '%';
-        //    else track1Viz.style.width = '0%';
-        //    if (!track2Tap) track2Viz.style.width = p2 + '%';
-        //    else track2Viz.style.width = '0%';
-        //    if (!track3Tap) track3Viz.style.width = p3 + '%';
-        //    else track3Viz.style.width = '0%';
-        //    if (!track4Tap) track4Viz.style.width = p4 + '%';
-        //    else track4Viz.style.width = '0%';
+           if (trackMuted[0]) track1Viz.style.width = p1 + '%';
+           else track1Viz.style.width = '0%';
+           if (trackMuted[1]) track2Viz.style.width = p2 + '%';
+           else track2Viz.style.width = '0%';
+           if (trackMuted[2]) track3Viz.style.width = p3 + '%';
+           else track3Viz.style.width = '0%';
+           if (trackMuted[3]) track4Viz.style.width = p4 + '%';
+           else track4Viz.style.width = '0%';
 
        }
