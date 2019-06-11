@@ -35,14 +35,16 @@
         else trackOn = -1;
       });
     }
-
+    console.log(trackOn);
     if (trackOn<0) {
       trackElements[0].style.backgroundColor = "hsl(0, 100%, 30%)";
       trackElements[1].style.backgroundColor = "hsl(113, 100%, 30%)";
       trackElements[2].style.backgroundColor = "hsl(189, 100%, 30%)";
       trackElements[3].style.backgroundColor = "hsl(298, 100%, 30%)";
+      
     } else {
       trackElements[trackOn].style.backgroundColor = "white";
+      
     }
 
 
