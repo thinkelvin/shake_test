@@ -149,7 +149,7 @@ function draw() {
     openingAnimation();
   }
   soundViz();
-  if (trackTapped) console.log("Track Tapped");
+  if (trackTapped) console.log(trackID[trackOn]);
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
@@ -165,15 +165,6 @@ function draw() {
         document.getElementById("localBump").innerHTML = NbBumps.toString();
         socket.emit('bump', "bump"); // tell server the client mobile shakes
       }
-      /*
-      if ((Level * prevLevel) == -1) { // A transition is detected
-        lvlCheckDelay = 40;
-        NbBumps++;
-        document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
-        socket.emit('bump', "bump"); // tell server the client mobile shakes
-      }
-      prevLevel = Level;
-      */
     }
     lvlCheckDelay--;
   }
