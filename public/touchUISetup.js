@@ -36,14 +36,14 @@
     //     else trackOn = -1;
     //   });
     // }
-    console.log(trackOn);
+    
 
 
     mc1.on("tap", function (ev) {
       track1Tap = !track1Tap;
       trackTapped = !trackTapped;
       if (trackTapped) trackOn = 1;
-
+      console.log(trackOn);
       track1Sound.mute(track1Tap);
       if (track1Tap) {
         track1Element.style.backgroundColor = "white";
