@@ -144,6 +144,7 @@ function setup() {
 
 function draw() {
   trackSoundSetup();
+  console.log(trackOn);
   if (!allPlayed) {
     openingAnimation();
   }
