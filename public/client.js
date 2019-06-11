@@ -151,7 +151,10 @@ function draw() {
     openingAnimation();
   }
   soundViz();
-  if (trackTapped) console.log(trackID[trackOn-1]);
+  console.log(trackID[0]);
+  console.log(trackID[1]);
+  console.log(trackID[2]);
+  console.log(trackID[3]);
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
