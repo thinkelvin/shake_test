@@ -9,9 +9,7 @@ var firstTimeSetup = true;
 
 function trackSoundSetup() {
   for (var i=0; i<4 ;i++){
-    if (trackMuted[i]) {
-      trackSounds[i].mute();
-    }
+      trackSounds[i].mute(trackMuted[i]);
   }
   if (firstTimeSetup && !trackStarted && trackLoaded==4) {
         trackIDs[0] = trackSounds[0].play();
