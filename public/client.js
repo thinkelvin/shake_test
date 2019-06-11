@@ -138,6 +138,8 @@ function setup() {
       mainPage.style.display = "block";
     }
   });
+
+  
 }
 
 
@@ -149,7 +151,7 @@ function draw() {
     openingAnimation();
   }
   soundViz();
-  if (trackTapped) console.log(trackID[trackOn]);
+  if (trackTapped) console.log(trackID[trackOn-1]);
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
