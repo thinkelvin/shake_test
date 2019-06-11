@@ -44,6 +44,7 @@ var dataArray1;
 var mainPage;
 var clientID;
 
+
 var _debug = false; // turn on/off accelerationX plot for debug
 
 function preload() {
@@ -168,11 +169,11 @@ function draw() {
         lvlCheckDelay = 20;
         NbBumps++;
         document.getElementById("localBump").innerHTML = NbBumps.toString();
-        var trackInfo = {
-          trackID: trackIDs[trackOn],
-          trackPos: trackSounds[trackOn].seek()
-        }
-        socket.emit('bump', trackInfo); // tell server the client mobile shakes
+        // var trackInfo = {
+        //   trackID: trackIDs[trackOn],
+        //   trackPos: trackSounds[trackOn].seek()
+        // }
+        socket.emit('bump', 'trackInfo'); // tell server the client mobile shakes
       }
     }
     lvlCheckDelay--;
