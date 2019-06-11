@@ -26,10 +26,10 @@ function trackSoundSetup() {
   }
   
   if (!firstTimeSetup && !trackStarted && trackLoaded == 4) {
-    track1Sound.play();
-    track2Sound.play();
-    track3Sound.play();
-    track4Sound.play();
+    track1Sound.play(trackIDs[0]);
+    track2Sound.play(trackIDs[1]);
+    track3Sound.play(trackIDs[2]);
+    track4Sound.play(trackIDs[3]);
     trackStarted = true;
     track1Sound.once('end', function () {
       
