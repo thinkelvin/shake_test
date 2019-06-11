@@ -4,14 +4,14 @@ var trackSounds = [];
 var trackStarted = true;
 var trackLoaded = 0;
 var trackEnded = 0;
-var trackID = [];
+var trackIDs = [];
 
 function trackSoundSetup() {
     if (!trackStarted && trackLoaded==4) {
-          trackID[0] = trackSounds[0].play();
-          trackID[1] = trackSounds[1].play();
-          trackID[2] = trackSounds[2].play();
-          trackID[3] = trackSounds[3].play();
+          trackIDs[0] = trackSounds[0].play();
+          trackIDs[1] = trackSounds[1].play();
+          trackIDs[2] = trackSounds[2].play();
+          trackIDs[3] = trackSounds[3].play();
           trackStarted = true;
           trackSounds[0].once('end', function () {
             trackEnded++;

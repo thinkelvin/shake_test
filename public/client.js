@@ -162,11 +162,15 @@ function draw() {
     if (lvlCheckDelay == 0) {
       Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
-      if (Level > 0) { // shake is detected
+      if (Level > 0 && trackTapped) { // shake with track tapped
         lvlCheckDelay = 20;
         NbBumps++;
         document.getElementById("localBump").innerHTML = NbBumps.toString();
-        socket.emit('bump', "bump"); // tell server the client mobile shakes
+        var trackInfo = {
+          trackID: trackIDs[trackOn],
+          trackPos: trackSounds[trackOn].seek()
+        }
+        socket.emit('bump', trackInfo); // tell server the client mobile shakes
       }
     }
     lvlCheckDelay--;
