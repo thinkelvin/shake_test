@@ -25,6 +25,7 @@
            track3Viz.style.width = p3 + '%';
            track4Viz.style.width = p4 + '%';
 
+        //    Disable the viz if tap
         //    if (!track1Tap) track1Viz.style.width = p1 + '%';
         //    else track1Viz.style.width = '0%';
         //    if (!track2Tap) track2Viz.style.width = p2 + '%';
