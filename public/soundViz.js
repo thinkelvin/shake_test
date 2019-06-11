@@ -15,7 +15,7 @@
            p2 = seg2.reduce(getSum) / segWidth;
            p3 = seg3.reduce(getSum) / segWidth;
            p4 = seg4.reduce(getSum) / segWidth;
-           p1 = p1 * 100 * 4 / 256;
+           p1 = p1 * 100 * 1.5 / 256;
            p2 = p2 * 100 * 1.5 / 256;
            p3 = p3 * 100 * 1.2 / 256;
            p4 = p4 * 100 * 1.3 / 256;
