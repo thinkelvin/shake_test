@@ -21,19 +21,19 @@ function trackSoundSetup() {
     trackSounds[2].play(trackIDs[2]);
     trackSounds[3].play(trackIDs[3]);
     trackStarted = true;
-    trackSounds[0].on('end', function () {
+    trackSounds[0].once('end', function () {
       
       trackEnded++;
     });
-    trackSounds[1].on('end', function () {
+    trackSounds[1].once('end', function () {
       
       trackEnded++;
     });
-    trackSounds[2].on('end', function () {
+    trackSounds[2].once('end', function () {
      
       trackEnded++;
     });
-    trackSounds[3].on('end', function () {
+    trackSounds[3].once('end', function () {
     
       trackEnded++;
     });
