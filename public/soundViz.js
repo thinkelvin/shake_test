@@ -26,13 +26,13 @@
         //    track4Viz.style.width = p4 + '%';
 
         //    Disable the viz if tap
-           if (trackMuted[0]) track1Viz.style.width = p1 + '%';
+           if (!trackMuted[0]) track1Viz.style.width = p1 + '%';
            else track1Viz.style.width = '0%';
-           if (trackMuted[1]) track2Viz.style.width = p2 + '%';
+           if (!trackMuted[1]) track2Viz.style.width = p2 + '%';
            else track2Viz.style.width = '0%';
-           if (trackMuted[2]) track3Viz.style.width = p3 + '%';
+           if (!trackMuted[2]) track3Viz.style.width = p3 + '%';
            else track3Viz.style.width = '0%';
-           if (trackMuted[3]) track4Viz.style.width = p4 + '%';
+           if (!trackMuted[3]) track4Viz.style.width = p4 + '%';
            else track4Viz.style.width = '0%';
 
        }
