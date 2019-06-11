@@ -28,7 +28,7 @@
     mcs[2] = new Hammer(trackElements[2]);
     mcs[3] = new Hammer(trackElements[3]);
 
-    for (let i=0; i<4; i++) {
+    for (var i=0; i<4; i++) {
       mcs[i].on("tap", function(ev) {
         trackTapped = !trackTapped;
         if (trackTapped) trackOn=i;
