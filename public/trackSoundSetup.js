@@ -1,5 +1,5 @@
 // variables for track
-
+var trackMuted = [];
 var trackSounds = [];
 var trackStarted = true;
 var trackLoaded = 0;
@@ -8,6 +8,11 @@ var trackIDs = [];
 var firstTimeSetup = true;
 
 function trackSoundSetup() {
+  for (var i=0; i<4 ;i++){
+    if (trackMuted[i]) {
+      trackSounds[i].mute();
+    }
+  }
   if (firstTimeSetup && !trackStarted && trackLoaded==4) {
         trackIDs[0] = trackSounds[0].play();
         trackIDs[1] = trackSounds[1].play();
@@ -38,7 +43,7 @@ function trackSoundSetup() {
     
       trackEnded++;
     });
-    //}
+    
   } else if (trackEnded == 4) {
     trackEnded = 0;
     trackLoaded = 4;
