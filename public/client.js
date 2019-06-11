@@ -125,6 +125,7 @@ function setup() {
   window.addEventListener("devicemotion", accUpdate, true);
   // window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
+  socket.on('initClient', initClient);
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
   touchUISetup();
@@ -228,6 +229,10 @@ function openingAnimation() {
 
 }
 
+function initClient(data) {
+ console.log("I am no: "+ data.clientID);
+
+}
 function remoteBump() {
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();

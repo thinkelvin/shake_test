@@ -24,6 +24,10 @@ io.on('connection', newConnection);
 // Whenever this is a new Socket connection, do the following
 function newConnection(socket){
     console.log('new connection:'+socket.id);
+    var clientData = {
+        clientID: NbClients
+    }
+    socket.emit('initClient', clientData);
     allClients[NbClients] = socket.id;
     NbClients++;
         // For every new Socket connection
