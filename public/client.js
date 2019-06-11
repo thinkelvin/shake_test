@@ -46,7 +46,7 @@ var mainPage;
 var _debug = false; // turn on/off accelerationX plot for debug
 
 function preload() {
-  track1Sound = new Howl({
+  trackSounds[0] = new Howl({
     src: ['./media/track1.mp3'],
     volume: 0.5,
     preload: true,
@@ -152,7 +152,7 @@ function draw() {
   }
   soundViz();
 
-  if (trackTapped) console.log(trackID[trackOn-1]);
+  if (trackTapped) console.log((trackID[trackOn-1]);
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);

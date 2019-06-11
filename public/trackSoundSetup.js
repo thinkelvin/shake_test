@@ -4,6 +4,7 @@ var track1Sound;
 var track2Sound;
 var track3Sound;
 var track4Sound;
+var trackSounds = [];
 var track1Ready = false;
 var track2Ready = false;
 var track3Ready = false;
@@ -19,12 +20,12 @@ var trackID = [];
 
 function trackSoundSetup() {
     if (!trackStarted && trackLoaded==4) {
-          trackID[0] = track1Sound.play();
+          trackID[0] = trackSounds[0].play();
           trackID[1] = track2Sound.play();
           trackID[2] = track3Sound.play();
           trackID[3] = track4Sound.play();
           trackStarted = true;
-          track1Sound.once('end', function () {
+          trackSounds[0].once('end', function () {
             trackEnded++;
           });
           track2Sound.once('end', function () {
