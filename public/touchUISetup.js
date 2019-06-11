@@ -33,7 +33,7 @@
         trackTapped = !trackTapped;
         if (trackTapped) trackOn=i;
         else trackOn = -1;
-      })
+      });
     }
 
     if (trackOn<0) {
