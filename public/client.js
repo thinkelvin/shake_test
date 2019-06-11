@@ -152,9 +152,7 @@ function draw() {
   }
   soundViz();
   console.log(trackID[0]);
-  console.log(trackID[1]);
-  console.log(trackID[2]);
-  console.log(trackID[3]);
+  if (trackTapped) console.log(trackID[trackOn]);
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
