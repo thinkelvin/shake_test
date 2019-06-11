@@ -43,7 +43,7 @@
       track1Tap = !track1Tap;
       trackTapped = !trackTapped;
       if (trackTapped) trackOn = 1;
-      console.log(trackOn);
+
       track1Sound.mute(track1Tap);
       if (track1Tap) {
         track1Element.style.backgroundColor = "white";
@@ -84,4 +84,6 @@
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
       }
     });
+
+    console.log(trackOn);
   }
