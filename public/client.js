@@ -42,6 +42,7 @@ var analyser1;
 var bufferLength1;
 var dataArray1;
 var mainPage;
+var clientID;
 
 var _debug = false; // turn on/off accelerationX plot for debug
 
@@ -230,12 +231,13 @@ function openingAnimation() {
 }
 
 function initClient(data) {
+  clientID = data.clientID;
  console.log("I am no: "+ data.clientID);
     trackMuted[0] = true;
     trackMuted[1] = true;
     trackMuted[2] = true;
     trackMuted[3] = true;
- if (clientID >0) {
+ if (data.clientID >0) {
     trackMuted[data.trackPlay] = false;
  } else {
     trackMuted[0] = false;
