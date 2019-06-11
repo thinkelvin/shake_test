@@ -149,7 +149,7 @@ function draw() {
     openingAnimation();
   }
   soundViz();
-
+  if (trackTapped) console.log("Track Tapped");
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
