@@ -36,15 +36,17 @@
     //     else trackOn = -1;
     //   });
     // }
-    
+
 
 
     mc1.on("tap", function (ev) {
       track1Tap = !track1Tap;
-      track1Sound.mute(track1Tap);
+      //track1Sound.mute(track1Tap);
       if (track1Tap) {
         track1Element.style.backgroundColor = "white";
-        trackOn = 1;
+        track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+        track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+        track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
       } else {
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
       }
@@ -52,10 +54,12 @@
 
     mc2.on("tap", function (ev) {
       track2Tap = !track2Tap;
-      track2Sound.mute(track2Tap);
+      //track2Sound.mute(track2Tap);
       if (track2Tap) {
+        track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
         track2Element.style.backgroundColor = "white";
-        trackOn = 2;
+        track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+        track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
       } else {
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
       }
@@ -63,10 +67,12 @@
 
     mc3.on("tap", function (ev) {
       track3Tap = !track3Tap;
-      track3Sound.mute(track3Tap);
+      //track3Sound.mute(track3Tap);
       if (track3Tap) {
+        track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+        track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
         track3Element.style.backgroundColor = "white";
-        trackOn = 3;
+        track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
       } else {
         track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
       }
@@ -74,14 +80,18 @@
 
     mc4.on("tap", function (ev) {
       track4Tap = !track4Tap;
-      track4Sound.mute(track4Tap);
+      //track4Sound.mute(track4Tap);
       if (track4Tap) {
+        track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+        track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+        track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+
         track4Element.style.backgroundColor = "white";
-        trackOn = 4;
+
       } else {
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
       }
     });
 
-   
+
   }
