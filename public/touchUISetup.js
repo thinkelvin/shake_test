@@ -18,40 +18,40 @@ function touchUISetup() {
     track1Tap = !track1Tap;
     track1Sound.mute(track1Tap);
     if (track1Tap) {
-      track1Element.style.backgroundColor = "black";
+      track1Element.style.backgroundColor = "white";
     }
     else {
-      track1Element.style.backgroundColor = "hsl(0, 100%, 33%)";
+      track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
     }
   });
   mc2.on("tap", function (ev) {
     track2Tap = !track2Tap;
     track2Sound.mute(track2Tap);
     if (track2Tap) {
-      track2Element.style.backgroundColor = "black";
+      track2Element.style.backgroundColor = "white";
     }
     else {
-      track2Element.style.backgroundColor = "hsl(113, 100%, 33%)";
+      track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
     }
   });
   mc3.on("tap", function (ev) {
     track3Tap = !track3Tap;
     track3Sound.mute(track3Tap);
     if (track3Tap) {
-      track3Element.style.backgroundColor = "black";
+      track3Element.style.backgroundColor = "white";
     }
     else {
-      track3Element.style.backgroundColor = "hsl(189, 100%, 33%)";
+      track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
     }
   });
   mc4.on("tap", function (ev) {
     track4Tap = !track4Tap;
     track4Sound.mute(track4Tap);
     if (track4Tap) {
-      track4Element.style.backgroundColor = "black";
+      track4Element.style.backgroundColor = "white";
     }
     else {
-      track4Element.style.backgroundColor = "hsl(298, 100%, 33%)";
+      track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
     }
   });
 }
