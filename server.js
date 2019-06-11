@@ -32,7 +32,7 @@ function newConnection(socket){
     socket.on('bump', shakeMsg);
     function shakeMsg(data) {
         socketPair[socket.id] = Date.now();
-        //console.log(socket.id +": " + Date.now());
+        console.log(data.trackID);
         socket.broadcast.emit('remoteBump',socket.id); // tell the other client about the shake 
         // check shake sync only both shake times >0
         var t1 = socketPair[allClients[0]];
