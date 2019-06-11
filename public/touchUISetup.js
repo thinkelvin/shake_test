@@ -4,8 +4,8 @@
   var track4Tap = false;
   var trackElements = [];
   var mcs = [];
-  var trackTapped=false;
-  var trackOn=-1;
+  var trackTapped = false;
+  var trackOn = -1;
 
   function touchUISetup() {
     // set up touch responses
@@ -18,7 +18,7 @@
     var mc2 = new Hammer(track2Element);
     var mc3 = new Hammer(track3Element);
     var mc4 = new Hammer(track4Element);
-    
+
     // trackElements[0] = document.getElementById('track1');
     // trackElements[1] = document.getElementById('track2');
     // trackElements[2] = document.getElementById('track3');
@@ -28,7 +28,7 @@
     // var mc3 = new Hammer(trackElements[2]);
     // var mc4 = new Hammer(trackElements[3]);
 
-    
+
     // for (var i=0; i<4; i++) {
     //   mcs[i].on("tap", function(ev) {
     //     trackTapped = !trackTapped;
@@ -36,11 +36,14 @@
     //     else trackOn = -1;
     //   });
     // }
-
+    console.log(trackOn);
 
 
     mc1.on("tap", function (ev) {
       track1Tap = !track1Tap;
+      trackTapped = !trackTapped;
+      if (trackTapped) trackOn = 1;
+
       track1Sound.mute(track1Tap);
       if (track1Tap) {
         track1Element.style.backgroundColor = "white";
@@ -50,6 +53,8 @@
     });
     mc2.on("tap", function (ev) {
       track2Tap = !track2Tap;
+      trackTapped = !trackTapped;
+      if (trackTapped) trackOn = 2;
       track2Sound.mute(track2Tap);
       if (track2Tap) {
         track2Element.style.backgroundColor = "white";
@@ -59,6 +64,8 @@
     });
     mc3.on("tap", function (ev) {
       track3Tap = !track3Tap;
+            trackTapped = !trackTapped;
+            if (trackTapped) trackOn = 3;
       track3Sound.mute(track3Tap);
       if (track3Tap) {
         track3Element.style.backgroundColor = "white";
@@ -68,6 +75,8 @@
     });
     mc4.on("tap", function (ev) {
       track4Tap = !track4Tap;
+            trackTapped = !trackTapped;
+            if (trackTapped) trackOn = 4;
       track4Sound.mute(track4Tap);
       if (track4Tap) {
         track4Element.style.backgroundColor = "white";
