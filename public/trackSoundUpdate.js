@@ -12,10 +12,10 @@ function trackSoundUpdate() {
   // for (var i=0; i<4 ;i++){
   //     trackSounds[i].mute(trackMuted[i]);
   // }
-  // track1Sound.mute(trackMuted[0]);
-  // track2Sound.mute(trackMuted[1]);
-  // track3Sound.mute(trackMuted[2]);
-  // track4Sound.mute(trackMuted[3]);
+  track1Sound.mute(trackMuted[0]);
+  track2Sound.mute(trackMuted[1]);
+  track3Sound.mute(trackMuted[2]);
+  track4Sound.mute(trackMuted[3]);
 
   if (firstLoop && !trackStarted && trackLoaded==4) {
         trackIDs[0] = track1Sound.play();

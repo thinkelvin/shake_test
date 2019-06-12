@@ -131,11 +131,11 @@ function setup() {
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
   touchUISetup();
-  // prepare tracks on/off
-  track1Sound.mute(trackMuted[0]);
-  track2Sound.mute(trackMuted[1]);
-  track3Sound.mute(trackMuted[2]);
-  track4Sound.mute(trackMuted[3]);
+  // // prepare tracks on/off
+  // track1Sound.mute(trackMuted[0]);
+  // track2Sound.mute(trackMuted[1]);
+  // track3Sound.mute(trackMuted[2]);
+  // track4Sound.mute(trackMuted[3]);
 
   var landingPageTap = new Hammer(landingPage);
   landingPageTap.on("tap", function (ev) {
