@@ -21,11 +21,13 @@ function trackSoundUpdate() {
       trackIDs[2] = track3Sound.play();
       trackIDs[3] = track4Sound.play();
       firstLoop = false;
+      console.log('first loop');
     } else {
       track1Sound.play(trackIDs[0]);
       track2Sound.play(trackIDs[1]);
       track3Sound.play(trackIDs[2]);
       track4Sound.play(trackIDs[3]);
+      console.log('second loop');
     }
     trackStarted = true;
     track1Sound.once('end', function () {
