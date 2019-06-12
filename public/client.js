@@ -254,8 +254,13 @@ function remoteBump(data) {
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
   if (syncPlay <0) {
     syncPlay = data.trackPos;
-    console.log('synced play...');
-
+    console.log('synced received...');
+    trackStarted = false;
+    trackEnded = 0;
+    trackMuted[0] = false;
+    trackMuted[1] = false;
+    trackMuted[2] = false;
+    trackMuted[3] = false;
   }
 }
 
