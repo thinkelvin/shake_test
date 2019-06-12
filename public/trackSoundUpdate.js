@@ -14,7 +14,7 @@ function trackSoundUpdate() {
   track3Sound.mute(trackMuted[2]);
   track4Sound.mute(trackMuted[3]);
 
-  if (!trackStarted && trackLoaded == 4) {
+  if (!trackStarted && trackLoaded == 4 ) {
     if (firstLoop) {
       trackIDs[0] = track1Sound.play();
       trackIDs[1] = track2Sound.play();
@@ -27,9 +27,11 @@ function trackSoundUpdate() {
       track2Sound.play(trackIDs[1]);
       track3Sound.play(trackIDs[2]);
       track4Sound.play(trackIDs[3]);
+      
       console.log('second loop');
     }
     trackStarted = true;
+    trackEnded = 0;
     track1Sound.once('end', function () {
       trackEnded++;
     });
