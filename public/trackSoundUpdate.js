@@ -18,10 +18,6 @@ function trackSoundUpdate() {
 
   if (!trackStarted && trackLoaded == 4 ) {
     if (firstLoop) {
-                track1Sound.seek(12);
-                track2Sound.seek(12);
-                track3Sound.seek(12);
-                track4Sound.seek(12);
       trackIDs[0] = track1Sound.play();
       trackIDs[1] = track2Sound.play();
       trackIDs[2] = track3Sound.play();
