@@ -254,7 +254,7 @@ function remoteBump(data) {
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
   if (syncPlay <0 && clientID !=0) {
     syncPlay = data.trackID;
-    console.log('synced received...');
+    console.log('synced: '+syncPlay);
     // trackStarted = false;
     // trackEnded = 0;
     trackMuted[data.trackID] = false;
