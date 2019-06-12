@@ -23,9 +23,10 @@ function trackSoundUpdate() {
       trackIDs[2] = track3Sound.play();
       trackIDs[3] = track4Sound.play();
       firstLoop = false;
-      console.log('first loop');
+      // console.log('first loop');
     } else {
       if (syncPlay >0) {
+          console.log('synced play...');
           track1Sound.seek(syncPlay);
           track2Sound.seek(syncPlay);
           track3Sound.seek(syncPlay);
@@ -37,7 +38,7 @@ function trackSoundUpdate() {
       track3Sound.play(trackIDs[2]);
       track4Sound.play(trackIDs[3]);
       
-      console.log('second loop');
+      // console.log('second loop');
     }
     trackStarted = true;
     trackEnded = 0;
@@ -59,7 +60,7 @@ function trackSoundUpdate() {
     trackEnded = 0;
     // trackLoaded = 4;
     trackStarted = false;
-    console.log('finised all tracks:'+trackEnded);
+    // console.log('finised all tracks:'+trackEnded);
   }
 
 }
