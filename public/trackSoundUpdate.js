@@ -7,6 +7,8 @@ var trackEnded = 0;
 var trackIDs = [];
 var firstLoop = true;
 var track1Sound, track2Sound, track3Sound, track4Sound;
+var syncPlay = -1;
+
 
 function trackSoundUpdate() {
   track1Sound.mute(trackMuted[0]);
@@ -23,6 +25,13 @@ function trackSoundUpdate() {
       firstLoop = false;
       console.log('first loop');
     } else {
+      if (syncPlay >0) {
+          track1Sound.seek(syncPlay);
+          track2Sound.seek(syncPlay);
+          track3Sound.seek(syncPlay);
+          track4Sound.seek(syncPlay);
+          syncPlay = -1;
+      }
       track1Sound.play(trackIDs[0]);
       track2Sound.play(trackIDs[1]);
       track3Sound.play(trackIDs[2]);
