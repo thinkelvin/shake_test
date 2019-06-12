@@ -46,7 +46,7 @@ function trackSoundUpdate() {
     trackEnded = 0;
     // trackLoaded = 4;
     trackStarted = false;
-    console.log('finised all tracks');
+    console.log('finised all tracks:'+trackEnded);
   }
 
 }
