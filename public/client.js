@@ -252,8 +252,9 @@ function initClient(data) {
 function remoteBump(data) {
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
-  if (syncPlay <0 && clientID !=0) {
-    syncPlay = data.trackID;
+  // if (syncPlay <0 && clientID !=0) {
+  if (clientID !=0) {
+  syncPlay = data.trackID;
     console.log('synced: '+syncPlay);
     // trackStarted = false;
     // trackEnded = 0;
