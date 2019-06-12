@@ -251,9 +251,9 @@ function initClient(data) {
 function remoteBump(data) {
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
-  // trackMuted[0] = false;
-  // track1Sound.seek(data.trackPos);
-  // track1Sound.play();
+  trackMuted[0] = false;
+  track1Sound.seek(data.trackPos);
+  track1Sound.play();
 }
 
 function syncBump() {
