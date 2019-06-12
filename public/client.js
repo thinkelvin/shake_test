@@ -247,24 +247,13 @@ function initClient(data) {
   }
 
 }
-var synced = false;
+
 function remoteBump(data) {
   NbBumps_remote++;
-  if (!synced) {
+  
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
-  trackMuted[0] = false;
-  track1Sound.seek(data.trackPos);
-  track1Sound.play();
-  trackMuted[1] = false;
-  track2Sound.seek(data.trackPos);
-  track2Sound.play();
-  trackMuted[2] = false;
-  track3Sound.seek(data.trackPos);
-  track3Sound.play();
-  trackMuted[3] = false;
-  track4Sound.seek(data.trackPos);
-  track4Sound.play();
-  synced=true;
+  if (syncPlay <0) {
+    syncPlay = data.trackPos;
   }
 }
 
