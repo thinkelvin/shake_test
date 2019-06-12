@@ -26,7 +26,6 @@ function trackSoundUpdate() {
       // console.log('first loop');
     } else {
       if (syncPlay >0) {
-          console.log('synced play...');
           track1Sound.seek(syncPlay);
           track2Sound.seek(syncPlay);
           track3Sound.seek(syncPlay);
