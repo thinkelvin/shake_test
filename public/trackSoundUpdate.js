@@ -25,13 +25,13 @@ function trackSoundUpdate() {
       firstLoop = false;
       // console.log('first loop');
     } else {
-      // if (syncPlay >0) {
-      //     track1Sound.seek(syncPlay);
-      //     track2Sound.seek(syncPlay);
-      //     track3Sound.seek(syncPlay);
-      //     track4Sound.seek(syncPlay);
-      //     syncPlay = -1;
-      // }
+      if (syncPlay >0) {
+          track1Sound.seek(syncPlay);
+          track2Sound.seek(syncPlay);
+          track3Sound.seek(syncPlay);
+          track4Sound.seek(syncPlay);
+          syncPlay = -1;
+      }
       track1Sound.play(trackIDs[0]);
       track2Sound.play(trackIDs[1]);
       track3Sound.play(trackIDs[2]);
