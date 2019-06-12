@@ -146,11 +146,11 @@ function setup() {
 
 
 function draw() {
-      trackSoundUpdate();
+  trackSoundUpdate();
   if (!allPlayed) {
     openingAnimation();
   }
-    soundViz();
+  soundViz();
 
 
   // if (trackTapped) console.log(trackIDs[trackOn]);
@@ -254,6 +254,15 @@ function remoteBump(data) {
   trackMuted[0] = false;
   track1Sound.seek(data.trackPos);
   track1Sound.play();
+  trackMuted[1] = false;
+  track2Sound.seek(data.trackPos);
+  track2Sound.play();
+  trackMuted[2] = false;
+  track3Sound.seek(data.trackPos);
+  track3Sound.play();
+  trackMuted[3] = false;
+  track4Sound.seek(data.trackPos);
+  track4Sound.play();
 }
 
 function syncBump() {
