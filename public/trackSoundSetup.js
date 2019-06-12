@@ -12,10 +12,10 @@ function trackSoundSetup() {
   // for (var i=0; i<4 ;i++){
   //     trackSounds[i].mute(trackMuted[i]);
   // }
-  track1Sound.mute(trackMuted[0]);
-  track2Sound.mute(trackMuted[1]);
-  track3Sound.mute(trackMuted[2]);
-  track4Sound.mute(trackMuted[3]);
+  // track1Sound.mute(trackMuted[0]);
+  // track2Sound.mute(trackMuted[1]);
+  // track3Sound.mute(trackMuted[2]);
+  // track4Sound.mute(trackMuted[3]);
 
   if (firstTimeSetup && !trackStarted && trackLoaded==4) {
         trackIDs[0] = track1Sound.play();
@@ -32,19 +32,15 @@ function trackSoundSetup() {
     track4Sound.play(trackIDs[3]);
     trackStarted = true;
     track1Sound.once('end', function () {
-      
       trackEnded++;
     });
     track2Sound.once('end', function () {
-      
       trackEnded++;
     });
     track3Sound.once('end', function () {
-     
       trackEnded++;
     });
     track4Sound.once('end', function () {
-    
       trackEnded++;
     });
     

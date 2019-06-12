@@ -51,6 +51,7 @@ function preload() {
   track1Sound= new Howl({
     src: ['./media/track1.mp3'],
     volume: 0.5,
+    mute: true,
     preload: true,
     onload: function () {
       trackLoaded++;
@@ -59,6 +60,7 @@ function preload() {
   track2Sound = new Howl({
     src: ['./media/track2.mp3'],
     volume: 0.5,
+    mute: true,
     preload: true,
     onload: function () {
       trackLoaded++;
@@ -67,6 +69,7 @@ function preload() {
   track3Sound = new Howl({
     src: ['./media/track3.mp3'],
     volume: 0.5,
+    mute: true,
     preload: true,
     onload: function () {
       trackLoaded++;
@@ -75,6 +78,7 @@ function preload() {
   track4Sound = new Howl({
     src: ['./media/track4.mp3'],
     volume: 0.5,
+    mute: true,
     preload: true,
     onload: function () {
       trackLoaded++;
@@ -169,11 +173,11 @@ function draw() {
         lvlCheckDelay = 20;
         NbBumps++;
         document.getElementById("localBump").innerHTML = NbBumps.toString();
-        // var trackInfo = {
-        //   trackID: trackIDs[trackOn],
-        //   trackPos: trackSounds[trackOn].seek()
-        // }
-        socket.emit('bump', 'trackInfo'); // tell server the client mobile shakes
+        var trackInfo = {
+          trackID: trackIDs[trackOn],
+          trackPos: track1Sound.seek()
+        }
+        socket.emit('bump', trackInfo); // tell server the client mobile shakes
       }
     }
     lvlCheckDelay--;
