@@ -241,7 +241,7 @@ function initClient(data) {
   trackMuted[2] = true;
   trackMuted[3] = true;
   if (data.clientID > 0) {
-    trackMuted[data.trackPlay] = false;
+    //trackMuted[data.trackPlay] = false;
   } else {
     trackMuted[0] = false;
     trackMuted[1] = false;
@@ -252,9 +252,12 @@ function initClient(data) {
 
 }
 
-function remoteBump() {
+function remoteBump(data) {
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
+  trackMuted[0] = false;
+  track1Sound.seek(data.trackPos);
+  //track1Sound.play();
 }
 
 function syncBump() {
