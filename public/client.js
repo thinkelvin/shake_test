@@ -247,9 +247,10 @@ function initClient(data) {
   }
 
 }
-
+var synced = false;
 function remoteBump(data) {
   NbBumps_remote++;
+  if (!synced) {
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
   trackMuted[0] = false;
   track1Sound.seek(data.trackPos);
@@ -263,6 +264,8 @@ function remoteBump(data) {
   trackMuted[3] = false;
   track4Sound.seek(data.trackPos);
   track4Sound.play();
+  synced=true;
+  }
 }
 
 function syncBump() {
