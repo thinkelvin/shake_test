@@ -146,12 +146,11 @@ function setup() {
 
 
 function draw() {
+      trackSoundUpdate();
   if (!allPlayed) {
     openingAnimation();
-  } else {
-    trackSoundUpdate();
-    soundViz();
   }
+    soundViz();
 
 
   // if (trackTapped) console.log(trackIDs[trackOn]);
