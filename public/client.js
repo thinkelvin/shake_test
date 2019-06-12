@@ -255,16 +255,16 @@ function remoteBump(data) {
   if (syncPlay <0) {
     syncPlay = data.trackPos;
     console.log('synced received...');
-    trackStarted = false;
-    trackEnded = 0;
+    // trackStarted = false;
+    // trackEnded = 0;
     trackMuted[0] = false;
     trackMuted[1] = false;
     trackMuted[2] = false;
     trackMuted[3] = false;
-    track1Sound.stop();
-    track2Sound.stop();
-    track3Sound.stop();
-    track4Sound.stop();
+    // track1Sound.stop();
+    // track2Sound.stop();
+    // track3Sound.stop();
+    // track4Sound.stop();
 
   }
 }
