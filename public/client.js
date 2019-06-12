@@ -257,7 +257,7 @@ function remoteBump(data) {
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
   trackMuted[0] = false;
   track1Sound.seek(data.trackPos);
-  //track1Sound.play();
+  track1Sound.play();
 }
 
 function syncBump() {
