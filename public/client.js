@@ -146,14 +146,15 @@ function setup() {
 
 
 function draw() {
-    trackSoundUpdate();
   if (!allPlayed) {
     openingAnimation();
+  } else {
+    trackSoundUpdate();
+    soundViz();
   }
 
-  soundViz();
 
-  if (trackTapped) console.log(trackIDs[trackOn]);
+  // if (trackTapped) console.log(trackIDs[trackOn]);
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
     fillBuffer(dAccX);
