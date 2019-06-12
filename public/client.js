@@ -48,7 +48,7 @@ var clientID;
 var _debug = false; // turn on/off accelerationX plot for debug
 
 function preload() {
-  track1Sound= new Howl({
+  track1Sound = new Howl({
     src: ['./media/track1.mp3'],
     volume: 0.5,
     mute: true,
@@ -107,8 +107,8 @@ function setup() {
     document.getElementById('accGraph').style.display = "none";
   }
 
-    landingPage = document.getElementById("landingPage");
-      projectName = document.getElementById("projectName");
+  landingPage = document.getElementById("landingPage");
+  projectName = document.getElementById("projectName");
   loadingProgress1 = document.getElementById("loading1");
   loadingProgress2 = document.getElementById("loading2");
   loadingProgress3 = document.getElementById("loading3");
@@ -135,6 +135,11 @@ function setup() {
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
   touchUISetup();
+  // prepare tracks on/off
+  track1Sound.mute(trackMuted[0]);
+  track2Sound.mute(trackMuted[1]);
+  track3Sound.mute(trackMuted[2]);
+  track4Sound.mute(trackMuted[3]);
 
   var landingPageTap = new Hammer(landingPage);
   landingPageTap.on("tap", function (ev) {
@@ -145,18 +150,15 @@ function setup() {
       mainPage.style.display = "block";
     }
   });
-
-  
 }
 
 
 
 function draw() {
-  trackSoundSetup();
-
   if (!allPlayed) {
     openingAnimation();
   }
+  trackSoundUpdate();
   soundViz();
 
   if (trackTapped) console.log(trackIDs[trackOn]);
@@ -189,35 +191,35 @@ function openingAnimation() {
     loadingProgress1.style.width = progressBarWidth1 + '%';
     progressBarWidth1 += barStep;
   }
-  if (trackLoaded > 0 && progressBarWidth1 <=200 && progressBarWidth1 >100) {
-    loadingProgress1BK.style.width = (progressBarWidth1-100) + '%';
+  if (trackLoaded > 0 && progressBarWidth1 <= 200 && progressBarWidth1 > 100) {
+    loadingProgress1BK.style.width = (progressBarWidth1 - 100) + '%';
     progressBarWidth1 += barStep;
   }
   if (trackLoaded > 1 && progressBarWidth2 <= 100 && progressBarWidth1 > barProgressOffset) {
     loadingProgress2.style.width = progressBarWidth2 + '%';
     progressBarWidth2 += barStep;
   }
-    if (trackLoaded > 1 && progressBarWidth2 <= 200 && progressBarWidth2 > 100) {
-      loadingProgress2BK.style.width = (progressBarWidth2 - 100) + '%';
-      progressBarWidth2 += barStep;
-    }
+  if (trackLoaded > 1 && progressBarWidth2 <= 200 && progressBarWidth2 > 100) {
+    loadingProgress2BK.style.width = (progressBarWidth2 - 100) + '%';
+    progressBarWidth2 += barStep;
+  }
 
   if (trackLoaded > 2 && progressBarWidth3 <= 100 && progressBarWidth2 > barProgressOffset) {
     loadingProgress3.style.width = progressBarWidth3 + '%';
     progressBarWidth3 += barStep;
   }
-      if (trackLoaded > 2 && progressBarWidth3 <= 200 && progressBarWidth3 > 100) {
-        loadingProgress3BK.style.width = (progressBarWidth3 - 100) + '%';
-        progressBarWidth3 += barStep;
-      }
+  if (trackLoaded > 2 && progressBarWidth3 <= 200 && progressBarWidth3 > 100) {
+    loadingProgress3BK.style.width = (progressBarWidth3 - 100) + '%';
+    progressBarWidth3 += barStep;
+  }
   if (trackLoaded > 3 && progressBarWidth4 <= 100 && progressBarWidth3 > barProgressOffset) {
     loadingProgress4.style.width = progressBarWidth4 + '%';
     progressBarWidth4 += barStep;
   }
-      if (trackLoaded > 3 && progressBarWidth4 <= 200 && progressBarWidth4 > 100) {
-        loadingProgress4BK.style.width = (progressBarWidth4 - 100) + '%';
-        progressBarWidth4 += barStep;
-      }
+  if (trackLoaded > 3 && progressBarWidth4 <= 200 && progressBarWidth4 > 100) {
+    loadingProgress4BK.style.width = (progressBarWidth4 - 100) + '%';
+    progressBarWidth4 += barStep;
+  }
   if (progressBarWidth1 > 200 && progressBarWidth2 > 200 && progressBarWidth3 > 200 && progressBarWidth4 > 200) {
     allPlayed = true;
     document.getElementById('projectNameColor').style.opacity = 1;
@@ -226,7 +228,7 @@ function openingAnimation() {
     // document.getElementById('projectName').style.setProperty("background-clip","text");
     // document.getElementById('projectName').style.setProperty("-webkit-text-fill-color", 'transparent');
 
-     //document.getElementById('projectName').style.color = "white";
+    //document.getElementById('projectName').style.color = "white";
     document.getElementById('projectName').style.opacity = 0;
     document.getElementById('projectName').style.transition = "all 1s ease-in";
 
@@ -237,22 +239,23 @@ function openingAnimation() {
 
 function initClient(data) {
   clientID = data.clientID;
- console.log("I am no: "+ data.clientID);
-    trackMuted[0] = true;
-    trackMuted[1] = true;
-    trackMuted[2] = true;
-    trackMuted[3] = true;
- if (data.clientID >0) {
+  console.log("I am no: " + data.clientID);
+  trackMuted[0] = true;
+  trackMuted[1] = true;
+  trackMuted[2] = true;
+  trackMuted[3] = true;
+  if (data.clientID > 0) {
     trackMuted[data.trackPlay] = false;
- } else {
+  } else {
     trackMuted[0] = false;
     trackMuted[1] = false;
     trackMuted[2] = false;
     trackMuted[3] = false;
 
- }
+  }
 
 }
+
 function remoteBump() {
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
