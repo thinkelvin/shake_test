@@ -238,6 +238,7 @@ function initClient(data) {
   trackMuted[3] = true;
   if (data.clientID > 0) {
     trackMuted[data.trackPlay] = false;
+    console.log(data.trackPlay);
   } else {
     trackMuted[0] = false;
     trackMuted[1] = false;
