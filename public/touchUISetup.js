@@ -30,6 +30,7 @@
         track2Tap = false; track3Tap = false; track4Tap = false;
       } else {
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+        trackOn = -1;
       }
     });
 
@@ -45,7 +46,7 @@
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
         track1Tap = false; track3Tap = false; track4Tap = false;
       } else {
-       
+        trackOn = -1;
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
       }
     });
@@ -62,7 +63,7 @@
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
         track1Tap = false; track2Tap = false; track4Tap = false;
       } else {
-        
+        trackOn = -1;
         track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
       }
     });
@@ -72,15 +73,14 @@
       trackTapped = track4Tap;
       //track4Sound.mute(track4Tap);
       if (track4Tap) {
-              trackOn = 3
+        trackOn = 3
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
         track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
-  
         track4Element.style.backgroundColor = "white";
         track1Tap = false; track2Tap = false; track3Tap = false;
       } else {
-        ;
+        trackOn = -1;
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
       }
     });

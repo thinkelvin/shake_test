@@ -168,8 +168,8 @@ function draw() {
         NbBumps++;
         document.getElementById("localBump").innerHTML = NbBumps.toString();
         var trackInfo = {
-          trackID: trackIDs[trackOn],
-          trackPos: track1Sound.seek()
+          trackID: trackOn,
+          //trackPos: track1Sound.seek()
         }
         socket.emit('bump', trackInfo); // tell server the client mobile shakes
       }
@@ -237,7 +237,7 @@ function initClient(data) {
   trackMuted[2] = true;
   trackMuted[3] = true;
   if (data.clientID > 0) {
-    //trackMuted[data.trackPlay] = false;
+    trackMuted[data.trackPlay] = false;
   } else {
     trackMuted[0] = false;
     trackMuted[1] = false;
@@ -250,21 +250,20 @@ function initClient(data) {
 
 function remoteBump(data) {
   NbBumps_remote++;
-  
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
-  if (syncPlay <0) {
-    syncPlay = data.trackPos;
+  if (syncPlay <0 && clientID !=0) {
+    syncPlay = data.trackID;
     console.log('synced received...');
     // trackStarted = false;
     // trackEnded = 0;
-    trackMuted[0] = false;
-    trackMuted[1] = false;
-    trackMuted[2] = false;
-    trackMuted[3] = false;
-          track1Sound.seek(syncPlay);
-          track2Sound.seek(syncPlay);
-          track3Sound.seek(syncPlay);
-          track4Sound.seek(syncPlay);
+    trackMuted[trackID] = false;
+    // trackMuted[1] = false;
+    // trackMuted[2] = false;
+    // trackMuted[3] = false;
+    //       track1Sound.seek(syncPlay);
+    //       track2Sound.seek(syncPlay);
+    //       track3Sound.seek(syncPlay);
+    //       track4Sound.seek(syncPlay);
 
   }
 }

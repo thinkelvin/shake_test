@@ -39,9 +39,9 @@ function newConnection(socket){
     socket.on('bump', shakeMsg);
     function shakeMsg(data) {
         socketPair[socket.id] = Date.now();
-        console.log(data.trackID+':'+data.trackPos);
-       // socket.broadcast.emit('remoteBump',data.trackPos); // tell everyone except the sender
-       io.emit('remoteBump',data.trackPos); // tell everyone 
+        //console.log(data.trackID+':'+data.trackPos);
+        socket.broadcast.emit('remoteBump',data.trackID); // tell everyone except the sender
+    //    io.emit('remoteBump',data.trackPos); // tell everyone 
        // check shake sync only both shake times >0
         var t1 = socketPair[allClients[0]];
         var t2 = socketPair[allClients[1]];
