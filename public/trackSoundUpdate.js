@@ -40,10 +40,11 @@ function trackSoundUpdate() {
     track4Sound.once('end', function () {
       trackEnded++;
     });
+  
 
   } else if (trackEnded == 4) {
     trackEnded = 0;
-    trackLoaded = 4;
+    // trackLoaded = 4;
     trackStarted = false;
     console.log('finised all tracks');
   }
