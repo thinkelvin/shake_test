@@ -261,6 +261,11 @@ function remoteBump(data) {
     trackMuted[1] = false;
     trackMuted[2] = false;
     trackMuted[3] = false;
+    track1Sound.stop();
+    track2Sound.stop();
+    track3Sound.stop();
+    track4Sound.stop();
+
   }
 }
 
