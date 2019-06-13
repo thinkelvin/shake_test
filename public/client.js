@@ -163,7 +163,7 @@ function draw() {
     if (lvlCheckDelay == 0) {
       Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
-      if (Level > 0 && trackTapped) { // shake with track tapped
+      if (Level > 0 && trackOn >= 0) { // shake with track tapped
         lvlCheckDelay = 20;
         NbBumps++;
         document.getElementById("localBump").innerHTML = NbBumps.toString();
