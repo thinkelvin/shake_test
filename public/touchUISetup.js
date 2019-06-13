@@ -26,7 +26,7 @@
       trackTap[0] = !trackTap[0];
       // trackTapped = track1Tap;
       //track1Sound.mute(track1Tap);
-      if (track1Tap) {
+      if (trackTap[0]) {
         trackOn = 0;
         track1Element.style.backgroundColor = "white";
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
@@ -48,7 +48,7 @@
       // track2Tap = !track2Tap;
       // trackTapped = track2Tap;
       //track2Sound.mute(track2Tap);
-      if (track2Tap) {
+      if (trackTap[1]) {
          trackOn = 1;
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
         track2Element.style.backgroundColor = "white";
@@ -70,7 +70,7 @@
       // track3Tap = !track3Tap;
       // trackTapped = track3Tap;
       //track3Sound.mute(track3Tap);
-      if (track3Tap) {
+      if (trackTap[2]) {
         trackOn = 2;
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
@@ -92,7 +92,7 @@
       // track4Tap = !track4Tap;
       // trackTapped = track4Tap;
       //track4Sound.mute(track4Tap);
-      if (track4Tap) {
+      if (trackTap[3]) {
         trackOn = 3
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
