@@ -52,7 +52,6 @@ function preload() {
     src: ['./media/track1.mp3'],
     volume: 0.5,
     preload: true,
-    autoplay: true,
     onload: function () {
       trackLoaded++;
     }
@@ -61,7 +60,6 @@ function preload() {
     src: ['./media/track2.mp3'],
     volume: 0.5,
     preload: true,
-    autoplay: true,
     onload: function () {
       trackLoaded++;
     }
@@ -70,7 +68,6 @@ function preload() {
     src: ['./media/track3.mp3'],
     volume: 0.5,
     preload: true,
-    autoplay: true,
     onload: function () {
       trackLoaded++;
     }
@@ -79,7 +76,6 @@ function preload() {
     src: ['./media/track4.mp3'],
     volume: 0.5,
     preload: true,
-    autoplay: true,
     onload: function () {
       trackLoaded++;
     }
