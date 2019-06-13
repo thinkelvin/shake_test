@@ -1,13 +1,16 @@
 
   var trackTap = [];
   var trackOn = -1;
-
+    var track1Element;
+    var track2Element;
+    var track3Element;
+    var track4Element;
   function touchUISetup() {
     // set up touch responses
-    var track1Element = document.getElementById('track1');
-    var track2Element = document.getElementById('track2');
-    var track3Element = document.getElementById('track3');
-    var track4Element = document.getElementById('track4');
+    track1Element = document.getElementById('track1');
+    track2Element = document.getElementById('track2');
+    track3Element = document.getElementById('track3');
+    track4Element = document.getElementById('track4');
     var mc1 = new Hammer(track1Element);
     var mc2 = new Hammer(track2Element);
     var mc3 = new Hammer(track3Element);

@@ -185,8 +185,8 @@ function draw() {
             track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
             break;
         }
-        // trackTap[trackOn] = false;
-        // trackOn = -1;
+        trackTap[trackOn] = false;
+        trackOn = -1;
       }
     }
     lvlCheckDelay--;
