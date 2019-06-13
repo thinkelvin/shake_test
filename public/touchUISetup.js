@@ -38,7 +38,7 @@
         trackOn = -1;
       }
       for (let i = 0; i < 4; i++) {
-        if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
+        if (trackOn >= 0 && trackOn == i) trackTap[trackOn] = true;
         else trackTap[i] = false;
       }
     });
