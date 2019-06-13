@@ -169,9 +169,24 @@ function draw() {
         document.getElementById("localBump").innerHTML = NbBumps.toString();
         var trackInfo = {
           trackID: trackOn,
-          //trackPos: track1Sound.seek()
         }
         socket.emit('bump', trackInfo); // tell server the client mobile shakes
+        switch (trackOn) {
+          case 0:
+            track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+            break;
+          case 1:
+            track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+            break;
+          case 2:
+            track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+            break;
+          case 3:
+            track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
+            break;
+        }
+        trackTap[trackOn] = false;
+        trackOn = -1;
       }
     }
     lvlCheckDelay--;
@@ -253,22 +268,30 @@ function remoteBump(data) {
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
   // if (syncPlay <0 && clientID !=0) {
-  if (clientID !=0) {
-  syncPlay = data.trackID;
-    console.log('synced: '+syncPlay);
-    // trackStarted = false;
-    // trackEnded = 0;
+  if (clientID != 0) {
+    syncPlay = data.trackID;
+    console.log('synced: ' + syncPlay);
     if (data.trackID == trackOn) {
-      trackMuted[data.trackID] = false;
-      //trackOn = -1;
+      switch (trackOn) {
+        case 0:
+          track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+          break;
+        case 1:
+          track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+          break;
+        case 2:
+          track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+          break;
+        case 3:
+          track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
+          break;
+      }
+      trackTap[trackOn] = false;
+      trackMuted[trackOn] = false;
+      trackOn = -1;
+
     }
-    // trackMuted[1] = false;
-    // trackMuted[2] = false;
-    // trackMuted[3] = false;
-    //       track1Sound.seek(syncPlay);
-    //       track2Sound.seek(syncPlay);
-    //       track3Sound.seek(syncPlay);
-    //       track4Sound.seek(syncPlay);
+
 
   }
 }
