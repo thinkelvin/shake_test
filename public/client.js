@@ -272,23 +272,23 @@ function remoteBump(data) {
     syncPlay = data.trackID;
     console.log('synced: ' + syncPlay);
     if (data.trackID == trackOn) {
-      switch (trackOn) {
-        case 0:
-          track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
-          break;
-        case 1:
-          track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
-          break;
-        case 2:
-          track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
-          break;
-        case 3:
-          track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
-          break;
-      }
-      trackTap[trackOn] = false;
-      trackMuted[trackOn] = false;
-      trackOn = -1;
+      // switch (trackOn) {
+      //   case 0:
+      //     track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+      //     break;
+      //   case 1:
+      //     track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+      //     break;
+      //   case 2:
+      //     track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+      //     break;
+      //   case 3:
+      //     track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
+      //     break;
+      // }
+      // trackTap[trackOn] = false;
+      // trackMuted[trackOn] = false;
+      // trackOn = -1;
 
     }
 
