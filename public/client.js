@@ -54,7 +54,12 @@ function preload() {
     preload: true,
     onload: function () {
       trackLoaded++;
-    }
+    },
+        onplayerror: function () {
+            track1Sound.once('unlock', function () {
+              trackSoundUpdate();
+            });
+          }
   });
   track2Sound = new Howl({
     src: ['./media/track2.mp3'],
@@ -62,6 +67,11 @@ function preload() {
     preload: true,
     onload: function () {
       trackLoaded++;
+    },
+    onplayerror: function () {
+      track2Sound.once('unlock', function () {
+        trackSoundUpdate();
+      });
     }
   });
   track3Sound = new Howl({
@@ -70,6 +80,11 @@ function preload() {
     preload: true,
     onload: function () {
       trackLoaded++;
+    },
+    onplayerror: function () {
+      track3Sound.once('unlock', function () {
+        trackSoundUpdate();
+      });
     }
   });
   track4Sound = new Howl({
@@ -78,6 +93,11 @@ function preload() {
     preload: true,
     onload: function () {
       trackLoaded++;
+    },
+    onplayerror: function () {
+      track4Sound.once('unlock', function () {
+        trackSoundUpdate();
+      });
     }
   });
 
@@ -260,10 +280,7 @@ function initClient(data) {
 function remoteBump(data) {
   NbBumps_remote++;
   document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
-  // if (syncPlay <0 && clientID !=0) {
   if (clientID != 0) {
-    syncPlay = data.trackID;
-    console.log('synced: ' + syncPlay);
     if (data.trackID == trackOn) {
       switch (trackOn) {
         case 0:
