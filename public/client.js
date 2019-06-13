@@ -136,7 +136,7 @@ function setup() {
   landingPageTap.on("tap", function (ev) {
     if (trackLoaded == 4 && allPlayed) {
       landingPage.style.display = "none";
-      trackStarted = false;
+      //trackStarted = false;
       screenfull.request();
       mainPage.style.display = "block";
     }
