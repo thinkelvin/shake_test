@@ -7,7 +7,7 @@ var prevLevel = 0; // previous Level change
 var lvlCheckDelay = 0; // control if level check or not
 var Status = 0; // keep track of the Level change
 
-var playing;
+// var playing;
 var prevSignal;
 var NbBumps;
 var NbBumps_remote;
@@ -117,7 +117,7 @@ function setup() {
 
   pAccX = 0;
   bufferReady = false;
-  playing = false;
+  // playing = false;
   preSignal = 0;
   Bump = false;
   NbBumps = 0;
@@ -146,10 +146,11 @@ function setup() {
 
 
 function draw() {
-  trackSoundUpdate();
+
   if (!allPlayed) {
     openingAnimation();
   }
+  trackSoundUpdate();
   soundViz();
 
   console.log(trackOn);
@@ -230,16 +231,8 @@ function openingAnimation() {
   if (progressBarWidth1 > 200 && progressBarWidth2 > 200 && progressBarWidth3 > 200 && progressBarWidth4 > 200) {
     allPlayed = true;
     document.getElementById('projectNameColor').style.opacity = 1;
-    // document.getElementById('projectName').style.setProperty("background", "-webkit-linear-gradient(left, red, green, blue, purple)");
-    // document.getElementById('projectName').style.setProperty("-webkit-background-clip","text");
-    // document.getElementById('projectName').style.setProperty("background-clip","text");
-    // document.getElementById('projectName').style.setProperty("-webkit-text-fill-color", 'transparent');
-
-    //document.getElementById('projectName').style.color = "white";
     document.getElementById('projectName').style.opacity = 0;
     document.getElementById('projectName').style.transition = "all 1s ease-in";
-
-
   }
 
 }
