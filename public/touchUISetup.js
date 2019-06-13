@@ -17,7 +17,7 @@
     var mc2 = new Hammer(track2Element);
     var mc3 = new Hammer(track3Element);
     var mc4 = new Hammer(track4Element);
-    for (let i=0; i<4; i++) {
+    for (let i = 0; i < 4; i++) {
       trackTap[i] = false;
     }
 
@@ -37,8 +37,8 @@
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
         trackOn = -1;
       }
-      for (let i=0; i<4; i++) {
-        if (trackOn>0 && trackOn == i) trackTap[trackOn] = true;
+      for (let i = 0; i < 4; i++) {
+        if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
         else trackTap[i] = false;
       }
     });
@@ -49,7 +49,7 @@
       // trackTapped = track2Tap;
       //track2Sound.mute(track2Tap);
       if (trackTap[1]) {
-         trackOn = 1;
+        trackOn = 1;
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
         track2Element.style.backgroundColor = "white";
         track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
@@ -59,10 +59,10 @@
         trackOn = -1;
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
       }
-            for (let i = 0; i < 4; i++) {
-              if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
-              else trackTap[i] = false;
-            }
+      for (let i = 0; i < 4; i++) {
+        if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
+        else trackTap[i] = false;
+      }
     });
 
     mc3.on("tap", function (ev) {
@@ -81,10 +81,10 @@
         trackOn = -1;
         track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
       }
-            for (let i = 0; i < 4; i++) {
-              if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
-              else trackTap[i] = false;
-            }
+      for (let i = 0; i < 4; i++) {
+        if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
+        else trackTap[i] = false;
+      }
     });
 
     mc4.on("tap", function (ev) {
@@ -103,10 +103,10 @@
         trackOn = -1;
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
       }
-            for (let i = 0; i < 4; i++) {
-              if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
-              else trackTap[i] = false;
-            }
+      for (let i = 0; i < 4; i++) {
+        if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
+        else trackTap[i] = false;
+      }
     });
 
 
