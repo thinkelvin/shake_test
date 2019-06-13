@@ -52,52 +52,36 @@ function preload() {
     src: ['./media/track1.mp3'],
     volume: 0.5,
     preload: true,
+    autoplay: true,
     onload: function () {
       trackLoaded++;
-    },
-        onplayerror: function () {
-            track1Sound.once('unlock', function () {
-              trackSoundUpdate();
-            });
-          }
+    }
   });
   track2Sound = new Howl({
     src: ['./media/track2.mp3'],
     volume: 0.5,
     preload: true,
+    autoplay: true,
     onload: function () {
       trackLoaded++;
-    },
-    onplayerror: function () {
-      track2Sound.once('unlock', function () {
-        trackSoundUpdate();
-      });
     }
   });
   track3Sound = new Howl({
     src: ['./media/track3.mp3'],
     volume: 0.5,
     preload: true,
+    autoplay: true,
     onload: function () {
       trackLoaded++;
-    },
-    onplayerror: function () {
-      track3Sound.once('unlock', function () {
-        trackSoundUpdate();
-      });
     }
   });
   track4Sound = new Howl({
     src: ['./media/track4.mp3'],
     volume: 0.5,
     preload: true,
+    autoplay: true,
     onload: function () {
       trackLoaded++;
-    },
-    onplayerror: function () {
-      track4Sound.once('unlock', function () {
-        trackSoundUpdate();
-      });
     }
   });
 
