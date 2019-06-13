@@ -258,7 +258,10 @@ function remoteBump(data) {
     console.log('synced: '+syncPlay);
     // trackStarted = false;
     // trackEnded = 0;
-    trackMuted[data.trackID] = false;
+    if (data.trackID == trackOn) {
+      trackMuted[data.trackID] = false;
+      //trackOn = -1;
+    }
     // trackMuted[1] = false;
     // trackMuted[2] = false;
     // trackMuted[3] = false;

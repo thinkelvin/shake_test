@@ -2,7 +2,8 @@
   var track2Tap = false;
   var track3Tap = false;
   var track4Tap = false;
-  var trackTapped = false;
+  var trackTap = [];
+  //var trackTapped = false;
   var trackOn = -1;
 
   function touchUISetup() {
@@ -16,10 +17,14 @@
     var mc2 = new Hammer(track2Element);
     var mc3 = new Hammer(track3Element);
     var mc4 = new Hammer(track4Element);
+    for (let i=0; i<4; i++) {
+      trackTap[i] = false;
+    }
 
     mc1.on("tap", function (ev) {
-      track1Tap = !track1Tap;
-      trackTapped = track1Tap;
+      //track1Tap = !track1Tap;
+      trackTap[0] = !trackTap[0];
+      // trackTapped = track1Tap;
       //track1Sound.mute(track1Tap);
       if (track1Tap) {
         trackOn = 0;
@@ -27,16 +32,21 @@
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
         track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
-        track2Tap = false; track3Tap = false; track4Tap = false;
+        // track2Tap = false; track3Tap = false; track4Tap = false;
       } else {
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
         trackOn = -1;
       }
+      for (let i=0; i<4; i++) {
+        if (trackOn>0 && trackOn == i) trackTap[trackOn] = true;
+        else trackTap[i] = false;
+      }
     });
 
     mc2.on("tap", function (ev) {
-      track2Tap = !track2Tap;
-      trackTapped = track2Tap;
+      trackTap[1] = !trackTap[1];
+      // track2Tap = !track2Tap;
+      // trackTapped = track2Tap;
       //track2Sound.mute(track2Tap);
       if (track2Tap) {
          trackOn = 1;
@@ -44,16 +54,21 @@
         track2Element.style.backgroundColor = "white";
         track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
-        track1Tap = false; track3Tap = false; track4Tap = false;
+        // track1Tap = false; track3Tap = false; track4Tap = false;
       } else {
         trackOn = -1;
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
       }
+            for (let i = 0; i < 4; i++) {
+              if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
+              else trackTap[i] = false;
+            }
     });
 
     mc3.on("tap", function (ev) {
-      track3Tap = !track3Tap;
-      trackTapped = track3Tap;
+      trackTap[2] = !trackTap[2];
+      // track3Tap = !track3Tap;
+      // trackTapped = track3Tap;
       //track3Sound.mute(track3Tap);
       if (track3Tap) {
         trackOn = 2;
@@ -61,16 +76,21 @@
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
         track3Element.style.backgroundColor = "white";
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
-        track1Tap = false; track2Tap = false; track4Tap = false;
+        // track1Tap = false; track2Tap = false; track4Tap = false;
       } else {
         trackOn = -1;
         track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
       }
+            for (let i = 0; i < 4; i++) {
+              if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
+              else trackTap[i] = false;
+            }
     });
 
     mc4.on("tap", function (ev) {
-      track4Tap = !track4Tap;
-      trackTapped = track4Tap;
+      trackTap[3] = !trackTap[3];
+      // track4Tap = !track4Tap;
+      // trackTapped = track4Tap;
       //track4Sound.mute(track4Tap);
       if (track4Tap) {
         trackOn = 3
@@ -78,11 +98,15 @@
         track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
         track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
         track4Element.style.backgroundColor = "white";
-        track1Tap = false; track2Tap = false; track3Tap = false;
+        // track1Tap = false; track2Tap = false; tracksTap = false;
       } else {
         trackOn = -1;
         track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
       }
+            for (let i = 0; i < 4; i++) {
+              if (trackOn > 0 && trackOn == i) trackTap[trackOn] = true;
+              else trackTap[i] = false;
+            }
     });
 
 
