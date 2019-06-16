@@ -137,7 +137,6 @@ function setup() {
     if (trackLoaded == 4 && allPlayed) {
       landingPage.style.display = "none";
       trackStarted = false;
-      
       mainPage.style.display = "block";
       screenfull.request();
     }

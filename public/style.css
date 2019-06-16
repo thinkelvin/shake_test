@@ -100,7 +100,7 @@
   top: 30%;
   left: 50%;
   animation: 1s shake infinite alternate;
-  font-size: 13vw;
+  font-size: 8vw;
   font-family: 'Slackey', cursive;
   background: -webkit-linear-gradient(left, hsl(0,100%,50%), hsl(113,100%,50%),hsl(189,100%,50%));
  -webkit-background-clip: text;
