@@ -137,8 +137,9 @@ function setup() {
     if (trackLoaded == 4 && allPlayed) {
       landingPage.style.display = "none";
       trackStarted = false;
-      screenfull.request();
+      
       mainPage.style.display = "block";
+      screenfull.request();
     }
   });
 }
