@@ -86,7 +86,7 @@
  #projectName {
    display: inline-block;
    margin: auto;
-   font-size: 13vw;
+   font-size: 5em;
    font-family: 'Slackey',
      cursive;
    position: absolute;
@@ -104,7 +104,7 @@
  #projectNameColor {
    display: inline-block;
    margin: auto;
-   font-size: 13vw;
+   font-size: 5em;
    font-family: 'Slackey', cursive;
    position: absolute;
    top: 30%;
