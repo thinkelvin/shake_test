@@ -84,34 +84,39 @@
  }
 
  #projectName {
+   font-size: 13vw;
+   font-family: 'Slackey',
+     cursive;
    position: fixed;
    top: 30%;
    left: 50%;
    animation: 1s shake infinite alternate;
-   font-size: 13vw;
-   font-family: 'Slackey',cursive;
+
    color: rgb(0, 0, 0);
    z-index: 2;
-    opacity: 1;
-    transition: none;
-    text-align: center;
+   opacity: 1;
+   transition: none;
+   text-align: center;
  }
+
  #projectNameColor {
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  text-align: center;
-  animation: 1s shake infinite alternate;
-  font-size: 13vw;
-  font-family: 'Slackey', cursive;
-  background: -webkit-linear-gradient(left, hsl(0,100%,50%), hsl(113,100%,50%),hsl(189,100%,50%));
- -webkit-background-clip: text;
- background-clip: text;
- -webkit-text-fill-color: transparent; 
-  z-index: 1;
+   font-size: 13vw;
+   font-family: 'Slackey', cursive;
+   position: fixed;
+   top: 30%;
+   left: 50%;
+   text-align: center;
+   animation: 1s shake infinite alternate;
+
+   background: -webkit-linear-gradient(left, hsl(0, 100%, 50%), hsl(113, 100%, 50%), hsl(189, 100%, 50%));
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   z-index: 1;
    opacity: 0;
    transition: none;
-}
+ }
+
  .loadingBar {
    /* cursor: pointer; */
    width: 100%;
@@ -147,7 +152,7 @@
    padding: 0%;
    width: 0%;
    height: 100%;
-   }
+ }
 
  #loading3 {
    padding: 0%;
@@ -158,10 +163,10 @@
  }
 
  #loading3bk {
-    background-color: black;
-    padding: 0%;
-    width: 0%;
-    height: 100%;
+   background-color: black;
+   padding: 0%;
+   width: 0%;
+   height: 100%;
  }
 
  #loading4 {
@@ -173,10 +178,10 @@
  }
 
  #loading4bk {
-      background-color: black;
-      padding: 0%;
-      width: 0%;
-      height: 100%;
+   background-color: black;
+   padding: 0%;
+   width: 0%;
+   height: 100%;
  }
 
 
@@ -228,7 +233,7 @@
    height: 100%;
    overflow: hidden;
    background-color: black;
-  
+
  }
 
  /* canvas {
