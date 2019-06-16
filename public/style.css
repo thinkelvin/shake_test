@@ -94,11 +94,13 @@
    z-index: 2;
     opacity: 1;
     transition: none;
+    text-align: center;
  }
  #projectNameColor {
   position: fixed;
   top: 30%;
   left: 50%;
+  text-align: center;
   animation: 1s shake infinite alternate;
   font-size: 10vw;
   font-family: 'Slackey', cursive;
