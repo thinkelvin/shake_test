@@ -87,7 +87,7 @@
    font-size: 13vw;
    font-family: 'Slackey',
      cursive;
-   position: fixed;
+   position: absolute;
    top: 30%;
    left: 50%;
    animation: 1s shake infinite alternate;
@@ -102,7 +102,7 @@
  #projectNameColor {
    font-size: 13vw;
    font-family: 'Slackey', cursive;
-   position: fixed;
+   position: absolute;
    top: 30%;
    left: 50%;
    text-align: center;
