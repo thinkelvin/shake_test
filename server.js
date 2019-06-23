@@ -9,6 +9,7 @@ var server = app.listen(port, function() {
 app.use(express.static('public'));
 app.get('/', function(req, res){
     res.render('index');
+    console.log('index page sent');
 });
 app.get('/pp', function(req, res){
     console.log("welcome Processing!");
