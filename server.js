@@ -10,6 +10,9 @@ app.use(express.static('public'));
 app.get('/', function(req, res){
     res.render('index');
 });
+app.get('/pp', function(req, res){
+    console.log("welcome Processing!");
+});
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
 var allClients = [];
