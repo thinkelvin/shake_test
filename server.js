@@ -1,5 +1,7 @@
 var express = require('express');
+var secure = require('ssl-express-www');
 var app = express();
+app.use(secure);
 var port= process.env.PORT || 8080;
 var timeStart;
 var server = app.listen(port, function() {
