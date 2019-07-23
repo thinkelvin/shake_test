@@ -1,4 +1,4 @@
-var clientStart;
+// var clientStart;
 var express = require('express');
 var secure = require('ssl-express-www');
 var app = express();
@@ -16,9 +16,9 @@ app.get('/', function(req, res){
 });
 app.get('/:clientID', function(req, res){
     //console.log(req.params[0]);
-    clientStart = req.params[0];
+   // clientStart = req.params[0];
     res.render('index');
-    console.log(clientStart);
+    // console.log(clientStart);
 });
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
