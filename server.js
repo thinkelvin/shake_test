@@ -14,7 +14,7 @@ app.get('/', function(req, res){
     console.log('index page sent');
 });
 app.get('/:clientID', function(req, res){
-    console.log(req.params);
+    console.log(req.params[0]);
 });
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
