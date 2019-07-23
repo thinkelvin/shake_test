@@ -10,16 +10,16 @@ var server = app.listen(port, function() {
     timeStart = new Date();
 });
 app.use(express.static('public'));
-app.get('/', function(req, res){
+app.get('/s', function(req, res){
     res.render('index');
     console.log('index page sent');
 });
-app.get('/s', function(req, res){
-    //console.log(req.params[0]);
-   // clientStart = req.params[0];
-    res.render('index');
-    // console.log(clientStart);
-});
+// app.get('/s', function(req, res){
+//     //console.log(req.params[0]);
+//    // clientStart = req.params[0];
+//     res.render('index');
+//     // console.log(clientStart);
+// });
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
 var allClients = [];
