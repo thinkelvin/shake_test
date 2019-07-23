@@ -13,8 +13,8 @@ app.get('/', function(req, res){
     res.render('index');
     console.log('index page sent');
 });
-app.get('/pp', function(req, res){
-    console.log("welcome Processing!");
+app.get('/:clientID', function(req, res){
+    console.log(req.params);
 });
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
