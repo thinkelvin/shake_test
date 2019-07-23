@@ -10,7 +10,7 @@ var server = app.listen(port, function() {
     timeStart = new Date();
 });
 app.use(express.static('public'));
-app.get('/s', function(req, res){
+app.get('/', function(req, res){
     res.render('index');
     console.log('index page sent');
 });
