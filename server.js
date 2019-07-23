@@ -14,7 +14,7 @@ app.get('/', function(req, res){
     res.render('index');
     console.log('index page sent');
 });
-app.get('/:clientID', function(req, res){
+app.get('/s', function(req, res){
     //console.log(req.params[0]);
    // clientStart = req.params[0];
     res.render('index');
