@@ -13,13 +13,13 @@ var indexResponse = function(req, res) {
     res.render('index');
 }
 app.use(express.static('public'));
-app.get('/', indexResponse);
-app.get('/s', indexResponse);
 
-// app.get('/', function(req, res){
-//     res.render('index');
-//     console.log('index page sent');
-// });
+
+app.get('/', function(req, res){
+    //res.render('index');
+    res.sendFile('index.html');
+    console.log('index page sent');
+});
 // app.get('/s', function(req, res){
 //     //console.log(req.params[0]);
 //    // clientStart = req.params[0];
