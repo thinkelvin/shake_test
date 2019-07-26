@@ -167,7 +167,7 @@ function draw() {
       if (Level > 0 && trackOn >= 0) { // shake with track tapped
         lvlCheckDelay = 20;
         NbBumps++;
-        document.getElementById("localBump").innerHTML = NbBumps.toString();
+        // document.getElementById("localBump").innerHTML = NbBumps.toString();
         var trackInfo = {
           trackID: trackOn,
         }
@@ -259,7 +259,7 @@ function initClient(data) {
 
 function remoteBump(data) {
   NbBumps_remote++;
-  document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
+  // document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
   if (clientID != 0) {
     if (data.trackID == trackOn) {
       switch (trackOn) {
@@ -288,7 +288,7 @@ function remoteBump(data) {
 
 function syncBump() {
   NbBumps_sync++;
-  document.getElementById("syncBump").innerHTML = NbBumps_sync.toString();
+  // document.getElementById("syncBump").innerHTML = NbBumps_sync.toString();
 }
 
 
