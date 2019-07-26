@@ -43,6 +43,7 @@ io.on('connection', newConnection);
 // Whenever this is a new Socket connection, do the following
 function newConnection(socket){
     console.log('new connection:'+socket.id);
+    
     var clientData = {
         clientID: NbClients,
         trackPlay: trackNum
@@ -51,7 +52,8 @@ function newConnection(socket){
     allClients[NbClients] = socket.id;
     NbClients++;
     trackNum = (trackNum+1)%4;
-        // For every new Socket connection
+    console.log('NbClients: ' + NbClients);
+    // For every new Socket connection
     socketPair[socket.id] = -1; // shake time set to -1 at start
     //console.log(Object.keys(socketPair).length);
     socket.on('bump', shakeMsg);
