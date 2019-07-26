@@ -20,13 +20,14 @@ app.get('/', function(req, res){
     res.sendFile('index.html');
     console.log('index page sent');
 });
-// app.get('/s', function(req, res){
-//     //console.log(req.params[0]);
-//    // clientStart = req.params[0];
-//     // res.render('index');
-//     // console.log(clientStart);
-//     console.log('route to s');
-// });
+app.get('/s', function(req, res){
+    //console.log(req.params[0]);
+   // clientStart = req.params[0];
+    // res.render('index');
+    // console.log(clientStart);
+    res.sendFile('index.html');
+    console.log('route to s');
+});
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
 var allClients = [];
