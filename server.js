@@ -80,6 +80,7 @@ function newConnection(socket){
         console.log('client disconnected: '+ socket.id);
         delete socketPair[socket.id];
         NbClients--;
+        console.log('NbClients: ' + NbClients);
     }
 }
 
