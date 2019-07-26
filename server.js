@@ -25,7 +25,7 @@ app.get('/s', function(req, res){
    // clientStart = req.params[0];
     // res.render('index');
     // console.log(clientStart);
-    res.sendFile('/public/index_s.html');
+    res.sendFile('/public/index_s.html', {root: __dirname});
     console.log('route to s');
 });
 console.log("my node server is up and running at Heroku!!!");
