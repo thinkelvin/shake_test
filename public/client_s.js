@@ -239,21 +239,21 @@ function openingAnimation() {
 
 function initClient(data) {
   clientID = data.clientID;
-  console.log("I am no: " + data.clientID);
-  trackMuted[0] = true;
-  trackMuted[1] = true;
-  trackMuted[2] = true;
-  trackMuted[3] = true;
-  if (data.clientID > 0) {
-    trackMuted[data.trackPlay] = false;
-    console.log(data.trackPlay);
-  } else {
-    trackMuted[0] = false;
-    trackMuted[1] = false;
-    trackMuted[2] = false;
-    trackMuted[3] = false;
+  //console.log("I am no: " + data.clientID);
+  trackMuted[1] = false;
+  trackMuted[2] = false;
+  trackMuted[3] = false;
+  trackMuted[0] = false;
+//   if (data.clientID > 0) {
+//     trackMuted[data.trackPlay] = false;
+//     console.log(data.trackPlay);
+//   } else {
+//     trackMuted[0] = false;
+//     trackMuted[1] = false;
+//     trackMuted[2] = false;
+//     trackMuted[3] = false;
 
-  }
+//   }
 
 }
 
