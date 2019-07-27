@@ -168,7 +168,7 @@ function draw() {
       if (Level > 0 && trackOn >= 0) { // shake with track tapped
         lvlCheckDelay = 20;
         NbBumps++;
-        if (trackIDs[trackOn]) { // Only broadcast when active track is tapped
+        if (!trackMuted[trackOn]) { // Only broadcast when active track is tapped
           var trackInfo = {
             trackID: trackOn,
           }

@@ -169,7 +169,7 @@ function draw() {
         lvlCheckDelay = 20;
         NbBumps++;
         // document.getElementById("localBump").innerHTML = NbBumps.toString();
-        if (trackIDs[trackOn]) {
+        if (!trackMuted[trackOn]) {
           var trackInfo = {
             trackID: trackOn,
           }
