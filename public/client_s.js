@@ -130,6 +130,7 @@ function setup() {
   socket.on('initClient', initClient);
   socket.on('remoteBump', remoteBump); // handle the shake by another client
   socket.on('syncBump', syncBump);
+  socket.on('track', trackCheck); // check if the active track is wanted
   touchUISetup();
 
   var landingPageTap = new Hammer(landingPage);
@@ -168,10 +169,12 @@ function draw() {
         lvlCheckDelay = 20;
         NbBumps++;
         // document.getElementById("localBump").innerHTML = NbBumps.toString();
-        var trackInfo = {
-          trackID: trackOn,
+        if (trackIDs[trackOn]) {
+          var trackInfo = {
+            trackID: trackOn,
+          }
+          socket.broadcast.emit('track', trackInfo); // tell server the client mobile shakes
         }
-        socket.emit('bump', trackInfo); // tell server the client mobile shakes
         switch (trackOn) {
           case 0:
             track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
@@ -256,6 +259,30 @@ function initClient(data) {
 //   }
 
 }
+
+function trackCheck(data) {
+  if (data.trackID == trackOn) {
+    switch (trackOn) {
+      case 0:
+        track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+        break;
+      case 1:
+        track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+        break;
+      case 2:
+        track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+        break;
+      case 3:
+        track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
+        break;
+    }
+    trackTap[trackOn] = false; // untap the track
+    trackMuted[trackOn] = false; // enable the audio track 
+    trackOn = -1; // no track is tapped
+
+  }
+}
+
 
 function remoteBump(data) {
   NbBumps_remote++;

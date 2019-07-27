@@ -166,7 +166,6 @@ function draw() {
       Level = detectLevelChange(dAccX); // +1: moveto right, -1: moveto left, 0: no shake
       lvlCheckDelay++;
       if (Level > 0 && trackOn >= 0) { // shake with track tapped
-        
         lvlCheckDelay = 20;
         NbBumps++;
         if (trackIDs[trackOn]) { // Only broadcast when active track is tapped
@@ -282,8 +281,8 @@ function trackCheck(data) {
     trackOn = -1; // no track is tapped
 
   }
-
 }
+
 function remoteBump(data) {
   NbBumps_remote++;
   // document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
