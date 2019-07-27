@@ -173,7 +173,7 @@ function draw() {
             trackID: trackOn,
           }
           //socket.emit('bump', trackInfo); // tell server the client mobile shakes
-          socket.broadcast.emit('track',trackInfo); // tell everyone which active track is shaken
+          //socket.broadcast.emit('track',trackInfo); // tell everyone which active track is shaken
         }
         switch (trackOn) {
           case 0:
