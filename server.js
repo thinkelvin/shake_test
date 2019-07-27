@@ -31,7 +31,8 @@ app.get('/s', function(req, res){
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
 var allClients = [];
-var NbClients = 0;
+var NbClients = 0; // number of connected clients
+var Clients = 0; // serve as client ID, always increment up and unique
 // Enable Socket Communication
 var socket = require('socket.io');
 var io = socket(server);
@@ -45,35 +46,37 @@ function newConnection(socket){
     console.log('new connection:'+socket.id);
     
     var clientData = {
-        clientID: NbClients,
+        clientID: Clients, // unique number
         trackPlay: trackNum
     }
-    socket.emit('initClient', clientData);
-    allClients[NbClients] = socket.id;
+    socket.emit('initClient', clientData); // return client info back to Browser
+    allClients[Clients] = socket.id;
+    Clients++;
     NbClients++;
     trackNum = (trackNum+1)%4;
-    console.log('NbClients: ' + NbClients);
-    // For every new Socket connection
-    socketPair[socket.id] = -1; // shake time set to -1 at start
-    //console.log(Object.keys(socketPair).length);
-    socket.on('bump', shakeMsg);
-    function shakeMsg(data) {
-        socketPair[socket.id] = Date.now();
-        //console.log(data.trackID+':'+data.trackPos);
-        socket.broadcast.emit('remoteBump',data); // tell everyone except the sender
-    //    io.emit('remoteBump',data.trackPos); // tell everyone 
-       // check shake sync only both shake times >0
-        var t1 = socketPair[allClients[0]];
-        var t2 = socketPair[allClients[1]];
-        //console.log(t1+','+t2);
-        if (Math.abs(t1-t2)<3000) {
-            //socket.broadcast.emit('syncShake','hello');
-            io.emit('syncBump');
-            console.log('sync Bump');
-        }
-        
+    //     // For every new Socket connection
+    // socketPair[socket.id] = -1; // shake time set to -1 at start
+    // //console.log(Object.keys(socketPair).length);
+    // socket.on('bump', shakeMsg);
+    // function shakeMsg(data) {
+    //     socketPair[socket.id] = Date.now();
+    //     //console.log(data.trackID+':'+data.trackPos);
+    //     socket.broadcast.emit('remoteBump',data); // tell everyone except the sender
+    // //    io.emit('remoteBump',data.trackPos); // tell everyone 
+    //    // check shake sync only both shake times >0
+    //     var t1 = socketPair[allClients[0]];
+    //     var t2 = socketPair[allClients[1]];
+    //     //console.log(t1+','+t2);
+    //     if (Math.abs(t1-t2)<3000) {
+    //         //socket.broadcast.emit('syncShake','hello');
+    //         io.emit('syncBump');
+    //         console.log('sync Bump');
+    //     }
+    // }
+    socket.on('track', trackMsg);
+    function trackMsg(data) {
+        socket.broadcast.emit('track',data);
     }
-    
     // Client disconnects
     socket.on('disconnect', byeConnection);
     function byeConnection(){
