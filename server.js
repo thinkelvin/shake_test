@@ -50,7 +50,7 @@ function newConnection(socket){
     }
     socket.emit('initClient', clientData); // return client info back to Browser
     allClients[Clients] = socket.id;
-    Client++;
+    Clients++;
     NbClients++;
     trackNum = (trackNum+1)%4;
         // For every new Socket connection
