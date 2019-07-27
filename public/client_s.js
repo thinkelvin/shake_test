@@ -173,7 +173,7 @@ function draw() {
           var trackInfo = {
             trackID: trackOn,
           }
-          socket.broadcast.emit('track', trackInfo); // tell server the client mobile shakes
+          socket.emit('track', trackInfo); // tell server the client mobile shakes
         }
         switch (trackOn) {
           case 0:

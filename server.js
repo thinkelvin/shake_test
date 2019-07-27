@@ -71,9 +71,11 @@ function newConnection(socket){
             io.emit('syncBump');
             console.log('sync Bump');
         }
-        
     }
-    
+    socket.on('track', trackMsg);
+    function trackMsg(data) {
+        socket.broadcast.emit('track',data);
+    }
     // Client disconnects
     socket.on('disconnect', byeConnection);
     function byeConnection(){
