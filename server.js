@@ -53,25 +53,25 @@ function newConnection(socket){
     Clients++;
     NbClients++;
     trackNum = (trackNum+1)%4;
-        // For every new Socket connection
-    socketPair[socket.id] = -1; // shake time set to -1 at start
-    //console.log(Object.keys(socketPair).length);
-    socket.on('bump', shakeMsg);
-    function shakeMsg(data) {
-        socketPair[socket.id] = Date.now();
-        //console.log(data.trackID+':'+data.trackPos);
-        socket.broadcast.emit('remoteBump',data); // tell everyone except the sender
-    //    io.emit('remoteBump',data.trackPos); // tell everyone 
-       // check shake sync only both shake times >0
-        var t1 = socketPair[allClients[0]];
-        var t2 = socketPair[allClients[1]];
-        //console.log(t1+','+t2);
-        if (Math.abs(t1-t2)<3000) {
-            //socket.broadcast.emit('syncShake','hello');
-            io.emit('syncBump');
-            console.log('sync Bump');
-        }
-    }
+    //     // For every new Socket connection
+    // socketPair[socket.id] = -1; // shake time set to -1 at start
+    // //console.log(Object.keys(socketPair).length);
+    // socket.on('bump', shakeMsg);
+    // function shakeMsg(data) {
+    //     socketPair[socket.id] = Date.now();
+    //     //console.log(data.trackID+':'+data.trackPos);
+    //     socket.broadcast.emit('remoteBump',data); // tell everyone except the sender
+    // //    io.emit('remoteBump',data.trackPos); // tell everyone 
+    //    // check shake sync only both shake times >0
+    //     var t1 = socketPair[allClients[0]];
+    //     var t2 = socketPair[allClients[1]];
+    //     //console.log(t1+','+t2);
+    //     if (Math.abs(t1-t2)<3000) {
+    //         //socket.broadcast.emit('syncShake','hello');
+    //         io.emit('syncBump');
+    //         console.log('sync Bump');
+    //     }
+    // }
     socket.on('track', trackMsg);
     function trackMsg(data) {
         socket.broadcast.emit('track',data);

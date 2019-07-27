@@ -128,8 +128,8 @@ function setup() {
   // window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
   socket.on('initClient', initClient);
-  socket.on('remoteBump', remoteBump); // handle the shake by another client
-  socket.on('syncBump', syncBump);
+  // socket.on('remoteBump', remoteBump); // handle the shake by another client
+  // socket.on('syncBump', syncBump);
   socket.on('track', trackCheck); // check if the active track is wanted
   touchUISetup();
 
@@ -247,17 +247,7 @@ function initClient(data) {
   trackMuted[1] = true;
   trackMuted[2] = true;
   trackMuted[3] = true;
-  // if (data.clientID > 0) {
-    trackMuted[data.trackPlay] = false;
-    // console.log(data.trackPlay);
-  // } else {
-  //   trackMuted[0] = false;
-  //   trackMuted[1] = false;
-  //   trackMuted[2] = false;
-  //   trackMuted[3] = false;
-
-  // }
-
+  trackMuted[data.trackPlay] = false;
 }
 
 function trackCheck(data) {
@@ -283,37 +273,37 @@ function trackCheck(data) {
   }
 }
 
-function remoteBump(data) {
-  NbBumps_remote++;
-  // document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
-  if (clientID != 0) {
-    if (data.trackID == trackOn) {
-      switch (trackOn) {
-        case 0:
-          track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
-          break;
-        case 1:
-          track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
-          break;
-        case 2:
-          track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
-          break;
-        case 3:
-          track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
-          break;
-      }
-      trackTap[trackOn] = false;
-      trackMuted[trackOn] = false;
-      trackOn = -1;
+// function remoteBump(data) {
+//   NbBumps_remote++;
+//   // document.getElementById("remoteBump").innerHTML = NbBumps_remote.toString();
+//   if (clientID != 0) {
+//     if (data.trackID == trackOn) {
+//       switch (trackOn) {
+//         case 0:
+//           track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+//           break;
+//         case 1:
+//           track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+//           break;
+//         case 2:
+//           track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+//           break;
+//         case 3:
+//           track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
+//           break;
+//       }
+//       trackTap[trackOn] = false;
+//       trackMuted[trackOn] = false;
+//       trackOn = -1;
 
-    }
-  }
-}
+//     }
+//   }
+// }
 
-function syncBump() {
-  NbBumps_sync++;
-  // document.getElementById("syncBump").innerHTML = NbBumps_sync.toString();
-}
+// function syncBump() {
+//   NbBumps_sync++;
+//   // document.getElementById("syncBump").innerHTML = NbBumps_sync.toString();
+// }
 
 
 function accUpdate(e) {
