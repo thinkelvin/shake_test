@@ -31,7 +31,8 @@ app.get('/s', function(req, res){
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
 var allClients = [];
-var NbClients = 0;
+var NbClients = 0; // number of connected clients
+var Clients = 0; // serve as client ID, always increment up and unique
 // Enable Socket Communication
 var socket = require('socket.io');
 var io = socket(server);
@@ -44,11 +45,12 @@ io.on('connection', newConnection);
 function newConnection(socket){
     console.log('new connection:'+socket.id);
     var clientData = {
-        clientID: NbClients,
+        clientID: Clients, // unique number
         trackPlay: trackNum
     }
-    socket.emit('initClient', clientData);
-    allClients[NbClients] = socket.id;
+    socket.emit('initClient', clientData); // return client info back to Browser
+    allClients[Clients] = socket.id;
+    Client++;
     NbClients++;
     trackNum = (trackNum+1)%4;
         // For every new Socket connection
