@@ -44,7 +44,8 @@ var dataArray1;
 var mainPage;
 var clientID;
 
-var trackSyncTimes = []; // collect all active track shake times received
+var globalTrackTimes = []; // collect all active track shake times received
+var localTrackTimes = []; // collect all local inactive shake times
 
 var _debug = false; // turn on/off accelerationX plot for debug
 
@@ -143,7 +144,8 @@ function setup() {
   });
 
   // Initialize four tracks sync times
-  while (trackSyncTimes.push([]) < 4);
+  while (globalTrackTimes.push([]) < 4);
+  while (localTrackTimes.push([]) < 4);
 }
 
 
@@ -257,40 +259,22 @@ function initClient(data) {
 
 function trackSync(data) {
   // Remember the time when active track is shaken
-  trackSyncTimes[data.trackID].push(Date.now());
-  // if (data.trackID == trackOn && trackMuted[trackOn]) {
-  //   switch (trackOn) {
-  //     case 0:
-  //       track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
-  //       break;
-  //     case 1:
-  //       track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
-  //       break;
-  //     case 2:
-  //       track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
-  //       break;
-  //     case 3:
-  //       track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
-  //       break;
-  //   }
-  //   trackTap[trackOn] = false; // untap the track
-  //   trackMuted[trackOn] = false; // enable the audio track 
-  //   trackOn = -1; // no track is tapped
+  globalTrackTimes[data.trackID].push(Date.now());
 
-  // }
 }
 
 function trackCheck() {
   var curTime = Date.now();
   var shakeWindow = 3000;
-  var len = trackSyncTimes[trackOn].length;
+  //var len = globalTrackTimes[trackOn].length;
   if (len > 0) {
-    var trackTime = trackSyncTimes[trackOn][len - 1];
+    var trackTime = globalTrackTimes[trackOn].pop();
     // Check against the corresponding active track shaken time
     if (Math.abs(curTime - trackTime) < shakeWindow) {
       trackMuted[trackOn] = false; // enable the audio track 
-    }
+    } 
   }
+  // localTrackTimes[trackOn].push(curTime);
 }
 
 
