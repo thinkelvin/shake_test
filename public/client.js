@@ -282,7 +282,7 @@ function trackSync(data) {
 
 function trackCheck() {
   var curTime = Date.now();
-  var shakeWindow = 2000;
+  var shakeWindow = 3000;
   var len = trackSyncTimes[trackOn].length;
   if (len > 0) {
     var trackTime = trackSyncTimes[trackOn][len - 1];
