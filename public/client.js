@@ -132,6 +132,7 @@ function setup() {
   socket = io(); // create socket connection back to hosting server
   socket.on('initClient', initClient);
   socket.on('trackSync', trackSync); // check if the active track is wanted
+  socket.on('trackLocal', trackLocal);
   touchUISetup();
 
   var landingPageTap = new Hammer(landingPage);
@@ -173,15 +174,16 @@ function draw() {
       if (Level > 0 && trackOn >= 0) { // shake with track tapped
         lvlCheckDelay = 20;
         NbBumps++;
+        var trackInfo = {
+          trackID: trackOn,
+        }
         if (!trackMuted[trackOn]) { // Tell the server to broadcast if an active track is tapped and shaken
-          var trackInfo = {
-            trackID: trackOn,
-          }
           socket.emit('trackShake', trackInfo); // tell server the client mobile shakes
         } else {
           // Check if the inactive track should be enabled
-          trackLocal();
-          trackCheck = trackOn;
+          socket.emit('trackLocal', trackInfo);
+          //trackLocal();
+          //trackCheck = trackOn;
         }
         trackDeHighlight();
       }
@@ -201,7 +203,7 @@ function trackMatch() {
       var t2 = globalTrackTimes[trackCheck].pop();
       if (Math.abs(t1 - t2) < 3000) {
         trackMuted[trackCheck] = false;
-        trackCheck=-1;
+        trackCheck = -1;
       }
     }
   }

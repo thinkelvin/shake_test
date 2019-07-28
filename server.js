@@ -55,9 +55,14 @@ function newConnection(socket){
     NbClients++;
     trackNum = (trackNum+1)%4;
  
-    socket.on('trackShake', trackMsg);
-    function trackMsg(data) {
+    socket.on('trackShake', trackShakeMsg);
+    function trackShakeMsg(data) {
         socket.broadcast.emit('trackSync',data);
+    }
+
+    socket.on('trackLocal', trackLocalMsg);
+    function trackLocalMsg(data) {
+          socket.emit('trackLocal', data);
     }
     // Client disconnects
     socket.on('disconnect', byeConnection);
