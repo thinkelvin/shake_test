@@ -224,6 +224,7 @@ function trackLocal(data) {
   var curTime = Date.now();
    trackCheck = data.trackID;
   localTrackTimes[trackCheck].push(curTime);
+  trackMuted[trackCheck]=false;
  
 }
 
