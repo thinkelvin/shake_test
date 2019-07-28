@@ -44,6 +44,7 @@ var dataArray1;
 var mainPage;
 var clientID;
 
+var trackSyncTimes = []; // collect all active track shake times received
 
 var _debug = false; // turn on/off accelerationX plot for debug
 
@@ -140,6 +141,9 @@ function setup() {
       screenfull.request();
     }
   });
+
+  // Initialize four tracks sync times
+  while (trackSyncTimes.push([])< 4);
 }
 
 
@@ -171,6 +175,9 @@ function draw() {
             trackID: trackOn,
           }
           socket.emit('trackShake', trackInfo); // tell server the client mobile shakes
+        } else {
+          // Check if the inactive track should be enabled
+          trackCheck();
         }
         // Remove the highlight and resume the background track color
         switch (trackOn) {
@@ -249,30 +256,40 @@ function initClient(data) {
 }
 
 function trackSync(data) {
-  // only sync muted track
-  if (data.trackID == trackOn && trackMuted[trackOn]) {
-    switch (trackOn) {
-      case 0:
-        track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
-        break;
-      case 1:
-        track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
-        break;
-      case 2:
-        track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
-        break;
-      case 3:
-        track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
-        break;
-    }
-    trackTap[trackOn] = false; // untap the track
-    trackMuted[trackOn] = false; // enable the audio track 
-    trackOn = -1; // no track is tapped
+  // Remember the time when active track is shaken
+  trackSyncTimes[data.trackID].push(Date.now());
+  // if (data.trackID == trackOn && trackMuted[trackOn]) {
+  //   switch (trackOn) {
+  //     case 0:
+  //       track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+  //       break;
+  //     case 1:
+  //       track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+  //       break;
+  //     case 2:
+  //       track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+  //       break;
+  //     case 3:
+  //       track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
+  //       break;
+  //   }
+  //   trackTap[trackOn] = false; // untap the track
+  //   trackMuted[trackOn] = false; // enable the audio track 
+  //   trackOn = -1; // no track is tapped
 
-  }
+  // }
 }
 
-
+function trackCheck() {
+  var curTime = Date.now();
+  var shakeWindow = 2000;
+  var len = trackSyncTimes[trackOn].length;
+  var trackTime = trackSyncTimes[trackOn][len-1];
+  // Check against the corresponding active track shaken time
+  if (Math.abs(curTime - trackTime)<shakeWindow) {
+    trackMuted[trackOn] = false; // enable the audio track 
+  }
+}
 
 
 function accUpdate(e) {
