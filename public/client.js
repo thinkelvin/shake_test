@@ -216,6 +216,7 @@ function trackSync(data) {
   // if (trackMuted[theTrack]) { // No need to remember if the track is not muted
   var curTime = Date.now();
   globalTrackTimes[theTrack].push(curTime);
+  document.getElementById("localBump").innerHTML = theTrack.toString();
   // }
 
 }
