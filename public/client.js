@@ -220,18 +220,10 @@ function trackSync(data) {
 
 }
 
-function trackLocal() {
+function trackLocal(data) {
   var curTime = Date.now();
   localTrackTimes[trackOn].push(curTime);
-  // var len = globalTrackTimes[trackOn].length;
-  // if (len > 0 && trackMuted[trackOn]) {
-  //   // var trackTime = globalTrackTimes[trackOn][len - 1];
-  //   var trackTime = globalTrackTimes[trackOn].pop();
-  //   // Check against the corresponding active track shaken time
-  //   if (Math.abs(curTime - trackTime) < 3000) {
-  //     trackMuted[trackOn] = false; // enable the audio track 
-  //   }
-  // }
+  trackCheck = data.trackID;
 }
 
 function trackDeHighlight() {
