@@ -143,7 +143,7 @@ function setup() {
   });
 
   // Initialize four tracks sync times
-  while (trackSyncTimes.push([])< 4);
+  while (trackSyncTimes.push([]) < 4);
 }
 
 
@@ -284,10 +284,12 @@ function trackCheck() {
   var curTime = Date.now();
   var shakeWindow = 2000;
   var len = trackSyncTimes[trackOn].length;
-  var trackTime = trackSyncTimes[trackOn][len-1];
-  // Check against the corresponding active track shaken time
-  if (Math.abs(curTime - trackTime)<shakeWindow) {
-    trackMuted[trackOn] = false; // enable the audio track 
+  if (len > 0) {
+    var trackTime = trackSyncTimes[trackOn][len - 1];
+    // Check against the corresponding active track shaken time
+    if (Math.abs(curTime - trackTime) < shakeWindow) {
+      trackMuted[trackOn] = false; // enable the audio track 
+    }
   }
 }
 
