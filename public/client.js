@@ -222,8 +222,9 @@ function trackSync(data) {
 
 function trackLocal(data) {
   var curTime = Date.now();
-  localTrackTimes[trackOn].push(curTime);
-  trackCheck = data.trackID;
+   trackCheck = data.trackID;
+  localTrackTimes[trackCheck].push(curTime);
+ 
 }
 
 function trackDeHighlight() {

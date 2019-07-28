@@ -58,11 +58,13 @@ function newConnection(socket){
     socket.on('trackShake', trackShakeMsg);
     function trackShakeMsg(data) {
         socket.broadcast.emit('trackSync',data);
+        console.log('track Sync');
     }
 
     socket.on('trackLocal', trackLocalMsg);
     function trackLocalMsg(data) {
           socket.emit('trackLocal', data);
+          console.log('track Local');
     }
     // Client disconnects
     socket.on('disconnect', byeConnection);
