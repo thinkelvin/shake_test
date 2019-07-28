@@ -158,7 +158,7 @@ function draw() {
   trackSoundUpdate();
   soundViz();
 
-  console.log(trackOn);
+  // console.log(trackOn);
   // if (trackTapped) console.log(trackIDs[trackOn]);
 
   if (!bufferReady) { // need to fill up the buffer before computing mean and sd
@@ -181,26 +181,48 @@ function draw() {
           // Check if the inactive track should be enabled
           trackCheck();
         }
+        trackDeHighlight();
         // Remove the highlight and resume the background track color
-        switch (trackOn) {
-          case 0:
-            track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
-            break;
-          case 1:
-            track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
-            break;
-          case 2:
-            track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
-            break;
-          case 3:
-            track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
-            break;
-        }
-        trackTap[trackOn] = false;
-        trackOn = -1;
+        // switch (trackOn) {
+        //   case 0:
+        //     track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+        //     break;
+        //   case 1:
+        //     track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+        //     break;
+        //   case 2:
+        //     track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+        //     break;
+        //   case 3:
+        //     track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
+        //     break;
+        // }
+        // trackTap[trackOn] = false;
+        // trackOn = -1;
       }
     }
     lvlCheckDelay--;
+  }
+}
+
+function trackDeHighlight() {
+  if (trackOn >= 0) {
+    switch (trackOn) {
+      case 0:
+        track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
+        break;
+      case 1:
+        track2Element.style.backgroundColor = "hsl(113, 100%, 30%)";
+        break;
+      case 2:
+        track3Element.style.backgroundColor = "hsl(189, 100%, 30%)";
+        break;
+      case 3:
+        track4Element.style.backgroundColor = "hsl(298, 100%, 30%)";
+        break;
+    }
+    trackTap[trackOn] = false;
+    trackOn = -1;
   }
 }
 
@@ -277,8 +299,8 @@ function trackCheck() {
     // Check against the corresponding active track shaken time
     if (Math.abs(curTime - trackTime) < shakeWindow) {
       trackMuted[trackOn] = false; // enable the audio track 
-    } 
-  } 
+    }
+  }
 }
 
 
