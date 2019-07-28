@@ -46,6 +46,7 @@ var clientID;
 
 var globalTrackTimes = []; // collect all active track shake times received
 var localTrackTimes = []; // collect all local inactive shake times
+var trackCheck; 
 
 var _debug = false; // turn on/off accelerationX plot for debug
 
@@ -157,7 +158,7 @@ function draw() {
   }
   trackSoundUpdate();
   soundViz();
-
+  trackMatch();
   // console.log(trackOn);
   // if (trackTapped) console.log(trackIDs[trackOn]);
 
@@ -180,12 +181,50 @@ function draw() {
         } else {
           // Check if the inactive track should be enabled
           trackCheck();
+          trackCheck = trackOn;
         }
         trackDeHighlight();
       }
     }
     lvlCheckDelay--;
   }
+}
+
+function trackMatch(){
+  var localLen = localTrackTimes[trackCheck].length;
+  var globalLen = globalTrackTimes[trackCheck].length;
+  if (localLen>0 && globalLen>0) {
+    var t1 = localTrackTimes[trackCheck].pop();
+    var t2 = globalTrackTimes[trackCheck].pop();
+    if (Math.abs(t1-t2)<3000) {
+      trackMuted[trackCheck]=false;
+    }
+  }
+
+}
+
+function trackSync(data) {
+  // Remember the time when active track is shaken
+  var theTrack = data.trackID;
+  if (trackMuted[theTrack]) { // No need to remember if the track is not muted
+    var curTime = Date.now();
+    globalTrackTimes[theTrack].push(curTime);
+  }
+
+}
+
+function trackCheck() {
+  var curTime = Date.now();
+  localTrackTimes[trackOn].push(curTime);
+  // var len = globalTrackTimes[trackOn].length;
+  // if (len > 0 && trackMuted[trackOn]) {
+  //   // var trackTime = globalTrackTimes[trackOn][len - 1];
+  //   var trackTime = globalTrackTimes[trackOn].pop();
+  //   // Check against the corresponding active track shaken time
+  //   if (Math.abs(curTime - trackTime) < 3000) {
+  //     trackMuted[trackOn] = false; // enable the audio track 
+  //   }
+  // }
 }
 
 function trackDeHighlight() {
@@ -262,29 +301,7 @@ function initClient(data) {
   trackMuted[data.trackPlay] = false;
 }
 
-function trackSync(data) {
-  // Remember the time when active track is shaken
-  var theTrack = data.trackID;
-  if (trackMuted[theTrack]) { // No need to remember if the track is not muted
-    var curTime = Date.now();
-    globalTrackTimes[theTrack].push(curTime);
-  }
 
-}
-
-function trackCheck() {
-  var curTime = Date.now();
-  var shakeWindow = 3000;
-  var len = globalTrackTimes[trackOn].length;
-  if (len > 0 && trackMuted[trackOn]) {
-    // var trackTime = globalTrackTimes[trackOn][len - 1];
-    var trackTime = globalTrackTimes[trackOn].pop();
-    // Check against the corresponding active track shaken time
-    if (Math.abs(curTime - trackTime) < shakeWindow) {
-      trackMuted[trackOn] = false; // enable the audio track 
-    }
-  }
-}
 
 
 function accUpdate(e) {
