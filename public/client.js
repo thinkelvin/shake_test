@@ -180,7 +180,7 @@ function draw() {
           socket.emit('trackShake', trackInfo); // tell server the client mobile shakes
         } else {
           // Check if the inactive track should be enabled
-          trackCheck();
+          trackLocal();
           trackCheck = trackOn;
         }
         trackDeHighlight();
@@ -213,7 +213,7 @@ function trackSync(data) {
 
 }
 
-function trackCheck() {
+function trackLocal() {
   var curTime = Date.now();
   localTrackTimes[trackOn].push(curTime);
   // var len = globalTrackTimes[trackOn].length;
