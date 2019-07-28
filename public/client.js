@@ -175,7 +175,7 @@ function draw() {
         lvlCheckDelay = 20;
         NbBumps++;
         var trackInfo = {
-          trackID: trackOn,
+          trackID: trackOn
         }
         if (!trackMuted[trackOn]) { // Tell the server to broadcast if an active track is tapped and shaken
           socket.emit('trackShake', trackInfo); // tell server the client mobile shakes
