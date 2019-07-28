@@ -259,7 +259,16 @@ function initClient(data) {
 
 function trackSync(data) {
   // Remember the time when active track is shaken
-  globalTrackTimes[data.trackID].push(Date.now());
+  var theTrack = data.trackID;
+  var curTime = Date.now();
+  globalTrackTimes[theTrack].push(curTime);
+  var len = localTrackTimes[theTrack].length;
+  if (len>0){
+    var diff = localTrackTimes[theTrack][len-1]-curTime;
+    if (Math.abs(diff)<3000) {
+      trackMuted[trackOn] = false;
+    }
+  }
 
 }
 
@@ -272,9 +281,12 @@ function trackCheck() {
     // Check against the corresponding active track shaken time
     if (Math.abs(curTime - trackTime) < shakeWindow) {
       trackMuted[trackOn] = false; // enable the audio track 
-    } 
+    } else {
+      localTrackTimes[trackOn].push(curTime);
+    }
+  } else {
+    localTrackTimes[trackOn].push(curTime);
   }
-  // localTrackTimes[trackOn].push(curTime);
 }
 
 
