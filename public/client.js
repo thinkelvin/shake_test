@@ -263,15 +263,15 @@ function trackSync(data) {
   if (trackMuted[theTrack]) { // No need to remember if the track is not muted
     var curTime = Date.now();
     globalTrackTimes[theTrack].push(curTime);
-    if (theTrack == trackOn) {
-      var len = localTrackTimes[trackOn].length;
-      if (len > 0) {
-        var diff = localTrackTimes[theTrack][len - 1] - curTime;
-        if (Math.abs(diff) < 3000) {
-          trackMuted[trackOn] = false;
-        }
-      }
-    }
+    // if (theTrack == trackOn) {
+    //   var len = localTrackTimes[trackOn].length;
+    //   if (len > 0) {
+    //     var diff = localTrackTimes[theTrack][len - 1] - curTime;
+    //     if (Math.abs(diff) < 3000) {
+    //       trackMuted[trackOn] = false;
+    //     }
+    //   }
+    // }
   }
 
 }
@@ -285,12 +285,12 @@ function trackCheck() {
     // Check against the corresponding active track shaken time
     if (Math.abs(curTime - trackTime) < shakeWindow) {
       trackMuted[trackOn] = false; // enable the audio track 
-    } else {
-      localTrackTimes[trackOn].push(curTime);
-    }
-  } else {
-    localTrackTimes[trackOn].push(curTime);
-  }
+    } //else {
+      //localTrackTimes[trackOn].push(curTime);
+    //}
+  } //else {
+    //localTrackTimes[trackOn].push(curTime);
+  //}
 }
 
 
