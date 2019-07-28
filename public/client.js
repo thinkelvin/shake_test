@@ -179,7 +179,7 @@ function draw() {
           socket.emit('trackShake', trackInfo); // tell server the client mobile shakes
         } else {
           // Check if the inactive track should be enabled
-          setTimeout(trackCheck(),1000);
+          trackCheck();
         }
         // Remove the highlight and resume the background track color
         switch (trackOn) {
@@ -263,15 +263,6 @@ function trackSync(data) {
   if (trackMuted[theTrack]) { // No need to remember if the track is not muted
     var curTime = Date.now();
     globalTrackTimes[theTrack].push(curTime);
-    // if (theTrack == trackOn) {
-    //   var len = localTrackTimes[trackOn].length;
-    //   if (len > 0) {
-    //     var diff = localTrackTimes[theTrack][len - 1] - curTime;
-    //     if (Math.abs(diff) < 3000) {
-    //       trackMuted[trackOn] = false;
-    //     }
-    //   }
-    // }
   }
 
 }
@@ -281,16 +272,13 @@ function trackCheck() {
   var shakeWindow = 3000;
   var len = globalTrackTimes[trackOn].length;
   if (len > 0 && trackMuted[trackOn]) {
-    var trackTime = globalTrackTimes[trackOn][len - 1];
+    // var trackTime = globalTrackTimes[trackOn][len - 1];
+    var trackTime = globalTrackTimes[trackOn].pop();
     // Check against the corresponding active track shaken time
     if (Math.abs(curTime - trackTime) < shakeWindow) {
       trackMuted[trackOn] = false; // enable the audio track 
-    } //else {
-      //localTrackTimes[trackOn].push(curTime);
-    //}
-  } //else {
-    //localTrackTimes[trackOn].push(curTime);
-  //}
+    } 
+  } 
 }
 
 
