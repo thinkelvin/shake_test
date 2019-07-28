@@ -266,9 +266,9 @@ function trackSync(data) {
 function trackCheck() {
   var curTime = Date.now();
   var shakeWindow = 3000;
-  //var len = globalTrackTimes[trackOn].length;
+  var len = globalTrackTimes[trackOn].length;
   if (len > 0) {
-    var trackTime = globalTrackTimes[trackOn].pop();
+    var trackTime = globalTrackTimes[trackOn][len-1];
     // Check against the corresponding active track shaken time
     if (Math.abs(curTime - trackTime) < shakeWindow) {
       trackMuted[trackOn] = false; // enable the audio track 
