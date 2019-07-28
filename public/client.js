@@ -46,7 +46,7 @@ var clientID;
 
 var globalTrackTimes = []; // collect all active track shake times received
 var localTrackTimes = []; // collect all local inactive shake times
-var trackCheck;
+var trackCheck = -1;
 
 var _debug = false; // turn on/off accelerationX plot for debug
 
@@ -193,13 +193,16 @@ function draw() {
 }
 
 function trackMatch() {
-  var localLen = localTrackTimes[trackCheck].length;
-  var globalLen = globalTrackTimes[trackCheck].length;
-  if (localLen > 0 && globalLen > 0) {
-    var t1 = localTrackTimes[trackCheck].pop();
-    var t2 = globalTrackTimes[trackCheck].pop();
-    if (Math.abs(t1 - t2) < 3000) {
-      trackMuted[trackCheck] = false;
+  if (trackCheck >= 0) {
+    var localLen = localTrackTimes[trackCheck].length;
+    var globalLen = globalTrackTimes[trackCheck].length;
+    if (localLen > 0 && globalLen > 0) {
+      var t1 = localTrackTimes[trackCheck].pop();
+      var t2 = globalTrackTimes[trackCheck].pop();
+      if (Math.abs(t1 - t2) < 3000) {
+        trackMuted[trackCheck] = false;
+        trackCheck=-1;
+      }
     }
   }
 
