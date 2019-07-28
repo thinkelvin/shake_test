@@ -128,7 +128,7 @@ function setup() {
   // window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
   socket.on('initClient', initClient);
-  socket.on('track', trackCheck); // check if the active track is wanted
+  socket.on('trackSync', trackSync); // check if the active track is wanted
   touchUISetup();
 
   var landingPageTap = new Hammer(landingPage);
@@ -170,7 +170,7 @@ function draw() {
           var trackInfo = {
             trackID: trackOn,
           }
-          socket.emit('track', trackInfo); // tell server the client mobile shakes
+          socket.emit('trackShake', trackInfo); // tell server the client mobile shakes
         }
         // Remove the highlight and resume the background track color
         switch (trackOn) {
@@ -248,7 +248,7 @@ function initClient(data) {
   trackMuted[data.trackPlay] = false;
 }
 
-function trackCheck(data) {
+function trackSync(data) {
   // only sync muted track
   if (data.trackID == trackOn && trackMuted[trackOn]) {
     switch (trackOn) {
