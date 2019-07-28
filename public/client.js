@@ -206,10 +206,10 @@ function trackMatch(){
 function trackSync(data) {
   // Remember the time when active track is shaken
   var theTrack = data.trackID;
-  if (trackMuted[theTrack]) { // No need to remember if the track is not muted
+  // if (trackMuted[theTrack]) { // No need to remember if the track is not muted
     var curTime = Date.now();
     globalTrackTimes[theTrack].push(curTime);
-  }
+  // }
 
 }
 
