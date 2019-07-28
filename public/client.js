@@ -179,8 +179,7 @@ function draw() {
           socket.emit('trackShake', trackInfo); // tell server the client mobile shakes
         } else {
           // Check if the inactive track should be enabled
-          socket.emit('nothing', 'nothing');
-          trackCheck();
+          setTimeout(trackCheck(),500);
         }
         // Remove the highlight and resume the background track color
         switch (trackOn) {
