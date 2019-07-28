@@ -46,7 +46,7 @@ var clientID;
 
 var globalTrackTimes = []; // collect all active track shake times received
 var localTrackTimes = []; // collect all local inactive shake times
-var trackCheck; 
+var trackCheck;
 
 var _debug = false; // turn on/off accelerationX plot for debug
 
@@ -158,7 +158,7 @@ function draw() {
   }
   trackSoundUpdate();
   soundViz();
-  trackMatch();
+
   // console.log(trackOn);
   // if (trackTapped) console.log(trackIDs[trackOn]);
 
@@ -188,16 +188,18 @@ function draw() {
     }
     lvlCheckDelay--;
   }
+
+  trackMatch();
 }
 
-function trackMatch(){
+function trackMatch() {
   var localLen = localTrackTimes[trackCheck].length;
   var globalLen = globalTrackTimes[trackCheck].length;
-  if (localLen>0 && globalLen>0) {
+  if (localLen > 0 && globalLen > 0) {
     var t1 = localTrackTimes[trackCheck].pop();
     var t2 = globalTrackTimes[trackCheck].pop();
-    if (Math.abs(t1-t2)<3000) {
-      trackMuted[trackCheck]=false;
+    if (Math.abs(t1 - t2) < 3000) {
+      trackMuted[trackCheck] = false;
     }
   }
 
@@ -207,8 +209,8 @@ function trackSync(data) {
   // Remember the time when active track is shaken
   var theTrack = data.trackID;
   // if (trackMuted[theTrack]) { // No need to remember if the track is not muted
-    var curTime = Date.now();
-    globalTrackTimes[theTrack].push(curTime);
+  var curTime = Date.now();
+  globalTrackTimes[theTrack].push(curTime);
   // }
 
 }
