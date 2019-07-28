@@ -166,13 +166,13 @@ function draw() {
       if (Level > 0 && trackOn >= 0) { // shake with track tapped
         lvlCheckDelay = 20;
         NbBumps++;
-        if (!trackMuted[trackOn]) { // Only broadcast when active track is tapped
+        if (!trackMuted[trackOn]) { // Tell the server to broadcast if an active track is tapped and shaken
           var trackInfo = {
             trackID: trackOn,
           }
           socket.emit('track', trackInfo); // tell server the client mobile shakes
-          //socket.broadcast.emit('track',trackInfo); // tell everyone which active track is shaken
         }
+        // Remove the highlight and resume the background track color
         switch (trackOn) {
           case 0:
             track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
@@ -249,7 +249,8 @@ function initClient(data) {
 }
 
 function trackCheck(data) {
-  if (data.trackID == trackOn) {
+  // only sync muted track
+  if (data.trackID == trackOn && trackMuted[trackOn]) {
     switch (trackOn) {
       case 0:
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";

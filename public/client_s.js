@@ -248,7 +248,7 @@ function initClient(data) {
 }
 
 function trackCheck(data) {
-  if (data.trackID == trackOn) {
+  if (data.trackID == trackOn && trackMuted[trackOn]) {
     switch (trackOn) {
       case 0:
         track1Element.style.backgroundColor = "hsl(0, 100%, 30%)";
