@@ -7,7 +7,7 @@ var app = express();
 app.use(secure);
 
 app.use(express.static('public'));
-app.set('views', 'views');
+app.set('views', './views));
 app.set('view engine', 'ejs');
 var port= process.env.PORT || 8080;
 var timeStart;
