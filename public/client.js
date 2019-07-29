@@ -294,12 +294,18 @@ function openingAnimation() {
 
 function initClient(data) {
   clientID = data.clientID;
-  //console.log("I am no: " + data.clientID);
+  if (startTracks == 4) {
+  trackMuted[0] = false;
+  trackMuted[1] = false;
+  trackMuted[2] = false;
+  trackMuted[3] = false;
+  } else {
   trackMuted[0] = true;
   trackMuted[1] = true;
   trackMuted[2] = true;
   trackMuted[3] = true;
   trackMuted[data.trackPlay] = false;
+  }
 }
 
 
