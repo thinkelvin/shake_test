@@ -1,10 +1,13 @@
 // var clientStart;
 var express = require('express');
 var secure = require('ssl-express-www');
+var path = require('path');
 var app = express();
+
 app.use(secure);
-//app.use(express.static('public'));
-app.set('views', __dirname+'views');
+
+app.use(express.static('public'));
+// app.set('views', 'views');
 app.set('view engine', 'ejs');
 var port= process.env.PORT || 8080;
 var timeStart;
