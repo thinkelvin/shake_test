@@ -1,7 +1,6 @@
 // var clientStart;
 var express = require('express');
 var secure = require('ssl-express-www');
-var path = require('path');
 var app = express();
 
 app.use(secure);
@@ -15,17 +14,6 @@ var server = app.listen(port, function() {
     console.log('listening at:'+port);
     timeStart = new Date();
 });
-// var indexResponse = function(req, res) {
-//     res.render('index', {tracks: 4});
-// }
-
-
-
-// app.get('/:tracks', function(req, res){
-//      var tracks = req.params.tracks;
-//     res.sendFile('/public/index.html',{root: __dirname});
-//     console.log('tracks: '+ tracks);
-// });
 
 app.get('/', function (req, res) {
     res.render('index', {tracks: 1});
@@ -34,10 +22,7 @@ app.get('/4', function (req, res) {
     var tracks = req.params.tracks;
     res.render('index', {tracks: 4});
 });
-// app.get('/s', function(req, res){
-//     res.sendFile('/public/index_s.html', {root: __dirname});
-//     console.log('route to s');
-// });
+
 
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time

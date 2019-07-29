@@ -87,7 +87,6 @@ function preload() {
 }
 
 function setup() {
-  console.log("Start Tracks: "+ startTracks);
   mainPage = document.getElementById("main");
   track1Viz = document.getElementById("track1Viz");
   track2Viz = document.getElementById("track2Viz");
