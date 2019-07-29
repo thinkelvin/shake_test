@@ -15,9 +15,9 @@ var server = app.listen(port, function() {
     console.log('listening at:'+port);
     timeStart = new Date();
 });
-var indexResponse = function(req, res) {
-    res.render('index', {tracks: 4});
-}
+// var indexResponse = function(req, res) {
+//     res.render('index', {tracks: 4});
+// }
 
 
 
