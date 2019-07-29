@@ -28,17 +28,17 @@ var server = app.listen(port, function() {
 // });
 
 app.get('/', function (req, res) {
+    res.render('index', {tracks: 1});
+});
+app.get('/4', function (req, res) {
     var tracks = req.params.tracks;
     res.render('index', {tracks: 4});
 });
-app.get('/s', function(req, res){
-    //console.log(req.params[0]);
-   // clientStart = req.params[0];
-    // res.render('index');
-    // console.log(clientStart);
-    res.sendFile('/public/index_s.html', {root: __dirname});
-    console.log('route to s');
-});
+// app.get('/s', function(req, res){
+//     res.sendFile('/public/index_s.html', {root: __dirname});
+//     console.log('route to s');
+// });
+
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
 // var allClients = [];
