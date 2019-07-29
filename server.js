@@ -11,7 +11,7 @@ var server = app.listen(port, function() {
     timeStart = new Date();
 });
 var indexResponse = function(req, res) {
-    res.render('index');
+    res.render('index', {tracks: 4});
 }
 app.use(express.static('public'));
 
