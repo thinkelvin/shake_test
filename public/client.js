@@ -87,8 +87,8 @@ function preload() {
 }
 
 function setup() {
-  let params = getURLParams();
-  console.log(params.tracks);
+  // let params = getURLParams();
+  console.log('started');
   mainPage = document.getElementById("main");
   track1Viz = document.getElementById("track1Viz");
   track2Viz = document.getElementById("track2Viz");
