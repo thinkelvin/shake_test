@@ -3,6 +3,7 @@ var express = require('express');
 var secure = require('ssl-express-www');
 var app = express();
 app.use(secure);
+app.set('view engine', 'ejs');
 var port= process.env.PORT || 8080;
 var timeStart;
 var server = app.listen(port, function() {
@@ -15,12 +16,15 @@ var indexResponse = function(req, res) {
 app.use(express.static('public'));
 
 
-app.get('/:tracks', function(req, res){
-     var tracks = req.params.tracks;
-    res.sendFile('/public/index.html?tracks='+tracks,{root: __dirname});
-    // res.send(tracks);
-   
-    console.log('tracks: '+ tracks);
+// app.get('/:tracks', function(req, res){
+//      var tracks = req.params.tracks;
+//     res.sendFile('/public/index.html',{root: __dirname});
+//     console.log('tracks: '+ tracks);
+// });
+
+app.get('/:tracks', function (req, res) {
+    var tracks = req.params.tracks;
+    res.render('index', {tracks: tracks});
 });
 app.get('/s', function(req, res){
     //console.log(req.params[0]);
