@@ -23,9 +23,9 @@ var indexResponse = function(req, res) {
 //     console.log('tracks: '+ tracks);
 // });
 
-app.get('/:tracks', function (req, res) {
+app.get('/', function (req, res) {
     var tracks = req.params.tracks;
-    res.render('index', {tracks: tracks});
+    res.render('index', {tracks: 4});
 });
 app.get('/s', function(req, res){
     //console.log(req.params[0]);
