@@ -201,7 +201,7 @@ function trackMatch() {
     if (localLen > 0 && globalLen > 0) {
       var t1 = localTrackTimes[trackCheck].pop();
       var t2 = globalTrackTimes[trackCheck].pop();
-      if (Math.abs(t1 - t2) < 3000) {
+      if (Math.abs(t1 - t2) < 1000) { // match within 1 second of shake
         trackMuted[trackCheck] = false;
         trackCheck = -1;
       }
