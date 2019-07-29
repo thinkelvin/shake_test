@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.get('/:tracks', function(req, res){
      var tracks = req.params.tracks;
     res.sendFile('/public/index.html/?tracks='+tracks,{root: __dirname});
-    res.send(tracks);
+    // res.send(tracks);
    
     console.log('tracks: '+ tracks);
 });
