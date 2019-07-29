@@ -288,8 +288,8 @@ function openingAnimation() {
     document.getElementById('projectName').style.opacity = 0;
     document.getElementById('projectName').style.transition = "all 1s ease-in";
     document.getElementById('startMessage').style.opacity= 1;
-    document.getElementById('startMessage').style.transition = "all 3s ease-in";
-    document.getElementById('startMessage').style.color = "yellow";
+    document.getElementById('startMessage').style.transition = "all 2s ease-in";
+    document.getElementById('startMessage').style.color = "rgb(128,128,128)";
   }
 
 }
