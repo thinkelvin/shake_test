@@ -287,7 +287,7 @@ function openingAnimation() {
     document.getElementById('projectNameColor').style.opacity = 1;
     document.getElementById('projectName').style.opacity = 0;
     document.getElementById('projectName').style.transition = "all 1s ease-in";
-    // document.getElementById('startMessage').style.display = "block";
+    document.getElementById('startMessage').style.opacity= 1;
     document.getElementById('startMessage').style.transition = "all 3s ease-in";
     document.getElementById('startMessage').style.color = "yellow";
   }

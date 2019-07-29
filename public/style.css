@@ -193,6 +193,7 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1.0em;
   color: black;
+  opacity: 0;
   width: 100%;
   position: fixed;
   top: 75%;
