@@ -189,8 +189,10 @@
  }
 
 #startMessage {
+  font-size: 1.0em;
   color: yellow;
   width: 100%;
+  position: fixed;
   top: 75%;
 }
 
