@@ -3,6 +3,7 @@ var express = require('express');
 var secure = require('ssl-express-www');
 var app = express();
 app.use(secure);
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 var port= process.env.PORT || 8080;
 var timeStart;
@@ -13,7 +14,7 @@ var server = app.listen(port, function() {
 var indexResponse = function(req, res) {
     res.render('index', {tracks: 4});
 }
-app.use(express.static('public'));
+
 
 
 // app.get('/:tracks', function(req, res){
