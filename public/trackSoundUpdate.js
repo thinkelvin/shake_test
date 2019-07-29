@@ -1,5 +1,5 @@
 // variables for track
-var trackMuted = [];
+var trackMuted = [true,true,true,true];
 var trackSounds = [];
 var trackStarted = true;
 var trackLoaded = 0;

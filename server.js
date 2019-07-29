@@ -30,9 +30,9 @@ app.get('/s', function(req, res){
 });
 console.log("my node server is up and running at Heroku!!!");
 var socketPair = {}; // Object to store socketID: shake time
-var allClients = [];
-var NbClients = 0; // number of connected clients
-var Clients = 0; // serve as client ID, always increment up and unique
+// var allClients = [];
+var NbConClients = 0; // number of connected clients
+var ClientID = 0; // serve as client ID, always increment up and unique
 // Enable Socket Communication
 var socket = require('socket.io');
 var io = socket(server);
@@ -43,36 +43,36 @@ io.on('connection', newConnection);
 
 // Whenever this is a new Socket connection, do the following
 function newConnection(socket){
-    console.log('new connection:'+socket.id);
+    // console.log('new connection:'+socket.id);
     
     var clientData = {
-        clientID: Clients, // unique number
+        clientID: ClientID, // unique number
         trackPlay: trackNum
     }
     socket.emit('initClient', clientData); // return client info back to Browser
-    allClients[Clients] = socket.id;
-    Clients++;
-    NbClients++;
+    // allClients[ClientID] = socket.id;
+    ClientID++;
+    NbConClients++;
     trackNum = (trackNum+1)%4;
  
     socket.on('trackShake', trackShakeMsg);
     function trackShakeMsg(data) {
         socket.broadcast.emit('trackSync',data);
-        console.log('track Sync:'+ data.trackID);
+        // console.log('track Sync:'+ data.trackID);
     }
 
     socket.on('trackLocal', trackLocalMsg);
     function trackLocalMsg(data) {
           socket.emit('trackLocal', data);
-          console.log('track Local:' + data.trackID);
+        //   console.log('track Local:' + data.trackID);
     }
     // Client disconnects
     socket.on('disconnect', byeConnection);
     function byeConnection(){
         console.log('client disconnected: '+ socket.id);
         delete socketPair[socket.id];
-        NbClients--;
-        console.log('NbClients: ' + NbClients);
+        NbConClients--;
+        console.log('NbClients: ' + NbConClients);
     }
 }
 
