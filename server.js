@@ -15,10 +15,11 @@ var indexResponse = function(req, res) {
 app.use(express.static('public'));
 
 
-app.get('/', function(req, res){
+app.get('/:tracks', function(req, res){
     //res.render('index');
     res.sendFile('index.html');
-    console.log('index page sent');
+    var tracks = req.params.tracks;
+    console.log('tracks: '+ tracks);
 });
 app.get('/s', function(req, res){
     //console.log(req.params[0]);
