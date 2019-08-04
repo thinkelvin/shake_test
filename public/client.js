@@ -52,7 +52,7 @@ var _debug = false; // turn on/off accelerationX plot for debug
 
 function preload() {
   track1Sound = new Howl({
-    src: ['./media/track1.mp3'],
+    src: ['./media/ntrack1.mp3'],
     volume: 0.5,
     preload: true,
     onload: function () {
@@ -60,7 +60,7 @@ function preload() {
     }
   });
   track2Sound = new Howl({
-    src: ['./media/track2.mp3'],
+    src: ['./media/ntrack2.mp3'],
     volume: 0.5,
     preload: true,
     onload: function () {
@@ -68,7 +68,7 @@ function preload() {
     }
   });
   track3Sound = new Howl({
-    src: ['./media/track3.mp3'],
+    src: ['./media/ntrack3.mp3'],
     volume: 0.5,
     preload: true,
     onload: function () {
@@ -76,7 +76,7 @@ function preload() {
     }
   });
   track4Sound = new Howl({
-    src: ['./media/track4.mp3'],
+    src: ['./media/ntrack4.mp3'],
     volume: 0.5,
     preload: true,
     onload: function () {
