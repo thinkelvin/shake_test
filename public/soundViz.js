@@ -6,7 +6,7 @@
             analyser1.getByteFrequencyData(dataArray1);
             let segWidth = bufferLength1 * 0.25;
             // var seg1 = dataArray1.slice(3 * segWidth, 4 * segWidth - 1);
-            var seg1 = dataArray1.slice(100 , segWidth - 1);
+            var seg1 = dataArray1.slice(100 , segWidth - 1+100);
             var seg2 = dataArray1.slice(2 * segWidth, 3 * segWidth - 1);
             var seg3 = dataArray1.slice(segWidth, 2 * segWidth - 1);
             var seg4 = dataArray1.slice(0, segWidth - 1);
