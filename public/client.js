@@ -152,11 +152,12 @@ function setup() {
                 .catch(console.error);
             } else {
               window.addEventListener("devicemotion", accUpdate, true);
+                    screenfull.request();
             }
       landingPage.style.display = "none";
       trackStarted = false;
       mainPage.style.display = "block";
-      screenfull.request();
+
     }
   });
 
