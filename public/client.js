@@ -55,7 +55,7 @@ function preload() {
     src: ['./media/ntrack1.mp3'],
     volume: 0.5,
     preload: true,
-    mute: true,
+    html5: true,
     onload: function () {
       trackLoaded++;
     }
@@ -64,7 +64,7 @@ function preload() {
     src: ['./media/ntrack2.mp3'],
     volume: 0.5,
     preload: true,
-    mute: true,
+    html5: true,
     onload: function () {
       trackLoaded++;
     }
@@ -73,7 +73,7 @@ function preload() {
     src: ['./media/ntrack3.mp3'],
     volume: 0.5,
     preload: true,
-    mute: true,
+    html5: true,
     onload: function () {
       trackLoaded++;
     }
@@ -82,7 +82,7 @@ function preload() {
     src: ['./media/ntrack4.mp3'],
     volume: 0.5,
     preload: true,
-    mute: true,
+    html5: true,
     onload: function () {
       trackLoaded++;
     }
