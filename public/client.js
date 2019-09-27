@@ -163,7 +163,10 @@ function setup() {
       trackStarted = false;
       mainPage.style.display = "block";
       screenfull.request();
-      
+      track1Sound.play();
+      track2Sound.play();
+      track3Sound.play();
+      track4Sound.play();
     }
   });
 
