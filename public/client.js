@@ -133,7 +133,7 @@ function setup() {
 
 
   // window.addEventListener("devicemotion", accUpdate, true);
- 
+
   // window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
   socket.on('initClient', initClient);
@@ -144,26 +144,26 @@ function setup() {
   var landingPageTap = new Hammer(landingPage);
   landingPageTap.on("tap", function (ev) {
     if (trackLoaded == 4 && allPlayed) {
-            // Works with ipados 13 and ios 13
-            if (typeof DeviceMotionEvent.requestPermission === 'function') {
-              DeviceMotionEvent.requestPermission()
-                .then(PermissionStatus => {
-                  if (PermissionStatus === 'granted') {
-                    window.addEventListener("devicemotion", accUpdate, true);
-                  }
-                })
-                .catch(console.error);
-            } else {
+      // Works with ipados 13 and ios 13
+      if (typeof DeviceMotionEvent.requestPermission === 'function') {
+        DeviceMotionEvent.requestPermission()
+          .then(PermissionStatus => {
+            if (PermissionStatus === 'granted') {
               window.addEventListener("devicemotion", accUpdate, true);
-                    
+              if (screenfull.isEnabled) {
+                screenfull.request();
+              }
             }
+          })
+          .catch(console.error);
+      } else {
+        window.addEventListener("devicemotion", accUpdate, true);
+        screenfull.request();
+      }
       landingPage.style.display = "none";
       trackStarted = false;
       mainPage.style.display = "block";
-      // trackSoundUpdate();
-      if (screenfull.isEnabled) {
-        screenfull.request();
-      }
+
     }
   });
 
@@ -238,7 +238,7 @@ function trackSync(data) {
   // if (trackMuted[theTrack]) { // No need to remember if the track is not muted
   var curTime = Date.now();
   globalTrackTimes[theTrack].push(curTime);
-  
+
   // }
 
 }
@@ -309,7 +309,7 @@ function openingAnimation() {
     document.getElementById('projectNameColor').style.opacity = 1;
     document.getElementById('projectName').style.opacity = 0;
     document.getElementById('projectName').style.transition = "all 1s ease-in";
-    document.getElementById('startMessage').style.opacity= 1;
+    document.getElementById('startMessage').style.opacity = 1;
     document.getElementById('startMessage').style.transition = "all 2s ease-in";
     document.getElementById('startMessage').style.color = "rgb(128,128,128)";
   }
@@ -319,16 +319,16 @@ function openingAnimation() {
 function initClient(data) {
   clientID = data.clientID;
   if (startTracks == 4) {
-  trackMuted[0] = false;
-  trackMuted[1] = false;
-  trackMuted[2] = false;
-  trackMuted[3] = false;
+    trackMuted[0] = false;
+    trackMuted[1] = false;
+    trackMuted[2] = false;
+    trackMuted[3] = false;
   } else {
-  trackMuted[0] = true;
-  trackMuted[1] = true;
-  trackMuted[2] = true;
-  trackMuted[3] = true;
-  trackMuted[data.trackPlay] = false;
+    trackMuted[0] = true;
+    trackMuted[1] = true;
+    trackMuted[2] = true;
+    trackMuted[3] = true;
+    trackMuted[data.trackPlay] = false;
   }
 }
 
