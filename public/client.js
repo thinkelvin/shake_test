@@ -132,7 +132,7 @@ function setup() {
 
 
 
-  // window.addEventListener("devicemotion", accUpdate, true);
+  window.addEventListener("devicemotion", accUpdate, true);
 
   // window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
@@ -145,26 +145,25 @@ function setup() {
   landingPageTap.on("tap", function (ev) {
     if (trackLoaded == 4 && allPlayed) {
       // Works with ipados 13 and ios 13
-      if (typeof DeviceMotionEvent.requestPermission === 'function') {
-          DeviceMotionEvent.requestPermission()
-          .then(PermissionStatus => {
-            if (PermissionStatus === 'granted') {
-              window.addEventListener("devicemotion", accUpdate, true);
-              // if (screenfull.isEnabled) {
-                screenfull.request();
-              // }
-            }
-          })
-          .catch(console.error);
-        
-      } else {
-        window.addEventListener("devicemotion", accUpdate, true);
-        screenfull.request();
-      }
+      // if (typeof DeviceMotionEvent.requestPermission === 'function') {
+      //     DeviceMotionEvent.requestPermission()
+      //     .then(PermissionStatus => {
+      //       if (PermissionStatus === 'granted') {
+      //         window.addEventListener("devicemotion", accUpdate, true);
+      //         // if (screenfull.isEnabled) {
+      //           screenfull.request();
+      //         // }
+      //       }
+      //     })
+      //     .catch(console.error);
+      // } else {
+      //   window.addEventListener("devicemotion", accUpdate, true);
+      //   screenfull.request();
+      // }
       landingPage.style.display = "none";
       trackStarted = false;
       mainPage.style.display = "block";
-
+      screenfull.request();
     }
   });
 
