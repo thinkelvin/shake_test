@@ -146,6 +146,7 @@ function setup() {
     if (trackLoaded == 4 && allPlayed) {
       // Works with ipados 13 and ios 13
       if (typeof DeviceMotionEvent.requestPermission === 'function') {
+        if (PermissionStatus === 'denied') {
         DeviceMotionEvent.requestPermission()
           .then(PermissionStatus => {
             if (PermissionStatus === 'granted') {
@@ -156,6 +157,7 @@ function setup() {
             }
           })
           .catch(console.error);
+        }
       } else {
         window.addEventListener("devicemotion", accUpdate, true);
         screenfull.request();
