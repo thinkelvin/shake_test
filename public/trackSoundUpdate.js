@@ -6,7 +6,7 @@ var trackLoaded = 0;
 var trackEnded = 0;
 var trackIDs = [];
 var firstLoop = true;
-var track1Sound, track2Sound, track3Sound, track4Sound, fulltrack;
+var track1Sound, track2Sound, track3Sound, track4Sound;
 
 
 function trackSoundUpdate() {
@@ -15,7 +15,7 @@ function trackSoundUpdate() {
   track2Sound.mute(trackMuted[1]);
   track3Sound.mute(trackMuted[2]);
   track4Sound.mute(trackMuted[3]);
-      fulltrack.play();
+  
   if (!trackStarted && trackLoaded == 4 ) {
     if (firstLoop) {
       trackIDs[0] = track1Sound.play();

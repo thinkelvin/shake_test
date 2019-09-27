@@ -51,17 +51,11 @@ var trackCheck = -1;
 var _debug = false; // turn on/off accelerationX plot for debug
 
 function preload() {
-    fulltrack = new Howl({
-      src: ['./media/ftrack.mp3'],
-      volume: 0.5,
-      preload: true,
-      mute: false
-    });
+
   track1Sound = new Howl({
     src: ['./media/ntrack1.mp3'],
     volume: 0.5,
     preload: true,
-    html5: true,
     onload: function () {
       trackLoaded++;
     }
@@ -70,7 +64,6 @@ function preload() {
     src: ['./media/ntrack2.mp3'],
     volume: 0.5,
     preload: true,
-    html5: true,
     onload: function () {
       trackLoaded++;
     }
@@ -79,7 +72,6 @@ function preload() {
     src: ['./media/ntrack3.mp3'],
     volume: 0.5,
     preload: true,
-    html5: true,
     onload: function () {
       trackLoaded++;
     }
@@ -88,7 +80,6 @@ function preload() {
     src: ['./media/ntrack4.mp3'],
     volume: 0.5,
     preload: true,
-    html5: true,
     onload: function () {
       trackLoaded++;
     }
@@ -102,7 +93,8 @@ function setup() {
   track2Viz = document.getElementById("track2Viz");
   track3Viz = document.getElementById("track3Viz");
   track4Viz = document.getElementById("track4Viz");
- 
+  Howler.autoUnlock = true;
+  console.log(Howler.usingWebAudio);
   analyser1 = Howler.ctx.createAnalyser();
   Howler.masterGain.connect(analyser1);
   analyser1.connect(Howler.ctx.destination);
