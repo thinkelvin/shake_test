@@ -128,17 +128,7 @@ function setup() {
   NbBumps_sync = 0;
   //document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
 
-      if (typeof DeviceMotionEvent.requestPermission === 'function') {
-        DeviceMotionEvent.requestPermission()
-          .then(PermissionStatus => {
-            if (PermissionStatus === 'granted') {
-              window.addEventListener("devicemotion", accUpdate, true);
-            }
-          })
-          .catch(console.error);
-      } else {
-        window.addEventListener("devicemotion", accUpdate, true);
-      }
+
 
   // window.addEventListener("devicemotion", accUpdate, true);
  
@@ -152,6 +142,17 @@ function setup() {
   var landingPageTap = new Hammer(landingPage);
   landingPageTap.on("tap", function (ev) {
     if (trackLoaded == 4 && allPlayed) {
+            if (typeof DeviceMotionEvent.requestPermission === 'function') {
+              DeviceMotionEvent.requestPermission()
+                .then(PermissionStatus => {
+                  if (PermissionStatus === 'granted') {
+                    window.addEventListener("devicemotion", accUpdate, true);
+                  }
+                })
+                .catch(console.error);
+            } else {
+              window.addEventListener("devicemotion", accUpdate, true);
+            }
       landingPage.style.display = "none";
       trackStarted = false;
       mainPage.style.display = "block";
