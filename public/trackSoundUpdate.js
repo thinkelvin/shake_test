@@ -6,10 +6,11 @@ var trackLoaded = 0;
 var trackEnded = 0;
 var trackIDs = [];
 var firstLoop = true;
-var track1Sound, track2Sound, track3Sound, track4Sound;
+var track1Sound, track2Sound, track3Sound, track4Sound, fulltrack;
 
 
 function trackSoundUpdate() {
+  
   track1Sound.mute(trackMuted[0]);
   track2Sound.mute(trackMuted[1]);
   track3Sound.mute(trackMuted[2]);
@@ -21,6 +22,7 @@ function trackSoundUpdate() {
       trackIDs[1] = track2Sound.play();
       trackIDs[2] = track3Sound.play();
       trackIDs[3] = track4Sound.play();
+      fulltrack.play();
       firstLoop = false;
       // console.log('first loop');
     } else {
@@ -28,7 +30,7 @@ function trackSoundUpdate() {
       track2Sound.play(trackIDs[1]);
       track3Sound.play(trackIDs[2]);
       track4Sound.play(trackIDs[3]);
-      
+      fulltrack.play();
       // console.log('second loop');
     }
     trackStarted = true;

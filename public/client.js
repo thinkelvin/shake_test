@@ -51,6 +51,12 @@ var trackCheck = -1;
 var _debug = false; // turn on/off accelerationX plot for debug
 
 function preload() {
+    fulltrack = new Howl({
+      src: ['./media/ftrack.mp3'],
+      volume: 0.5,
+      preload: true,
+      mute: true,
+    });
   track1Sound = new Howl({
     src: ['./media/ntrack1.mp3'],
     volume: 0.5,
@@ -96,7 +102,7 @@ function setup() {
   track2Viz = document.getElementById("track2Viz");
   track3Viz = document.getElementById("track3Viz");
   track4Viz = document.getElementById("track4Viz");
-  Howler.autoUnlock = false;
+ 
   analyser1 = Howler.ctx.createAnalyser();
   Howler.masterGain.connect(analyser1);
   analyser1.connect(Howler.ctx.destination);
@@ -163,10 +169,6 @@ function setup() {
       trackStarted = false;
       mainPage.style.display = "block";
       screenfull.request();
-      track1Sound.play();
-      track2Sound.play();
-      track3Sound.play();
-      track4Sound.play();
     }
   });
 
