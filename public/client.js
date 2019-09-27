@@ -55,7 +55,7 @@ function preload() {
       src: ['./media/ftrack.mp3'],
       volume: 0.5,
       preload: true,
-      mute: true,
+      mute: true
     });
   track1Sound = new Howl({
     src: ['./media/ntrack1.mp3'],
