@@ -150,9 +150,9 @@ function setup() {
           .then(PermissionStatus => {
             if (PermissionStatus === 'granted') {
               window.addEventListener("devicemotion", accUpdate, true);
-              if (screenfull.isEnabled) {
+              // if (screenfull.isEnabled) {
                 screenfull.request();
-              }
+              // }
             }
           })
           .catch(console.error);
