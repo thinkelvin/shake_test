@@ -158,6 +158,7 @@ function setup() {
       trackStarted = false;
       mainPage.style.display = "block";
             screenfull.request();
+            trackSoundUpdate();
     }
   });
 
