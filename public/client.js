@@ -55,6 +55,7 @@ function preload() {
     src: ['./media/ntrack1.mp3'],
     volume: 0.5,
     preload: true,
+    mute: true,
     onload: function () {
       trackLoaded++;
     }
@@ -63,6 +64,7 @@ function preload() {
     src: ['./media/ntrack2.mp3'],
     volume: 0.5,
     preload: true,
+    mute: true,
     onload: function () {
       trackLoaded++;
     }
@@ -71,6 +73,7 @@ function preload() {
     src: ['./media/ntrack3.mp3'],
     volume: 0.5,
     preload: true,
+    mute: true,
     onload: function () {
       trackLoaded++;
     }
@@ -79,6 +82,7 @@ function preload() {
     src: ['./media/ntrack4.mp3'],
     volume: 0.5,
     preload: true,
+    mute: true,
     onload: function () {
       trackLoaded++;
     }
@@ -142,6 +146,7 @@ function setup() {
   var landingPageTap = new Hammer(landingPage);
   landingPageTap.on("tap", function (ev) {
     if (trackLoaded == 4 && allPlayed) {
+            // Works with ipados 13 and ios 13
             if (typeof DeviceMotionEvent.requestPermission === 'function') {
               DeviceMotionEvent.requestPermission()
                 .then(PermissionStatus => {
