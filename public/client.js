@@ -92,7 +92,7 @@ function setup() {
   track2Viz = document.getElementById("track2Viz");
   track3Viz = document.getElementById("track3Viz");
   track4Viz = document.getElementById("track4Viz");
-
+  Howler.autoUnlock = false;
   analyser1 = Howler.ctx.createAnalyser();
   Howler.masterGain.connect(analyser1);
   analyser1.connect(Howler.ctx.destination);
