@@ -127,14 +127,20 @@ function setup() {
   NbBumps_remote = 0;
   NbBumps_sync = 0;
   //document.getElementById("localBump").innerHTML = "Local Bumps = " + NbBumps.toString();
-  // DeviceMotionEvent.requestPermission().then (response => {
-  //   if (response == 'granted') {
-  //     window.addEventListener("devicemotion", accUpdate, true);
-  //   }
-  // })
-  // .catch(console.error)
 
-  window.addEventListener("devicemotion", accUpdate, true);
+      if (typeof DeviceMotionEvent.requestPermission === 'function') {
+        DeviceMotionEvent.requestPermission()
+          .then(PermissionStatus => {
+            if (PermissionStatus === 'granted') {
+              window.addEventListener("devicemotion", accUpdate, true);
+            }
+          })
+          .catch(console.error);
+      } else {
+        window.addEventListener("devicemotion", accUpdate, true);
+      }
+
+  // window.addEventListener("devicemotion", accUpdate, true);
  
   // window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
