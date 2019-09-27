@@ -134,7 +134,7 @@ function setup() {
   // })
   // .catch(console.error)
 
-  // window.addEventListener("devicemotion", accUpdate, true);
+  window.addEventListener("devicemotion", accUpdate, true);
  
   // window.addEventListener("MozOrientation", accUpdate, true);
   socket = io(); // create socket connection back to hosting server
