@@ -55,6 +55,11 @@ function preload() {
     src: ['./media/ntrack1.mp3'],
     volume: 0.5,
     preload: true,
+    onplayerror: function() {
+      sound.once('unlock', function() {
+        sound.play();
+      });
+    },
     onload: function () {
       trackLoaded++;
     }
@@ -158,7 +163,7 @@ function setup() {
       trackStarted = false;
       mainPage.style.display = "block";
       screenfull.request();
-            
+      
     }
   });
 
