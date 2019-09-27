@@ -157,8 +157,8 @@ function setup() {
       landingPage.style.display = "none";
       trackStarted = false;
       mainPage.style.display = "block";
-            screenfull.request();
-            trackSoundUpdate();
+      screenfull.request();
+            
     }
   });
 
