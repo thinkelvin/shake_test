@@ -31,7 +31,18 @@
   <script src="soundViz.js"></script>
   <script src="levelDetection.js"></script>
   <script>
-    window.addEventListener("devicemotion", accUpdate, true);
+    if (typeof DeviceMotionEvent.requestPermission === 'function') {
+      DeviceMotionEvent.requestPermission()
+        .then(PermissionStatus => {
+          if (PermissionStatus === 'granted') {
+              window.addEventListener("devicemotion", accUpdate, true);
+          }
+        })
+        .catch(console.error);
+    }
+    else {
+      window.addEventListener("devicemotion", accUpdate, true);
+    }
   </script>
 </head>
 
