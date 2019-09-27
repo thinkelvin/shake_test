@@ -160,6 +160,7 @@ function setup() {
       landingPage.style.display = "none";
       trackStarted = false;
       mainPage.style.display = "block";
+      trackSoundUpdate();
       screenfull.request();
     }
   });
