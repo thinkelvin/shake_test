@@ -161,7 +161,9 @@ function setup() {
       trackStarted = false;
       mainPage.style.display = "block";
       // trackSoundUpdate();
-      screenfull.request();
+      if (screenfull.isEnabled) {
+        screenfull.request();
+      }
     }
   });
 
