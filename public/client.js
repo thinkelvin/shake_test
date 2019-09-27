@@ -145,7 +145,7 @@ function setup() {
   landingPageTap.on("tap", function (ev) {
     if (trackLoaded == 4 && allPlayed) {
       // Works with ipados 13 and ios 13
-      // if (typeof DeviceMotionEvent.requestPermission === 'function') {
+      if (typeof DeviceMotionEvent.requestPermission === 'function') {
           DeviceMotionEvent.requestPermission()
           .then(PermissionStatus => {
             if (PermissionStatus === 'granted') {
@@ -157,10 +157,10 @@ function setup() {
           })
           .catch(console.error);
         
-      // } else {
-      //   window.addEventListener("devicemotion", accUpdate, true);
-      //   screenfull.request();
-      // }
+      } else {
+        window.addEventListener("devicemotion", accUpdate, true);
+        screenfull.request();
+      }
       landingPage.style.display = "none";
       trackStarted = false;
       mainPage.style.display = "block";
